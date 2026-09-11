@@ -1,13 +1,13 @@
 # Manipulation — The Fool and the Wise
 
-Landing page for **Book + AI Knowledge System** by J. Nasr.
+Landing page for **Book + Knowledge System**.
 
-- 157-page designed study edition
+- 157-page designed digital edition
 - 223-mechanism structured atlas
-- 669 mapped AI application directions
+- 669 mapped application directions
 - 83 source records
-- EPUB + workbook
-- AI Knowledge Framework with reasoning protocol, prompt and output schema
+- EPUB + analysis workbook
+- Knowledge Framework with reasoning protocol, prompt and output schema
 
 The purchase CTA opens an external PayPal checkout for **US$23.33**.
 
