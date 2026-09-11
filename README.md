@@ -1,15 +1,18 @@
-# Manipulation — The Fool and the Wise / Landing Page
+# Manipulation — The Fool and the Wise
 
-Static one-page sales site for the 2026 digital study edition by J. Nasr.
+Landing page for **Book + AI Knowledge System** by J. Nasr.
+
+- 157-page designed study edition
+- 223-mechanism structured atlas
+- 669 mapped AI application directions
+- 83 source records
+- EPUB + workbook
+- AI Knowledge Framework with reasoning protocol, prompt and output schema
+
+The purchase CTA opens an external PayPal checkout for **US$23.33**.
 
 ## Deployment
 
-Designed for Vercel as a static site. No build step is required.
+Static HTML/CSS/JS, configured for Vercel through `vercel.json`.
 
-## Payment
-
-The current BUY buttons submit a legacy PayPal Payments Standard form to `joenasr@gmail.com` with a fixed amount of USD 23.33 and no shipping. Before public launch, replace this with a current PayPal Payment Link or generated Buy Button from the PayPal Business dashboard.
-
-## Public assets
-
-Only marketing assets and low-resolution interior previews belong in this public repository. Do **not** add the paid PDF/EPUB/workbook/CSV package to the repository.
+The paid book/package files are deliberately **not stored in this public repository**.
