@@ -100,8 +100,15 @@ body {
 .hero-object { position: relative; min-height: 710px; display: flex; align-items: center; justify-content: center; }
 .book-wrap { position: relative; z-index: 3; width: min(78%, 480px); margin: 0; transform: rotate(-1.8deg); filter: drop-shadow(0 32px 28px rgba(0,0,0,.22)); }
 .book-wrap::after { content: ""; position: absolute; inset: 1.2% -3.7% -1.2% 99.7%; background: repeating-linear-gradient(to right, #d7d1c5 0 1px, #fcf8ee 1px 4px); transform: skewY(-8deg); transform-origin: left top; opacity: .95; }
-.book-wrap img { display: block; width: 100%; aspect-ratio: 504 / 720; object-fit: cover; }
 .book-wrap figcaption { position: absolute; left: 0; bottom: -30px; font-size: 9px; letter-spacing: .18em; color: var(--muted); }
+.cover-art { width: 100%; aspect-ratio: 504 / 720; background: #e9e3d8; border: 1px solid rgba(0,0,0,.2); display: flex; flex-direction: column; position: relative; overflow: hidden; padding: 8% 7% 6%; }
+.cover-art::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 20% 30%, rgba(0,0,0,.055) 0 1px, transparent 1.4px); background-size: 7px 9px; opacity: .6; mix-blend-mode: multiply; }
+.cover-kicker { font-size: clamp(6px, .7vw, 9px); letter-spacing: .22em; text-align: center; font-weight: 800; z-index: 2; }
+.cover-title { margin-top: 4%; font-family: var(--serif); font-size: clamp(26px, 3.6vw, 48px); letter-spacing: -.045em; text-align: center; z-index: 2; }
+.cover-subtitle { margin-top: 1%; font-size: clamp(7px, .8vw, 11px); letter-spacing: .18em; text-align: center; z-index: 2; }
+.cover-symbol { width: 94%; margin: auto; z-index: 2; }
+.cover-foot { text-align: center; font-size: clamp(6px, .68vw, 9px); letter-spacing: .13em; z-index: 2; }
+.cover-credit { margin-top: 4%; text-align: center; font-size: clamp(6px, .7vw, 9px); letter-spacing: .24em; z-index: 2; }
 .keyhole { position: absolute; z-index: 1; width: 190px; height: 190px; background: var(--red); border-radius: 50%; right: -38px; top: 24%; }
 .keyhole::after { content: ""; position: absolute; width: 86px; height: 210px; left: 52px; top: 108px; background: var(--red); clip-path: polygon(42% 0,58% 0,100% 100%,0 100%); }
 .measure { position: absolute; z-index: 2; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: .08em; color: var(--muted); border-top: 1px solid var(--rule); width: 65%; right: 0; top: 6%; padding-top: 6px; }
@@ -128,9 +135,16 @@ body {
 .contents-list em { font-family: var(--serif); font-size: 13px; color: var(--muted); }
 
 .editorial-stack { position: relative; min-height: 680px; }
-.preview { position: absolute; overflow: hidden; box-shadow: 0 22px 45px rgba(42,33,24,.19); border: 1px solid rgba(0,0,0,.1); background: #ddd6ca; }
-.preview::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(241,237,228,0) 35%, rgba(241,237,228,.52) 100%); pointer-events: none; }
-.preview img { display: block; width: 100%; height: 100%; object-fit: cover; filter: sepia(.14) contrast(.92) saturate(.72); }
+.preview { position: absolute; overflow: hidden; box-shadow: 0 22px 45px rgba(42,33,24,.19); border: 1px solid rgba(0,0,0,.14); background: #e5dfd4; padding: 10% 8%; display: flex; flex-direction: column; gap: 5%; color: #1b1a17; }
+.preview::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 20% 30%, rgba(0,0,0,.07) 0 1px, transparent 1.3px); background-size: 9px 11px; opacity: .4; pointer-events: none; }
+.preview strong { font-family: var(--serif); font-weight: 400; font-size: clamp(16px, 2vw, 28px); line-height: .95; z-index: 2; }
+.preview .page-no { font-size: 9px; letter-spacing: .18em; z-index: 2; }
+.preview i { display: block; height: 1px; background: rgba(0,0,0,.42); width: 100%; z-index: 2; }
+.preview i:nth-of-type(2) { width: 88%; }
+.preview i:nth-of-type(3) { width: 94%; }
+.preview i:nth-of-type(4) { width: 71%; }
+.preview i:nth-of-type(5) { width: 84%; }
+.preview em { margin-top: auto; font-style: normal; font-size: 7px; letter-spacing: .13em; z-index: 2; }
 .p1 { width: 46%; height: 62%; left: 0; top: 10%; transform: rotate(-7deg); }
 .p2 { width: 50%; height: 70%; right: 4%; top: 0; transform: rotate(5deg); }
 .p3 { width: 48%; height: 58%; left: 28%; bottom: 0; transform: rotate(.8deg); }
