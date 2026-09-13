@@ -1,25 +1,58 @@
 # Manipulation — The Fool and the Wise
 
-A single-scene Renaissance-inspired landing page for the digital study package by J. Nasr. Original chiaroscuro artwork, restrained crimson and aged-gold colors, a small author credit, and one direct purchase action. Responsive layout; no runtime JavaScript or external font requests.
+A single-scene landing page for the complete digital collection by J. Nasr.
+The painting remains the selected original; all typography and purchase controls
+are HTML and CSS. No runtime JavaScript or external fonts are required.
 
 Production: https://manipulation-the-fool-and-the-wise-two.vercel.app/
 Source: https://github.com/Joenasriani/test-things
 
-The purchase link opens PayPal for USD 23.33. Paid package files are not in this repository. Only the free sample is published.
+## Purchase interface
+
+A 72px minimum-height primary purchase button, a 56px desktop header button,
+and an inset 60px mobile purchase control share one PayPal checkout URL.
+The visible price and structured offer are USD 23.33. Mobile content reserves
+space for the fixed purchase control and the device safe area. Keyboard focus,
+active states and reduced-motion preferences are supported.
+
+Only four deliverable categories are visible. No methods, prompts, worked
+examples, output schemas or reference registers belong in this repository.
+The old sample is removed from the current site and branch. Prior commits and
+previously downloaded copies can still contain it; this release does not erase
+publication history or assert that previously shared content is confidential.
 
 ## Deployment
 
-Deploy the repository root as an Other/static project. No install or build step is required. Use the RoboMarket Vercel project `manipulation-the-fool-and-the-wise-v2`.
+Use the existing RoboMarket project manipulation-the-fool-and-the-wise-v2.
+Deploy these files only: index.html, styles.css, robots.txt, sitemap.xml,
+vercel.json, assets/cover.jpg and assets/collection-scene.webp.
+No install or build command is needed. This release uses the Vercel connector;
+Git push does not imply automatic deployment unless Git integration is configured.
 
-The current publication is deployed through the Vercel connector. A GitHub commit alone does not imply an automatic Vercel deployment; confirm a Git connection in the Vercel project settings before relying on push-to-deploy.
+## Commercial operation
+
+PayPal opens an external payment page. Payment completion and file delivery have
+not been transaction-tested. The site has no automatic delivery integration.
+The seller must verify payment and provide the current customer ZIP privately.
+Do not place paid ZIP files or private instructions in this public repository.
 
 ## SEO
 
-The page has a descriptive title and visible subject line, self-referencing canonical, Open Graph and Twitter metadata, Book/Product JSON-LD, robots.txt and a one-URL sitemap. Schema price matches the PayPal URL and visible price. No reviews, ISBN, return policy or availability claims are fabricated.
+Descriptive title and visible subject terms, self-referencing canonical URL,
+Open Graph/Twitter metadata, Book/Product JSON-LD, robots.txt and sitemap.
+Metadata describes deliverables only. Price changes require updating every
+checkout URL, visible price and structured offer together. Indexing is not guaranteed.
 
-After a domain change, update canonical/OG/schema URLs in index.html plus robots.txt and sitemap.xml together. Update visible price, checkout URL, metadata and JSON-LD together when changing price.
+## Design research
 
-Search indexing and rich results are determined by search engines. Submit the sitemap after verifying the production domain in Search Console.
+- https://baymard.com/learn/ecommerce-ux-best-practices
+- https://baymard.com/learn/button-design
+- https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html
+- https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum
+- https://www.nngroup.com/articles/button-states-communicate-interaction/
+
+These sources inform purchase-action prominence, labeling and target size.
+No conversion improvement or sales lift has been measured for this page.
 
 ## SEO references
 
@@ -27,4 +60,3 @@ Search indexing and rich results are determined by search engines. Submit the si
 - https://developers.google.com/search/docs/appearance/snippet
 - https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
 - https://developers.google.com/search/docs/appearance/structured-data/product
-- https://developers.google.com/search/docs/appearance/structured-data/sd-policies
