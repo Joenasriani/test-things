@@ -15,17 +15,14 @@ The visible price and structured offer are USD 23.33. Mobile content reserves
 space for the fixed purchase control and the device safe area. Keyboard focus,
 active states and reduced-motion preferences are supported.
 
-Only four deliverable categories are visible. No methods, prompts, worked
-examples, output schemas or reference registers belong in this repository.
-The old sample is removed from the current site and branch. Prior commits and
-previously downloaded copies can still contain it; this release does not erase
-publication history or assert that previously shared content is confidential.
+The original free sample is available through the header on desktop and mobile.
+Paid packages and private instructions remain outside this repository.
 
 ## Deployment
 
 Use the existing RoboMarket project manipulation-the-fool-and-the-wise-v2.
 Deploy these files only: index.html, styles.css, robots.txt, sitemap.xml,
-vercel.json, assets/cover.jpg and assets/collection-scene.webp.
+vercel.json, assets/cover.jpg, assets/collection-scene.webp and assets/Manipulation_Free_Sample.pdf.
 No install or build command is needed. This release uses the Vercel connector;
 Git push does not imply automatic deployment unless Git integration is configured.
 

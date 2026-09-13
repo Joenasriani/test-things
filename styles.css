@@ -91,3 +91,7 @@ footer small { font-size: .625rem; letter-spacing: .07em; color: #b8aa90; }
   .buy { transition: none; }
   .buy:hover { transform: none; }
 }
+
+.sample { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px; margin-left: auto; color: var(--ivory); font-size: .75rem; text-underline-offset: 5px; white-space: nowrap; }
+.sample span { color: var(--gold); }
+.sample:hover { color: var(--gold); }
