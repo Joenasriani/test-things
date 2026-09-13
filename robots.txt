@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://manipulation-the-fool-and-the-wise-two.vercel.app/sitemap.xml
