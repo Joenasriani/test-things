@@ -13,8 +13,11 @@
       "amount": "23.33",
       "currency": "USD"
     },
-    "shortDescription": "The anatomy of manipulation, persuasion and dark patterns.",
-    "formatLine": "157 pages · PDF + EPUB · Extras included",
+    "coreIdea": "Whoever sets the choices need not give the orders.",
+    "shortDescription": "Manipulation, persuasion and dark patterns, mapped for study.",
+    "proofLine": "Research cited. Hypotheses marked.",
+    "formatLine": "157 pages · PDF + EPUB",
+    "includedLine": "Workbook · 223-entry research atlas · Source register · AI framework + prompts",
     "verifiedAt": "2026-09-14",
     "visual": {
       "accent": "#7b211d"
