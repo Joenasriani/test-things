@@ -25,7 +25,8 @@
   <meta name="twitter:image" content="https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/cover.jpg">
   <meta name="twitter:image:alt" content="Manipulation — The Fool and the Wise book cover">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23191915'/%3E%3Cpath d='M10 12h20M10 20h13M10 28h20' stroke='%23e4dece' stroke-width='3'/%3E%3Cpath d='M26 20h4' stroke='%238d3028' stroke-width='3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="preload" as="image" href="assets/cover.jpg" fetchpriority="high">
   <link rel="preload" as="image" href="assets/collection-scene.webp" type="image/webp" fetchpriority="high">
   <script type="application/ld+json">
 {
@@ -84,32 +85,45 @@
   <a class="skip" href="#purchase">Skip to purchase</a>
   <main class="scene">
     <div class="painting" aria-hidden="true">
-      <img src="assets/collection-scene.webp" alt="" width="1536" height="1024" fetchpriority="high" decoding="async">
+      <img src="assets/collection-scene.webp" alt="" width="1536" height="1024" fetchpriority="auto" decoding="async">
     </div>
     <header class="masthead">
-      <p class="edition">A library of human influence</p>
+      <p class="edition">A study of human influence</p>
       <a class="sample" href="assets/Manipulation_Free_Sample.pdf" target="_blank" rel="noopener" aria-label="Read a free sample, PDF opens in a new tab">Read a sample <span aria-hidden="true">↗</span></a>
     </header>
-    <section class="book-intro" aria-labelledby="book-title">
-      <h1 id="book-title">Manipulation <span>The Fool and the Wise</span></h1>
-      <p class="description">Whoever sets the choices<br>need not give the orders.</p>
-      <p class="synopsis">The anatomy of manipulation, persuasion and dark patterns.</p>
-      <p class="evidence">Research references. Case studies. Hypotheses clearly marked.</p>
-      <section class="collection" aria-labelledby="collection-title">
-        <h2 id="collection-title">Free with the book</h2>
-        <ul>
-          <li>Study workbook</li>
-          <li>223-entry research atlas</li>
-          <li>Source register</li>
-          <li>AI framework + prompts</li>
-        </ul>
-      </section>
-      <div class="purchase" id="purchase">
-        <a class="buy" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=joenasr%40gmail.com&amp;item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amp;amount=23.33&amp;currency_code=USD&amp;no_shipping=1" target="_blank" rel="noopener noreferrer" aria-label="Buy the complete collection for 23.33 US dollars with PayPal, opens in a new tab">
-          <span>Buy the book</span><span class="price">$23.33 <small>USD</small></span><span class="arrow" aria-hidden="true">↗</span>
-        </a>
-        <p class="package">157 pages · PDF + EPUB · Extras included</p>
-        <p class="payment-note">One-time payment via PayPal</p>
+    <section class="product" aria-labelledby="book-title">
+      <div class="book-intro">
+        <h1 id="book-title">Manipulation <span>The Fool and the Wise</span></h1>
+      </div>
+      <figure class="book-edition">
+        <div class="book-object">
+          <img class="book-cover" src="assets/cover.jpg" alt="Manipulation — The Fool and the Wise, the digital study book by J. Nasr" width="1512" height="2160" fetchpriority="high" decoding="async">
+        </div>
+        <figcaption>157 pages · <span>PDF + EPUB</span></figcaption>
+      </figure>
+      <div class="offer">
+        <p class="description">Whoever sets the choices<br> need not give the orders.</p>
+        <div class="book-detail">
+          <p class="synopsis">Manipulation, persuasion and dark patterns, mapped for study.</p>
+          <p class="evidence">Research cited. Hypotheses marked.</p>
+          <p class="possibility">The next application is yours to imagine.</p>
+        </div>
+        <section class="collection" aria-labelledby="collection-title">
+          <h2 id="collection-title">Free with the book</h2>
+          <ul>
+            <li>Study workbook</li>
+            <li>223-entry research atlas</li>
+            <li>Source register</li>
+            <li>AI framework + prompts</li>
+          </ul>
+        </section>
+        <div class="purchase" id="purchase" tabindex="-1">
+          <p class="price">$23.33 <small>USD</small></p>
+          <a class="buy" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=joenasr%40gmail.com&amp;item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amp;amount=23.33&amp;currency_code=USD&amp;no_shipping=1" target="_blank" rel="noopener noreferrer" aria-label="Buy the complete collection for 23.33 US dollars with PayPal, opens in a new tab">
+            <span>Buy the book</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="checkout-note">PayPal · Files emailed after payment verification</p>
+        </div>
       </div>
     </section>
     <footer><small>J. Nasr</small></footer>
