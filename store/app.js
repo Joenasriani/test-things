@@ -20,6 +20,7 @@ const safeHttpUrl = (value) => {
 const money = (amount, currency) => {
   const value = Number(amount);
   if (!Number.isFinite(value) || value < 0 || !/^[A-Z]{3}$/.test(currency || '')) return '';
+
   try {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -32,7 +33,7 @@ const money = (amount, currency) => {
   }
 };
 
-const renderBook = (book) => {
+const renderBook = (book, position) => {
   const landing = safeHttpUrl(book.landingPage);
   if (!landing) return '';
 
@@ -42,27 +43,43 @@ const renderBook = (book) => {
   const accent = /^#[0-9a-f]{3,8}$/i.test(book.visual?.accent || '') ? book.visual.accent : '#7b211d';
   const fullTitle = [book.title, book.subtitle].filter(Boolean).join(' — ');
   const subtitle = book.subtitle ? `<span>${esc(book.subtitle)}</span>` : '';
+  const index = book.index || String(position + 1).padStart(2, '0');
+  const loading = position === 0 ? 'eager' : 'lazy';
+
   const buyControl = buy && price
-    ? `<a class="buy-direct" href="${esc(buy)}" target="_blank" rel="noopener noreferrer" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">Buy <span>${esc(price)}</span></a>`
-    : '';
+    ? `<a class="buy-direct" href="${esc(buy)}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">Buy <span>${esc(price)}</span></a>`
+    : price
+      ? `<span class="price-only" aria-label="Price ${esc(price)}">${esc(price)}</span>`
+      : '';
 
   return `
     <article class="work" style="--book-accent:${esc(accent)}">
       ${cover ? `
         <a class="cover-link" href="${esc(landing)}" aria-label="See ${esc(fullTitle)}">
-          <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="eager" decoding="async">
+          <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="${loading}" decoding="async">
         </a>` : ''}
 
       <div class="work-copy">
-        <p class="work-topline">${esc(book.author || '')}</p>
-        <h2 class="work-title"><a href="${esc(landing)}">${esc(book.title || '')}${subtitle}</a></h2>
-        <p class="short-description"><a href="${esc(landing)}">${esc(book.shortDescription || '')}</a></p>
+        <div class="work-meta" aria-label="Book ${esc(index)} by ${esc(book.author || '')}">
+          <span>${esc(index)}</span>
+          ${book.author ? `<span>${esc(book.author)}</span>` : ''}
+        </div>
+
+        <h2 class="work-title">
+          <a href="${esc(landing)}">${esc(book.title || '')}${subtitle}</a>
+        </h2>
+
+        ${book.shortDescription ? `
+          <p class="short-description">
+            <a href="${esc(landing)}">${esc(book.shortDescription)}</a>
+          </p>` : ''}
 
         <div class="work-action">
           ${buyControl}
-          <a class="enter" href="${esc(landing)}">See the book</a>
-          ${book.formatLine ? `<p class="format-line">${esc(book.formatLine)}</p>` : ''}
+          <a class="enter" href="${esc(landing)}" aria-label="See ${esc(fullTitle)}">See the book</a>
         </div>
+
+        ${book.formatLine ? `<p class="format-line">${esc(book.formatLine)}</p>` : ''}
       </div>
     </article>
   `;
