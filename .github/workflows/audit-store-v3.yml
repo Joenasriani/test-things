@@ -1,0 +1,22 @@
+name: Audit bookstore V3
+
+on:
+  push:
+    paths:
+      - 'store-v3/**'
+      - 'tools/audit-store-v3.mjs'
+      - '.github/workflows/audit-store-v3.yml'
+  pull_request:
+    paths:
+      - 'store-v3/**'
+      - 'tools/audit-store-v3.mjs'
+      - '.github/workflows/audit-store-v3.yml'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit bookstore V3
+        run: node tools/audit-store-v3.mjs
