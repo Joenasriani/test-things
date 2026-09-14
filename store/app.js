@@ -20,12 +20,11 @@ const safeHttpUrl = (value) => {
 const money = (amount, currency) => {
   const value = Number(amount);
   if (!Number.isFinite(value) || value < 0 || !/^[A-Z]{3}$/.test(currency || '')) return '';
-
   try {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency,
-      currencyDisplay: 'code',
+      currencyDisplay: 'narrowSymbol',
       minimumFractionDigits: 2
     }).format(value);
   } catch {
@@ -38,57 +37,44 @@ const renderBook = (book, position) => {
   if (!landing) return '';
 
   const cover = safeHttpUrl(book.cover);
+  const scene = safeHttpUrl(book.scene);
   const buy = safeHttpUrl(book.buyUrl);
   const price = money(book.price?.amount, book.price?.currency || '');
-  const accent = /^#[0-9a-f]{3,8}$/i.test(book.visual?.accent || '') ? book.visual.accent : '#7b211d';
   const fullTitle = [book.title, book.subtitle].filter(Boolean).join(' — ');
-  const subtitle = book.subtitle ? `<span>${esc(book.subtitle)}</span>` : '';
-  const index = book.index || String(position + 1).padStart(2, '0');
-  const loading = position === 0 ? 'eager' : 'lazy';
   const bookId = esc(book.id || fullTitle);
+  const index = book.index || String(position + 1).padStart(2, '0');
+  const valueLine = book.storeLine || [book.formatLine, book.includedLine].filter(Boolean).join(' · ');
 
   const buyControl = buy && price
-    ? `<a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">Buy <span>${esc(price)}</span></a>`
-    : price
-      ? `<span class="price-only" aria-label="Price ${esc(price)}">${esc(price)}</span>`
-      : '';
+    ? `<a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)} ${esc(book.price?.currency || '')}"><span>Buy</span><strong>${esc(price)}</strong></a>`
+    : '';
 
   return `
-    <article class="work" style="--book-accent:${esc(accent)}">
-      ${cover ? `
-        <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">
-          <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="${loading}" decoding="async">
-        </a>` : ''}
+    <article class="book-stage">
+      ${scene ? `<div class="book-atmosphere" aria-hidden="true"><img src="${esc(scene)}" alt="" loading="eager" decoding="async"></div>` : ''}
+      <div class="book-stage-inner">
+        ${cover ? `
+          <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">
+            <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="eager" decoding="async">
+          </a>` : ''}
 
-      <div class="work-copy">
-        <div class="work-meta" aria-label="Book ${esc(index)} by ${esc(book.author || '')}">
-          <span>${esc(index)}</span>
-          ${book.author ? `<span>${esc(book.author)}</span>` : ''}
+        <div class="book-copy">
+          <p class="book-meta">${esc(index)} · ${esc(book.author || '')}</p>
+          <h1 class="book-title">
+            <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">
+              ${esc(book.title || '')}
+              ${book.subtitle ? `<span>${esc(book.subtitle)}</span>` : ''}
+            </a>
+          </h1>
+
+          ${book.coreIdea ? `<p class="book-hook">${esc(book.coreIdea)}</p>` : ''}
+          ${valueLine ? `<p class="book-value">${esc(valueLine)}</p>` : ''}
+
+          <div class="book-actions">
+            ${buyControl}
+            <a class="see-book" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">See the book <span aria-hidden="true">→</span></a>
+          </div>
         </div>
-
-        <h2 class="work-title">
-          <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">${esc(book.title || '')}${subtitle}</a>
-        </h2>
-
-        ${book.coreIdea ? `<p class="core-idea">${esc(book.coreIdea)}</p>` : ''}
-
-        ${book.shortDescription ? `
-          <p class="short-description">
-            <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">${esc(book.shortDescription)}</a>
-          </p>` : ''}
-
-        ${book.proofLine ? `<p class="proof-line">${esc(book.proofLine)}</p>` : ''}
-
-        <div class="work-action">
-          ${buyControl}
-          <a class="enter" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">See the book</a>
-        </div>
-
-        ${(book.formatLine || book.includedLine) ? `
-          <div class="book-facts" aria-label="Book details">
-            ${book.formatLine ? `<p class="format-line">${esc(book.formatLine)}</p>` : ''}
-            ${book.includedLine ? `<p class="included-line">${esc(book.includedLine)}</p>` : ''}
-          </div>` : ''}
       </div>
     </article>
   `;
@@ -101,19 +87,17 @@ fetch('./data/books.json')
   })
   .then((books) => {
     const published = books.filter((book) => book.status === 'published' && safeHttpUrl(book.landingPage));
-    count.textContent = `${String(published.length).padStart(2, '0')} ${published.length === 1 ? 'book' : 'books'}`;
+    count.textContent = String(published.length).padStart(2, '0');
     catalogue.innerHTML = published.map(renderBook).join('') || '<p class="load-error">No published books are available.</p>';
   })
   .catch(() => {
     catalogue.innerHTML = '<p class="load-error">The book could not be loaded. Please refresh the page.</p>';
   });
 
-// Zero-backend measurement hook. Nothing is transmitted or stored here.
-// A future first-party analytics listener can consume this event without changing the storefront markup.
+// Zero-backend measurement hook. Nothing is transmitted or stored.
 document.addEventListener('click', (event) => {
   const link = event.target.closest('a[data-action]');
   if (!link) return;
-
   document.dispatchEvent(new CustomEvent('bookstore:action', {
     detail: {
       action: link.dataset.action,
