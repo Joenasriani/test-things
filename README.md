@@ -2,7 +2,7 @@
 
 A single-scene landing page for the complete digital collection by J. Nasr.
 The original painting sets the mood behind the actual book cover. All typography and purchase controls
-are HTML and CSS. No runtime JavaScript or external fonts are required.
+are HTML and CSS. No runtime JavaScript is required. Manrope is self-hosted with its SIL Open Font License.
 
 Production: https://manipulation-the-fool-and-the-wise-two.vercel.app/
 Source: https://github.com/Joenasriani/test-things
@@ -11,12 +11,12 @@ Source: https://github.com/Joenasriani/test-things
 
 Exactly one purchase link appears in the document and stays in normal flow on
 all screen sizes. No duplicated header or fixed mobile checkout bar. The free
-sample is the secondary header action. The price is displayed separately beside the single Buy button. The price and offer remain
+sample is the secondary action beside the extras disclosure. The price is displayed separately beside the single Buy button. The price and offer remain
 USD 23.33, with workbook, research atlas, source register and AI companion files
 included at no extra cost. All included files were checked against the customer ZIP.
 Keyboard focus, touch targets and reduced-motion preferences are supported.
 
-The original free sample is available through the header on desktop and mobile.
+The original free sample is available beside the offer on desktop and mobile.
 Paid packages and private instructions remain outside this repository.
 
 ## Deployment
@@ -96,3 +96,29 @@ Additional design and accessibility sources:
 
 This is a design application of usability research, not a measured conversion
 claim. Any responsive test fixtures are preview-only and excluded from production.
+
+## Dark, compact composition — 14 September 2026
+
+Background artwork is limited to 24% opacity on desktop and 18% on phones,
+with a dark overlay on every pixel. The cover has priority over the painting.
+The cover occupies one visual column; the title, short copy, price and single
+purchase action share the other. On phones the composition becomes vertical.
+
+The approved original line, “Watch what life repeats and men neglect,” is
+the sole editorial statement. It is not attributed to Machiavelli.
+The four extras use a native, keyboard-accessible details disclosure that
+expands in normal flow. No overlay hides the purchase action.
+The original sample, USD 23.33 price, PayPal destination, and delivery notice
+are retained. The credit stays small and low on the page.
+
+The stylesheet is v12. The locally served Manrope variable font is from
+https://github.com/google/fonts/tree/main/ofl/manrope and is redistributed
+with assets/fonts/OFL.txt. Its file must be included in deployments.
+This revision changes only the book landing page, not the separate store.
+Viewport checks and release verification are reported after rendering;
+earlier verification notes above describe prior versions.
+
+Release checks: one purchase link; existing sample path retained; USD 23.33
+agrees between visible price, PayPal query and JSON-LD; PayPal recipient
+matches the existing source. GitHub and deployed source are compared on release.
+Fresh interactive browser verification was unavailable for this revision.
