@@ -1,20 +1,6 @@
 const catalogue = document.querySelector('#catalogue');
 const count = document.querySelector('#library-count');
 
-const money = (amount, currency) => {
-  const value = Number(amount);
-  if (!Number.isFinite(value)) return 'Price unavailable';
-  try {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency,
-      minimumFractionDigits: 2
-    }).format(value);
-  } catch {
-    return `${amount} ${currency}`;
-  }
-};
-
 const esc = (value = '') => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')
@@ -22,48 +8,76 @@ const esc = (value = '') => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
-const renderWork = (book) => {
-  const accent = book.visual?.accent || '#7b211d';
-  const price = money(book.price?.amount, book.price?.currency || 'USD');
-  const landing = esc(book.landingPage);
-  const buy = esc(book.buyUrl || book.landingPage);
+const safeHttpUrl = (value) => {
+  try {
+    const url = new URL(String(value));
+    return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+  } catch {
+    return '';
+  }
+};
+
+const money = (amount, currency) => {
+  const value = Number(amount);
+  if (!Number.isFinite(value) || value < 0 || !/^[A-Z]{3}$/.test(currency || '')) return '';
+  try {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency,
+      currencyDisplay: 'code',
+      minimumFractionDigits: 2
+    }).format(value);
+  } catch {
+    return `${currency} ${amount}`;
+  }
+};
+
+const renderBook = (book) => {
+  const landing = safeHttpUrl(book.landingPage);
+  if (!landing) return '';
+
+  const cover = safeHttpUrl(book.cover);
+  const buy = safeHttpUrl(book.buyUrl);
+  const price = money(book.price?.amount, book.price?.currency || '');
+  const accent = /^#[0-9a-f]{3,8}$/i.test(book.visual?.accent || '') ? book.visual.accent : '#7b211d';
+  const fullTitle = [book.title, book.subtitle].filter(Boolean).join(' — ');
+  const subtitle = book.subtitle ? `<span>${esc(book.subtitle)}</span>` : '';
+  const buyControl = buy && price
+    ? `<a class="buy-direct" href="${esc(buy)}" target="_blank" rel="noopener noreferrer" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">Buy <span>${esc(price)}</span></a>`
+    : '';
 
   return `
     <article class="work" style="--book-accent:${esc(accent)}">
-      <div class="work-index" aria-hidden="true">
-        <span class="work-number">${esc(book.index || '')}</span>
-      </div>
-
-      <a class="cover-link" href="${landing}" aria-label="Open ${esc(book.title)} ${esc(book.subtitle)} landing page">
-        <img class="cover" src="${esc(book.cover)}" alt="${esc(book.title)} ${esc(book.subtitle)} book cover" loading="eager" decoding="async">
-      </a>
+      ${cover ? `
+        <a class="cover-link" href="${esc(landing)}" aria-label="See ${esc(fullTitle)}">
+          <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="eager" decoding="async">
+        </a>` : ''}
 
       <div class="work-copy">
-        <p class="work-topline">${esc(book.author)}</p>
-        <h2 class="work-title"><a href="${landing}">${esc(book.title)}<span>${esc(book.subtitle)}</span></a></h2>
-        <p class="short-description"><a href="${landing}">${esc(book.shortDescription)}</a></p>
+        <p class="work-topline">${esc(book.author || '')}</p>
+        <h2 class="work-title"><a href="${esc(landing)}">${esc(book.title || '')}${subtitle}</a></h2>
+        <p class="short-description"><a href="${esc(landing)}">${esc(book.shortDescription || '')}</a></p>
 
         <div class="work-action">
-          <div class="price">${esc(price)}<small>${esc(book.price?.currency || '')}</small></div>
-          <a class="buy-direct" href="${buy}" target="_blank" rel="noopener noreferrer">Buy</a>
-          <a class="enter" href="${landing}">See the book</a>
-          <p class="format-line">${esc(book.formatLine)}</p>
+          ${buyControl}
+          <a class="enter" href="${esc(landing)}">See the book</a>
+          ${book.formatLine ? `<p class="format-line">${esc(book.formatLine)}</p>` : ''}
         </div>
       </div>
     </article>
   `;
 };
 
-fetch('./data/books.json', { cache: 'no-store' })
+fetch('./data/books.json')
   .then((response) => {
     if (!response.ok) throw new Error(`Catalogue request failed: ${response.status}`);
     return response.json();
   })
   .then((books) => {
-    const published = books.filter((book) => book.status === 'published');
+    const published = books.filter((book) => book.status === 'published' && safeHttpUrl(book.landingPage));
     count.textContent = `${String(published.length).padStart(2, '0')} ${published.length === 1 ? 'book' : 'books'}`;
-    catalogue.innerHTML = published.map(renderWork).join('');
+    catalogue.innerHTML = published.map(renderBook).join('') || '<p class="load-error">No published books are available.</p>';
   })
   .catch(() => {
-    catalogue.innerHTML = '<p class="load-error">The catalogue could not be loaded.</p>';
+    catalogue.innerHTML = '<p class="load-error">The book could not be loaded. Please refresh the page.</p>';
   });
