@@ -69,17 +69,25 @@ const renderBook = (book, position) => {
           <a href="${esc(landing)}">${esc(book.title || '')}${subtitle}</a>
         </h2>
 
+        ${book.coreIdea ? `<p class="core-idea">${esc(book.coreIdea)}</p>` : ''}
+
         ${book.shortDescription ? `
           <p class="short-description">
             <a href="${esc(landing)}">${esc(book.shortDescription)}</a>
           </p>` : ''}
+
+        ${book.proofLine ? `<p class="proof-line">${esc(book.proofLine)}</p>` : ''}
 
         <div class="work-action">
           ${buyControl}
           <a class="enter" href="${esc(landing)}" aria-label="See ${esc(fullTitle)}">See the book</a>
         </div>
 
-        ${book.formatLine ? `<p class="format-line">${esc(book.formatLine)}</p>` : ''}
+        ${(book.formatLine || book.includedLine) ? `
+          <div class="book-facts" aria-label="Book details">
+            ${book.formatLine ? `<p class="format-line">${esc(book.formatLine)}</p>` : ''}
+            ${book.includedLine ? `<p class="included-line">${esc(book.includedLine)}</p>` : ''}
+          </div>` : ''}
       </div>
     </article>
   `;
