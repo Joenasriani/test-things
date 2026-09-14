@@ -9,11 +9,12 @@ Source: https://github.com/Joenasriani/test-things
 
 ## Purchase interface
 
-A 72px minimum-height primary purchase button, a 56px desktop header button,
-and an inset 60px mobile purchase control share one PayPal checkout URL.
-The visible price and structured offer are USD 23.33. Mobile content reserves
-space for the fixed purchase control and the device safe area. Keyboard focus,
-active states and reduced-motion preferences are supported.
+Exactly one purchase link appears in the document and stays in normal flow on
+all screen sizes. No duplicated header or fixed mobile checkout bar. The free
+sample is the secondary header action. The displayed price and offer remain
+USD 23.33, with workbook, research atlas, source register and AI companion files
+included at no extra cost. All included files were checked against the customer ZIP.
+Keyboard focus, touch targets and reduced-motion preferences are supported.
 
 The original free sample is available through the header on desktop and mobile.
 Paid packages and private instructions remain outside this repository.
@@ -57,3 +58,19 @@ No conversion improvement or sales lift has been measured for this page.
 - https://developers.google.com/search/docs/appearance/snippet
 - https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
 - https://developers.google.com/search/docs/appearance/structured-data/product
+
+## Copy and interface audit — 14 September 2026
+
+Removed competing purchase controls, their unused styles, and the fixed mobile
+bar that repeated the primary action and occupied reading space. The sequence
+is title, original editorial aphorism, subject and evidence scope, included
+extras, and one purchase action. The sample remains available before buying.
+The aphorism is original sales copy, not a quotation attributed to Machiavelli.
+The book is research-informed and AI-assisted; neither peer review of this
+edition, exhaustive scientific validation, nor AI-free authorship is claimed.
+The visible description and search/social metadata describe the same subject.
+No keyword stuffing, hidden SEO paragraphs, invented reviews or bonus valuations.
+
+Verified phone (390px) and tablet (768px) compositions in browser frames: one
+purchase link per document, a retained sample link, loaded artwork, and no
+horizontal overflow. Desktop checked on the deployed page.
