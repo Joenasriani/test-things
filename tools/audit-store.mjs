@@ -44,7 +44,7 @@ for (const book of published) {
   const label = book.id || book.title || 'unknown-book';
   const required = [
     'id', 'title', 'author', 'landingPage', 'buyUrl', 'cover',
-    'coreIdea', 'shortDescription', 'proofLine', 'formatLine', 'includedLine'
+    'coreIdea', 'storeLine', 'shortDescription', 'proofLine', 'formatLine', 'includedLine'
   ];
 
   for (const field of required) {
@@ -64,9 +64,11 @@ for (const book of published) {
   if (!isHttpUrl(book.landingPage)) fail(`${label}: landingPage must be HTTP/HTTPS.`);
   if (!isHttpUrl(book.buyUrl)) fail(`${label}: buyUrl must be HTTP/HTTPS.`);
   if (!isHttpUrl(book.cover)) fail(`${label}: cover must be an absolute HTTP/HTTPS URL so deployment root cannot break it.`);
+  if (book.scene && !isHttpUrl(book.scene)) fail(`${label}: scene must be an absolute HTTP/HTTPS URL when present.`);
   if (book.buyUrl === book.landingPage) fail(`${label}: Buy must not silently fall back to the landing page.`);
 
   if (book.coreIdea?.length > 140) fail(`${label}: coreIdea exceeds 140 characters.`);
+  if (book.storeLine?.length > 140) fail(`${label}: storeLine exceeds 140 characters.`);
   if (book.shortDescription?.length > 180) fail(`${label}: shortDescription exceeds 180 characters.`);
   if (book.proofLine?.length > 140) fail(`${label}: proofLine exceeds 140 characters.`);
   if (book.includedLine?.length > 180) fail(`${label}: includedLine exceeds 180 characters.`);
@@ -89,7 +91,7 @@ for (const book of published) {
   try {
     const response = await fetch(book.landingPage, {
       redirect: 'follow',
-      headers: { 'user-agent': 'ResearchLibraryAudit/2.0' }
+      headers: { 'user-agent': 'ResearchLibraryAudit/3.0' }
     });
     if (!response.ok) {
       fail(`${label}: landing page returned HTTP ${response.status}.`);
@@ -107,6 +109,10 @@ for (const book of published) {
     if (!includesText(text, book.shortDescription)) fail(`${label}: shortDescription cannot be verified on the landing page.`);
     if (!includesText(text, book.proofLine)) fail(`${label}: proofLine cannot be verified on the landing page.`);
 
+    for (const part of book.storeLine.split('·').map((value) => value.trim()).filter(Boolean)) {
+      if (!includesText(text, part)) fail(`${label}: store value "${part}" cannot be verified on the landing page.`);
+    }
+
     for (const part of book.formatLine.split('·').map((value) => value.trim()).filter(Boolean)) {
       if (!includesText(text, part)) fail(`${label}: format detail "${part}" cannot be verified on the landing page.`);
     }
@@ -121,7 +127,7 @@ for (const book of published) {
       fail(`${label}: catalogue price/currency cannot be confirmed on the landing page.`);
     }
 
-    ok(`${label}: source-backed positioning verified; Buy in 1 click; landing page in 1 click; landing page → Buy/Sample in 2 clicks.`);
+    ok(`${label}: source-backed storefront verified; Buy in 1 click; landing page in 1 click; landing page → Buy/Sample in 2 clicks.`);
   } catch (error) {
     fail(`${label}: landing page could not be audited (${error.message}).`);
   }
@@ -136,5 +142,5 @@ if (errors.length) {
 console.log('\nBOOKSTORE AUDIT PASSED\n');
 for (const note of notes) console.log(`- ${note}`);
 console.log(`- ${published.length} published book${published.length === 1 ? '' : 's'} validated.`);
-console.log('- Marketing claims shown by the store are required to be source-verifiable before publication.');
+console.log('- Every displayed positioning/value claim is required to be source-verifiable before publication.');
 console.log('- No account, signup, backend, CMS, database, or store-side checkout is required.');
