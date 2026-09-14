@@ -9,10 +9,11 @@ For any work affecting `store-v3/`, also treat this file as canonical and mandat
 
 - `store-v3/COUNCIL_FRAMEWORK.md`
 
-The V3 council framework must stay active for design, copy, UX and conversion decisions:
+The V3 council + reasoning framework must stay active for design, copy, UX and conversion decisions:
 - James Clear lens: instant comprehension, minimum friction, immediate purchase legibility.
 - Mark Manson lens: the page must inherit the specific book's worldview and voice; the hook does the selling before explanation.
 - Tim Ferriss lens: surface unusual utility and leverage without turning the page into a feature list or promising outcomes.
+- Reasoning kernel: FRAME → TRY → CHECK → UPDATE → STOP. Every proposed element is a candidate and survives only if it improves the buying decision more than it costs in friction, clutter, ambiguity or visual weight.
 - Council intersection: Cover → Title → Provocative idea → Compressed utility → Price → BUY → See inside.
 
 Hard constraints for bookstore changes:
@@ -25,6 +26,8 @@ Hard constraints for bookstore changes:
 - Do not replace the editorial composition with generic product cards, ecommerce templates, SaaS styling, AI aesthetics, or decorative UI.
 - Preserve mobile, tablet, and desktop as deliberate compositions.
 - Prefer zero-dependency/static solutions while the catalogue can be handled safely with files.
+- Do not expose internal reasoning architecture as customer-facing copy or interface.
 - For `store/`, run `node tools/audit-store.mjs` after catalogue or interaction changes and fix every failure.
+- For `store-v3/`, run `node tools/audit-store-v3.mjs` after design, copy, catalogue or interaction changes and fix every failure.
 
 The bookstore should perform the marketing through the book, its positioning, its evidence, its price and its clarity—not through added marketing decoration.
