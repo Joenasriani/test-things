@@ -1,0 +1,29 @@
+name: Audit bookstore
+
+on:
+  push:
+    paths:
+      - 'store/**'
+      - 'tools/add-book.mjs'
+      - 'tools/audit-store.mjs'
+      - '.github/workflows/audit-store.yml'
+  pull_request:
+    paths:
+      - 'store/**'
+      - 'tools/add-book.mjs'
+      - 'tools/audit-store.mjs'
+      - '.github/workflows/audit-store.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify catalogue, price, links and two-click paths
+        run: node tools/audit-store.mjs
