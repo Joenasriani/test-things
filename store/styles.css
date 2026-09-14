@@ -28,24 +28,26 @@ h1 span { color: var(--muted); font-style: italic; }
 .work { --book-accent: var(--accent); position: relative; display: grid; grid-template-columns: 8rem minmax(15rem, .75fr) minmax(18rem, 1fr); gap: clamp(1.5rem, 4vw, 5.5rem); align-items: center; padding: clamp(2.2rem, 6vh, 5.2rem) 0; border-bottom: 1px solid var(--ink); }
 .work-index { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; }
 .work-number { font: 400 clamp(4rem, 8vw, 8rem)/.8 var(--serif); letter-spacing: -.08em; }
-.work-kind { color: var(--book-accent); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; }
 .cover-link { position: relative; display: block; width: min(100%, 28rem); justify-self: center; text-decoration: none; }
 .cover-link::before { content: ''; position: absolute; inset: 2.2% -2.2% -2.2% 2.2%; border: 1px solid var(--ink); z-index: -1; transition: transform .2s ease; }
 .cover-link:hover::before { transform: translate(4px, 4px); }
 .cover { display: block; width: 100%; height: auto; border: 1px solid var(--ink); background: #ddd3c1; box-shadow: 0 22px 44px #2e251c22; transition: transform .2s ease; }
 .cover-link:hover .cover { transform: translate(-2px, -2px); }
 .work-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
-.work-topline { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: 1.1rem; color: var(--muted); font-size: .66rem; letter-spacing: .13em; text-transform: uppercase; }
+.work-topline { margin: 0 0 1rem; color: var(--muted); font-size: .66rem; letter-spacing: .13em; text-transform: uppercase; }
 .work-title { margin: 0; font: 400 clamp(2.3rem, 4.5vw, 5rem)/.95 var(--serif); letter-spacing: -.04em; }
+.work-title a, .short-description a { text-decoration: none; }
+.work-title a:hover, .short-description a:hover { color: var(--book-accent); }
 .work-title span { display: block; margin-top: .45rem; color: var(--book-accent); font-style: italic; font-size: .63em; letter-spacing: -.02em; }
-.proposition { margin: 1.4rem 0 .65rem; max-width: 27ch; font: 400 clamp(1.15rem, 1.8vw, 1.7rem)/1.35 var(--serif); }
-.short-description { margin: 0; max-width: 40rem; color: #4f4a43; font-size: .92rem; line-height: 1.5; }
-.evidence-line { margin: .55rem 0 0; max-width: 40rem; color: var(--muted); font-size: .74rem; line-height: 1.5; }
-.work-action { display: grid; grid-template-columns: auto 1fr; gap: 1rem 1.5rem; align-items: end; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.short-description { margin: 1.4rem 0 0; max-width: 36rem; color: #4f4a43; font: 1rem/1.5 var(--serif); }
+.work-action { display: grid; grid-template-columns: auto auto 1fr; gap: .8rem 1rem; align-items: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
 .price { font: 400 clamp(1.8rem, 3vw, 3.2rem)/1 var(--serif); font-variant-numeric: tabular-nums; }
 .price small { display: block; margin-top: .35rem; color: var(--muted); font: .58rem/1 var(--sans); letter-spacing: .16em; }
-.enter { justify-self: end; align-self: center; display: inline-flex; align-items: center; gap: .7rem; min-height: 44px; padding: .7rem 0 .4rem; border-bottom: 1px solid var(--ink); font-size: .78rem; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; }
-.enter::after { content: '↗'; color: var(--book-accent); font-size: 1rem; }
+.buy-direct, .enter { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; text-transform: uppercase; font-size: .72rem; letter-spacing: .13em; }
+.buy-direct { padding: .8rem 1rem; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); }
+.buy-direct:hover { background: var(--book-accent); border-color: var(--book-accent); }
+.enter { justify-self: start; padding: .8rem .1rem; border-bottom: 1px solid var(--ink); }
+.enter::after { content: '↗'; margin-left: .55rem; color: var(--book-accent); }
 .enter:hover { color: var(--book-accent); border-color: var(--book-accent); }
 .format-line { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: .66rem; }
 .library-foot { display: flex; justify-content: space-between; gap: 2rem; padding-top: 1rem; color: var(--muted); font-size: .68rem; }
@@ -72,6 +74,8 @@ h1 span { color: var(--muted); font-style: italic; }
   .cover-link { width: min(86%, 23rem); }
   .work-title { font-size: clamp(2.4rem, 12vw, 4rem); }
   .work-action { grid-template-columns: 1fr auto; }
+  .price { grid-column: 1 / -1; }
+  .buy-direct, .enter { justify-self: start; }
   .library-foot { flex-direction: column; gap: .45rem; }
 }
 @media (prefers-reduced-motion: reduce) {
