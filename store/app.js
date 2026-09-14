@@ -24,33 +24,29 @@ const esc = (value = '') => String(value)
 
 const renderWork = (book) => {
   const accent = book.visual?.accent || '#7b211d';
-  const topics = Array.isArray(book.topics) ? book.topics.slice(0, 3).join(' · ') : '';
   const price = money(book.price?.amount, book.price?.currency || 'USD');
+  const landing = esc(book.landingPage);
+  const buy = esc(book.buyUrl || book.landingPage);
 
   return `
     <article class="work" style="--book-accent:${esc(accent)}">
-      <div class="work-index">
+      <div class="work-index" aria-hidden="true">
         <span class="work-number">${esc(book.index || '')}</span>
-        <span class="work-kind">Published work</span>
       </div>
 
-      <a class="cover-link" href="${esc(book.landingPage)}" aria-label="Open ${esc(book.title)} ${esc(book.subtitle)} landing page">
+      <a class="cover-link" href="${landing}" aria-label="Open ${esc(book.title)} ${esc(book.subtitle)} landing page">
         <img class="cover" src="${esc(book.cover)}" alt="${esc(book.title)} ${esc(book.subtitle)} book cover" loading="eager" decoding="async">
       </a>
 
       <div class="work-copy">
-        <div class="work-topline">
-          <span>${esc(book.author)}</span>
-          ${topics ? `<span>${esc(topics)}</span>` : ''}
-        </div>
-        <h2 class="work-title">${esc(book.title)}<span>${esc(book.subtitle)}</span></h2>
-        <p class="proposition">${esc(book.proposition)}</p>
-        <p class="short-description">${esc(book.shortDescription)}</p>
-        <p class="evidence-line">${esc(book.evidenceLine)}</p>
+        <p class="work-topline">${esc(book.author)}</p>
+        <h2 class="work-title"><a href="${landing}">${esc(book.title)}<span>${esc(book.subtitle)}</span></a></h2>
+        <p class="short-description"><a href="${landing}">${esc(book.shortDescription)}</a></p>
 
         <div class="work-action">
           <div class="price">${esc(price)}<small>${esc(book.price?.currency || '')}</small></div>
-          <a class="enter" href="${esc(book.landingPage)}">Examine the work</a>
+          <a class="buy-direct" href="${buy}" target="_blank" rel="noopener noreferrer">Buy</a>
+          <a class="enter" href="${landing}">See the book</a>
           <p class="format-line">${esc(book.formatLine)}</p>
         </div>
       </div>
@@ -65,7 +61,7 @@ fetch('./data/books.json', { cache: 'no-store' })
   })
   .then((books) => {
     const published = books.filter((book) => book.status === 'published');
-    count.textContent = `${String(published.length).padStart(2, '0')} published ${published.length === 1 ? 'work' : 'works'}`;
+    count.textContent = `${String(published.length).padStart(2, '0')} ${published.length === 1 ? 'book' : 'books'}`;
     catalogue.innerHTML = published.map(renderWork).join('');
   })
   .catch(() => {
