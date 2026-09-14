@@ -9,18 +9,20 @@
     "landingPage": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
     "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amount=23.33&currency_code=USD&no_shipping=1",
     "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/cover.jpg",
+    "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/collection-scene.webp",
     "price": {
       "amount": "23.33",
       "currency": "USD"
     },
     "coreIdea": "Whoever sets the choices need not give the orders.",
+    "storeLine": "157 pages · Research Atlas · Source Register · AI Framework",
     "shortDescription": "Manipulation, persuasion and dark patterns, mapped for study.",
     "proofLine": "Research cited. Hypotheses marked.",
     "formatLine": "157 pages · PDF + EPUB",
     "includedLine": "Workbook · 223-entry research atlas · Source register · AI framework + prompts",
     "verifiedAt": "2026-09-14",
     "visual": {
-      "accent": "#7b211d"
+      "accent": "#9f3129"
     }
   }
 ]
