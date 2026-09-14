@@ -25,7 +25,7 @@ const url = publicHttpUrl(input);
 if (!url) throw new Error('The landing-page URL must be a public HTTP or HTTPS URL.');
 
 const response = await fetch(url, {
-  headers: { 'user-agent': 'BookstoreCatalogueImporter/2.0' },
+  headers: { 'user-agent': 'BookstoreCatalogueImporter/3.0' },
   redirect: 'follow'
 });
 
@@ -153,15 +153,18 @@ const draft = {
       amount: offer.price ? String(offer.price) : 'UNKNOWN',
       currency: offer.priceCurrency || 'UNKNOWN'
     },
+    coreIdea: 'UNKNOWN',
     shortDescription: shortDescription || 'UNKNOWN',
+    proofLine: 'UNKNOWN',
     formatLine: formatParts.join(' · ') || 'UNKNOWN',
+    includedLine: 'UNKNOWN',
     verifiedAt: 'UNKNOWN',
     visual: {
       accent: 'UNKNOWN'
     }
   },
   reviewRequired: true,
-  note: 'Nothing in this file is canonical until manually reviewed and merged into store/data/books.json.'
+  note: 'Nothing in this file is canonical until manually reviewed. Confirm the core idea, concise description, proof line and included value directly from the landing page before publishing to store/data/books.json.'
 };
 
 const outDir = path.join('store', 'data', 'inbox');
