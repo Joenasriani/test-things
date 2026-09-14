@@ -1,0 +1,26 @@
+[
+  {
+    "id": "manipulation-the-fool-and-the-wise",
+    "status": "published",
+    "index": "01",
+    "title": "Manipulation",
+    "subtitle": "The Fool and the Wise",
+    "author": "J. Nasr",
+    "landingPage": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
+    "cover": "/assets/cover.jpg",
+    "price": {
+      "amount": "23.33",
+      "currency": "USD"
+    },
+    "proposition": "Whoever sets the choices need not give the orders.",
+    "shortDescription": "The anatomy of manipulation, persuasion and dark patterns.",
+    "evidenceLine": "Research references. Case studies. Hypotheses clearly marked.",
+    "formatLine": "157 pages · PDF + EPUB · Extras included",
+    "topics": ["Manipulation", "Persuasion", "Dark patterns"],
+    "visual": {
+      "accent": "#7b211d",
+      "ink": "#171512",
+      "paper": "#efe9dc"
+    }
+  }
+]

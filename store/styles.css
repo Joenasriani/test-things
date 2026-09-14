@@ -1,0 +1,79 @@
+:root {
+  --paper: #efe9dc;
+  --ink: #171512;
+  --muted: #6f695f;
+  --rule: #bdb3a4;
+  --accent: #7b211d;
+  --serif: Baskerville, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --sans: Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+a { color: inherit; }
+::selection { background: var(--ink); color: var(--paper); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.library-shell { width: min(1600px, 100%); min-height: 100svh; margin: 0 auto; padding: 1.4rem clamp(1.25rem, 4vw, 4.5rem) 1.5rem; }
+.library-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-bottom: 1px solid var(--ink); padding-bottom: .8rem; }
+.identity { display: flex; align-items: center; gap: .8rem; }
+.identity-mark { display: inline-grid; place-items: center; width: 2rem; aspect-ratio: 1; border: 1px solid var(--ink); font: 700 .72rem/1 var(--sans); letter-spacing: .08em; }
+.identity-name, .library-count { margin: 0; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; }
+.library-count { color: var(--muted); white-space: nowrap; }
+.opening { display: grid; grid-template-columns: minmax(11rem, .42fr) minmax(0, 1.58fr); gap: 3vw; padding: clamp(2.4rem, 7vh, 6rem) 0 clamp(2rem, 6vh, 5rem); border-bottom: 1px solid var(--rule); }
+.eyebrow { margin: .6rem 0 0; color: var(--accent); font-size: .66rem; letter-spacing: .24em; }
+h1 { margin: 0; max-width: 20ch; font: 400 clamp(2.6rem, 6vw, 6.8rem)/.92 var(--serif); letter-spacing: -.045em; }
+h1 span { color: var(--muted); font-style: italic; }
+.opening-note { grid-column: 2; width: min(42rem, 100%); margin: 1.5rem 0 0; color: #4f4a43; font: 1rem/1.55 var(--serif); }
+.catalogue { min-height: 42vh; }
+.work { --book-accent: var(--accent); position: relative; display: grid; grid-template-columns: 8rem minmax(15rem, .75fr) minmax(18rem, 1fr); gap: clamp(1.5rem, 4vw, 5.5rem); align-items: center; padding: clamp(2.2rem, 6vh, 5.2rem) 0; border-bottom: 1px solid var(--ink); }
+.work-index { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; }
+.work-number { font: 400 clamp(4rem, 8vw, 8rem)/.8 var(--serif); letter-spacing: -.08em; }
+.work-kind { color: var(--book-accent); font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; }
+.cover-link { position: relative; display: block; width: min(100%, 28rem); justify-self: center; text-decoration: none; }
+.cover-link::before { content: ''; position: absolute; inset: 2.2% -2.2% -2.2% 2.2%; border: 1px solid var(--ink); z-index: -1; transition: transform .2s ease; }
+.cover-link:hover::before { transform: translate(4px, 4px); }
+.cover { display: block; width: 100%; height: auto; border: 1px solid var(--ink); background: #ddd3c1; box-shadow: 0 22px 44px #2e251c22; transition: transform .2s ease; }
+.cover-link:hover .cover { transform: translate(-2px, -2px); }
+.work-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+.work-topline { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: 1.1rem; color: var(--muted); font-size: .66rem; letter-spacing: .13em; text-transform: uppercase; }
+.work-title { margin: 0; font: 400 clamp(2.3rem, 4.5vw, 5rem)/.95 var(--serif); letter-spacing: -.04em; }
+.work-title span { display: block; margin-top: .45rem; color: var(--book-accent); font-style: italic; font-size: .63em; letter-spacing: -.02em; }
+.proposition { margin: 1.4rem 0 .65rem; max-width: 27ch; font: 400 clamp(1.15rem, 1.8vw, 1.7rem)/1.35 var(--serif); }
+.short-description { margin: 0; max-width: 40rem; color: #4f4a43; font-size: .92rem; line-height: 1.5; }
+.evidence-line { margin: .55rem 0 0; max-width: 40rem; color: var(--muted); font-size: .74rem; line-height: 1.5; }
+.work-action { display: grid; grid-template-columns: auto 1fr; gap: 1rem 1.5rem; align-items: end; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.price { font: 400 clamp(1.8rem, 3vw, 3.2rem)/1 var(--serif); font-variant-numeric: tabular-nums; }
+.price small { display: block; margin-top: .35rem; color: var(--muted); font: .58rem/1 var(--sans); letter-spacing: .16em; }
+.enter { justify-self: end; align-self: center; display: inline-flex; align-items: center; gap: .7rem; min-height: 44px; padding: .7rem 0 .4rem; border-bottom: 1px solid var(--ink); font-size: .78rem; letter-spacing: .13em; text-decoration: none; text-transform: uppercase; }
+.enter::after { content: '↗'; color: var(--book-accent); font-size: 1rem; }
+.enter:hover { color: var(--book-accent); border-color: var(--book-accent); }
+.format-line { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: .66rem; }
+.library-foot { display: flex; justify-content: space-between; gap: 2rem; padding-top: 1rem; color: var(--muted); font-size: .68rem; }
+.library-foot p { margin: 0; }
+.library-foot small { letter-spacing: .08em; }
+@media (max-width: 900px) {
+  .opening { grid-template-columns: 1fr; }
+  .opening-note { grid-column: 1; }
+  .work { grid-template-columns: 5rem 1fr; align-items: start; }
+  .work-index { grid-row: 1 / span 2; }
+  .cover-link { grid-column: 2; width: min(100%, 24rem); justify-self: start; }
+  .work-copy { grid-column: 2; }
+}
+@media (max-width: 620px) {
+  .library-shell { padding-inline: 1.15rem; }
+  .identity-name { display: none; }
+  .library-count { font-size: .58rem; }
+  .opening { padding-top: 2.4rem; }
+  h1 { font-size: clamp(2.35rem, 13vw, 4.4rem); }
+  .work { grid-template-columns: 1fr; gap: 1.4rem; }
+  .work-index { grid-row: auto; display: flex; flex-direction: row; align-items: end; }
+  .work-number { font-size: 4.6rem; }
+  .cover-link, .work-copy { grid-column: 1; }
+  .cover-link { width: min(86%, 23rem); }
+  .work-title { font-size: clamp(2.4rem, 12vw, 4rem); }
+  .work-action { grid-template-columns: 1fr auto; }
+  .library-foot { flex-direction: column; gap: .45rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover, .cover-link::before { transition: none; }
+}
