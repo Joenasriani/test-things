@@ -45,9 +45,10 @@ const renderBook = (book, position) => {
   const subtitle = book.subtitle ? `<span>${esc(book.subtitle)}</span>` : '';
   const index = book.index || String(position + 1).padStart(2, '0');
   const loading = position === 0 ? 'eager' : 'lazy';
+  const bookId = esc(book.id || fullTitle);
 
   const buyControl = buy && price
-    ? `<a class="buy-direct" href="${esc(buy)}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">Buy <span>${esc(price)}</span></a>`
+    ? `<a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">Buy <span>${esc(price)}</span></a>`
     : price
       ? `<span class="price-only" aria-label="Price ${esc(price)}">${esc(price)}</span>`
       : '';
@@ -55,7 +56,7 @@ const renderBook = (book, position) => {
   return `
     <article class="work" style="--book-accent:${esc(accent)}">
       ${cover ? `
-        <a class="cover-link" href="${esc(landing)}" aria-label="See ${esc(fullTitle)}">
+        <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">
           <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="${loading}" decoding="async">
         </a>` : ''}
 
@@ -66,21 +67,21 @@ const renderBook = (book, position) => {
         </div>
 
         <h2 class="work-title">
-          <a href="${esc(landing)}">${esc(book.title || '')}${subtitle}</a>
+          <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">${esc(book.title || '')}${subtitle}</a>
         </h2>
 
         ${book.coreIdea ? `<p class="core-idea">${esc(book.coreIdea)}</p>` : ''}
 
         ${book.shortDescription ? `
           <p class="short-description">
-            <a href="${esc(landing)}">${esc(book.shortDescription)}</a>
+            <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">${esc(book.shortDescription)}</a>
           </p>` : ''}
 
         ${book.proofLine ? `<p class="proof-line">${esc(book.proofLine)}</p>` : ''}
 
         <div class="work-action">
           ${buyControl}
-          <a class="enter" href="${esc(landing)}" aria-label="See ${esc(fullTitle)}">See the book</a>
+          <a class="enter" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">See the book</a>
         </div>
 
         ${(book.formatLine || book.includedLine) ? `
@@ -106,3 +107,17 @@ fetch('./data/books.json')
   .catch(() => {
     catalogue.innerHTML = '<p class="load-error">The book could not be loaded. Please refresh the page.</p>';
   });
+
+// Zero-backend measurement hook. Nothing is transmitted or stored here.
+// A future first-party analytics listener can consume this event without changing the storefront markup.
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[data-action]');
+  if (!link) return;
+
+  document.dispatchEvent(new CustomEvent('bookstore:action', {
+    detail: {
+      action: link.dataset.action,
+      book: link.dataset.book
+    }
+  }));
+});
