@@ -8,17 +8,16 @@
     "author": "J. Nasr",
     "landingPage": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
     "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amount=23.33&currency_code=USD&no_shipping=1",
-    "cover": "/assets/cover.jpg",
+    "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/cover.jpg",
     "price": {
       "amount": "23.33",
       "currency": "USD"
     },
     "shortDescription": "The anatomy of manipulation, persuasion and dark patterns.",
     "formatLine": "157 pages · PDF + EPUB · Extras included",
+    "verifiedAt": "2026-09-14",
     "visual": {
-      "accent": "#7b211d",
-      "ink": "#171512",
-      "paper": "#efe9dc"
+      "accent": "#7b211d"
     }
   }
 ]
