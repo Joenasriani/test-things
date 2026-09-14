@@ -55,8 +55,6 @@ const renderBook = (book) => {
         </a>
 
         <div class="book-copy">
-          <p class="book-author">${esc(book.author || '')}</p>
-
           <h1 class="book-title">
             <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">
               ${esc(book.title || '')}
