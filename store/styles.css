@@ -131,11 +131,25 @@ a { color: inherit; }
   letter-spacing: -.018em;
 }
 
+.core-idea {
+  margin: 1.45rem 0 0;
+  max-width: 27rem;
+  color: var(--ink);
+  font: 400 clamp(1.18rem, 1.8vw, 1.46rem)/1.35 var(--serif);
+}
+
 .short-description {
-  margin: 1.35rem 0 0;
+  margin: .85rem 0 0;
   max-width: 31rem;
   color: #4f4a43;
-  font: 1.04rem/1.52 var(--serif);
+  font: 1.02rem/1.52 var(--serif);
+}
+
+.proof-line {
+  margin: .62rem 0 0;
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .045em;
 }
 
 .work-action {
@@ -143,8 +157,8 @@ a { color: inherit; }
   flex-wrap: wrap;
   align-items: center;
   gap: .85rem 1.2rem;
-  margin-top: 1.8rem;
-  padding-top: 1.05rem;
+  margin-top: 1.65rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--rule);
 }
 
@@ -196,12 +210,17 @@ a { color: inherit; }
 }
 .enter:hover { color: var(--book-accent); border-color: var(--book-accent); }
 
-.format-line {
-  margin: .78rem 0 0;
+.book-facts {
+  margin-top: .72rem;
   color: var(--muted);
-  font-size: .7rem;
-  line-height: 1.4;
 }
+.format-line,
+.included-line {
+  margin: 0;
+  font-size: .7rem;
+  line-height: 1.45;
+}
+.included-line { margin-top: .22rem; }
 
 .load-error,
 .noscript-fallback { margin: 2rem 0; font: 1rem/1.5 var(--serif); }
@@ -254,18 +273,22 @@ a { color: inherit; }
   .work-copy { width: 100%; }
   .work-meta { margin-bottom: .85rem; font-size: .66rem; }
   .work-title { max-width: 10ch; font-size: clamp(2.55rem, 12vw, 4.15rem); }
-  .short-description { margin-top: 1.15rem; font-size: 1rem; }
+  .core-idea { margin-top: 1.2rem; font-size: 1.18rem; }
+  .short-description { margin-top: .78rem; font-size: 1rem; }
+  .proof-line { font-size: .68rem; }
   .work-action {
     display: grid;
     grid-template-columns: 1fr;
     gap: .65rem;
-    margin-top: 1.5rem;
+    margin-top: 1.45rem;
     padding-top: 1rem;
   }
   .buy-direct { width: 100%; }
   .enter { justify-self: start; width: max-content; }
   .price-only { justify-self: start; }
-  .format-line { margin-top: .68rem; }
+  .book-facts { margin-top: .7rem; }
+  .format-line,
+  .included-line { font-size: .68rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
