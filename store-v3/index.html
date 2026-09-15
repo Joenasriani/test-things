@@ -26,11 +26,17 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Person",
+        "@id": "https://reasoning-library.vercel.app/#author",
+        "name": "J. Nasr",
+        "url": "https://reasoning-library.vercel.app/"
+      },
+      {
         "@type": "WebSite",
         "@id": "https://reasoning-library.vercel.app/#website",
         "url": "https://reasoning-library.vercel.app/",
         "name": "The Reasoning Library",
-        "author": { "@type": "Person", "name": "J. Nasr" },
+        "author": { "@id": "https://reasoning-library.vercel.app/#author" },
         "inLanguage": "en"
       },
       {
@@ -46,7 +52,7 @@
             "item": {
               "@type": ["Book", "Product"],
               "name": "Manipulation — The Fool and the Wise",
-              "author": { "@type": "Person", "name": "J. Nasr" },
+              "author": { "@id": "https://reasoning-library.vercel.app/#author" },
               "image": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/cover.jpg",
               "url": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
               "bookFormat": "https://schema.org/EBook",
@@ -66,7 +72,7 @@
             "item": {
               "@type": ["Book", "Product"],
               "name": "The Structure of Life — The Structure of Reasoning",
-              "author": { "@type": "Person", "name": "J. Nasr" },
+              "author": { "@id": "https://reasoning-library.vercel.app/#author" },
               "url": "https://the-structure-of-life.vercel.app/",
               "bookFormat": "https://schema.org/EBook",
               "numberOfPages": 160,
@@ -86,7 +92,7 @@
   </script>
 
   <link rel="stylesheet" href="styles.css?v=7">
-  <script defer src="app.js?v=7"></script>
+  <script defer src="app.js?v=8"></script>
 </head>
 <body>
   <main class="store-shell">
@@ -102,19 +108,59 @@
       </div>
     </section>
 
-    <section class="catalogue" id="catalogue" aria-live="polite" aria-label="Published books">
-      <noscript>
-        <div class="fallback-books">
-          <article class="fallback-book">
-            <a href="https://manipulation-the-fool-and-the-wise-two.vercel.app/">Manipulation — The Fool and the Wise</a>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=joenasr%40gmail.com&amp;item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amp;amount=23.33&amp;currency_code=USD&amp;no_shipping=1">$23.33 · BUY BOOK</a>
-          </article>
-          <article class="fallback-book">
-            <a href="https://the-structure-of-life.vercel.app/">The Structure of Life — The Structure of Reasoning</a>
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=joenasr%40gmail.com&amp;item_name=The%20Structure%20of%20Life%20%7C%20Study%20Book%20%2B%20Free%20AI%20Frameworks&amp;amount=23.33&amp;currency_code=USD&amp;no_shipping=1">$23.33 · BUY BOOK</a>
-          </article>
+    <section class="catalogue" id="catalogue" aria-label="Published books">
+      <article class="book-entry book-entry--manipulation" data-book-theme="manipulation">
+        <div class="book-visual">
+          <img class="book-context" src="https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/collection-scene.webp" alt="" aria-hidden="true">
+          <a class="cover-link" href="https://manipulation-the-fool-and-the-wise-two.vercel.app/" data-action="open-book" data-book="manipulation-the-fool-and-the-wise" aria-label="Open Manipulation — The Fool and the Wise">
+            <img class="cover" src="https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/cover.jpg" alt="Manipulation — The Fool and the Wise book cover" loading="eager" decoding="async">
+          </a>
         </div>
-      </noscript>
+
+        <div class="book-copy">
+          <h2 class="book-title">
+            <a href="https://manipulation-the-fool-and-the-wise-two.vercel.app/" data-action="open-book" data-book="manipulation-the-fool-and-the-wise" aria-label="Open Manipulation — The Fool and the Wise">
+              Manipulation
+              <span>The Fool and the Wise</span>
+            </a>
+          </h2>
+          <p class="book-hook">See the mechanism behind the message.</p>
+          <p class="book-value">Dark psychology · Influence · Deception · Power</p>
+          <a class="price-buy" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=joenasr%40gmail.com&amp;item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amp;amount=23.33&amp;currency_code=USD&amp;no_shipping=1" data-action="buy" data-book="manipulation-the-fool-and-the-wise" aria-label="Buy Manipulation — The Fool and the Wise for $23.33">
+            <span class="price">$23.33</span>
+            <span class="purchase-word">BUY BOOK <b aria-hidden="true">↗</b></span>
+          </a>
+        </div>
+      </article>
+
+      <article class="book-entry book-entry--structure" data-book-theme="structure">
+        <div class="book-visual">
+          <a class="cover-link" href="https://the-structure-of-life.vercel.app/" data-action="open-book" data-book="the-structure-of-life" aria-label="Open The Structure of Life — The Structure of Reasoning">
+            <div class="cover cover--constructed structure-cover" aria-hidden="true">
+              <small>STUDY EDITION</small>
+              <strong>THE STRUCTURE<br>OF LIFE</strong>
+              <em>The Structure of Reasoning</em>
+              <div class="structure-axis"><i></i><i></i><i></i><i></i></div>
+              <span>by J. NASR</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="book-copy">
+          <h2 class="book-title">
+            <a href="https://the-structure-of-life.vercel.app/" data-action="open-book" data-book="the-structure-of-life" aria-label="Open The Structure of Life — The Structure of Reasoning">
+              The Structure of Life
+              <span>The Structure of Reasoning</span>
+            </a>
+          </h2>
+          <p class="book-hook">Structures from coding and engineering can expose hidden causes, missing variables</p>
+          <p class="book-value">160-page study book · 51 structures · 6 case studies · 5 free AI frameworks</p>
+          <a class="price-buy" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=joenasr%40gmail.com&amp;item_name=The%20Structure%20of%20Life%20%7C%20Study%20Book%20%2B%20Free%20AI%20Frameworks&amp;amount=23.33&amp;currency_code=USD&amp;no_shipping=1" data-action="buy" data-book="the-structure-of-life" aria-label="Buy The Structure of Life — The Structure of Reasoning for $23.33">
+            <span class="price">$23.33</span>
+            <span class="purchase-word">BUY BOOK <b aria-hidden="true">↗</b></span>
+          </a>
+        </div>
+      </article>
     </section>
   </main>
 </body>
