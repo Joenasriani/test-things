@@ -6,6 +6,19 @@ are HTML and CSS. No runtime JavaScript is required. Manrope is self-hosted with
 
 Production: https://manipulation-the-fool-and-the-wise-two.vercel.app/
 Source: https://github.com/Joenasriani/test-things
+Master book-production rules: `BOOK_PRODUCTION_FRAMEWORK.md`
+
+## Locked positioning — 15 September 2026
+
+The page now sells the book first as a serious study of the darker mechanics of human influence, deception and power.
+
+Locked public-facing direction:
+- **Watch what life repeats and men neglect.**
+- **See the mechanism behind the message.**
+- Dark psychology / influence / deception / power remain visible subject signals.
+- AI material remains in the product package, but the landing page does not lead by redefining the book as an AI product.
+- Counts and package components are supporting proof, not the main promise.
+- No existing book content is to be removed merely to simplify the sale.
 
 ## Purchase interface
 
@@ -13,7 +26,7 @@ Exactly one purchase link appears in the document and stays in normal flow on
 all screen sizes. No duplicated header or fixed mobile checkout bar. The free
 sample is the secondary action beside the extras disclosure. The price is displayed separately beside the single Buy button. The price and offer remain
 USD 23.33, with workbook, research atlas, source register and AI companion files
-included at no extra cost. All included files were checked against the customer ZIP.
+included at no extra cost.
 Keyboard focus, touch targets and reduced-motion preferences are supported.
 
 The original free sample is available beside the offer on desktop and mobile.
@@ -21,11 +34,10 @@ Paid packages and private instructions remain outside this repository.
 
 ## Deployment
 
-Use the existing RoboMarket project manipulation-the-fool-and-the-wise-v2.
-Deploy these files only: index.html, styles.css, robots.txt, sitemap.xml,
-vercel.json, assets/cover.jpg, assets/collection-scene.webp and assets/Manipulation_Free_Sample.pdf.
-No install or build command is needed. This release uses the Vercel connector;
-Git push does not imply automatic deployment unless Git integration is configured.
+Use the existing RoboMarket project `manipulation-the-fool-and-the-wise-v2`.
+Deploy these files only: `index.html`, `styles.css`, `robots.txt`, `sitemap.xml`,
+`vercel.json`, `assets/cover.jpg`, `assets/collection-scene.webp` and `assets/Manipulation_Free_Sample.pdf`.
+No install or build command is needed. Git push does not imply automatic deployment unless Git integration is configured.
 
 ## Commercial operation
 
@@ -36,10 +48,18 @@ Do not place paid ZIP files or private instructions in this public repository.
 
 ## SEO
 
-Descriptive title and visible subject terms, self-referencing canonical URL,
-Open Graph/Twitter metadata, Book/Product JSON-LD, robots.txt and sitemap.
-Metadata describes deliverables only. Price changes require updating every
-checkout URL, visible price and structured offer together. Indexing is not guaranteed.
+The production page uses:
+- a descriptive title using real subject language
+- a unique meta description
+- self-referencing canonical URL
+- index/follow robots directive
+- Open Graph/Twitter metadata
+- Book/Product/Offer JSON-LD
+- visible real-text subject terms
+- robots.txt
+- sitemap.xml
+
+The landing page must remain understandable without requiring animation or interaction. No hidden keyword blocks, doorway pages, invented reviews, fake scarcity or mass-generated duplicate pages. Price changes require updating the visible price, PayPal URL and structured offer together. Indexing is not guaranteed.
 
 ## Design research
 
@@ -62,63 +82,31 @@ No conversion improvement or sales lift has been measured for this page.
 ## Copy and interface audit — 14 September 2026
 
 Removed competing purchase controls, their unused styles, and the fixed mobile
-bar that repeated the primary action and occupied reading space. The sequence is title, actual cover, original editorial aphorism, subject and
-evidence scope, included extras, and one purchase action. The sample remains available before buying.
+bar that repeated the primary action and occupied reading space. The sequence is title, actual cover, original editorial aphorism, subject and evidence scope, included extras, and one purchase action. The sample remains available before buying.
 The aphorism is original sales copy, not a quotation attributed to Machiavelli.
 The book is research-informed and AI-assisted; neither peer review of this
 edition, exhaustive scientific validation, nor AI-free authorship is claimed.
-The visible description and search/social metadata describe the same subject.
 No keyword stuffing, hidden SEO paragraphs, invented reviews or bonus valuations.
-
-Verified phone (390px) and tablet (768px) compositions in browser frames: one
-purchase link per document, a retained sample link, loaded artwork, and no
-horizontal overflow. Desktop checked on the deployed page.
 
 ## Cover and first-screen revision — 14 September 2026
 
 The actual cover appears at its original proportions, with a restrained CSS book
 edge and tilt. The painted scene, ink, aged gold and crimson remain the visual
-direction. The price is now a distinct element beside the only Buy link.
-The brief description names the subject for readers and search engines, separates
-hypotheses from cited research, and hints at future applications. Delivery is
-explicitly described as email after payment verification. The sample is unchanged.
+direction. The price is a distinct element beside the only Buy link.
+Delivery is explicitly described as email after payment verification.
 
 The responsive composition uses normal document flow and `min-height: 100svh`.
-Phone layouts reduce spacing and cover size; on the shortest narrow screens the
-cover sits beside the aphorism. Scrolling is allowed for enlarged text and very
-short viewports, so no content or controls are clipped. No fixed checkout bar,
-forced viewport height, runtime JavaScript or external font request is needed.
+Phone layouts reduce spacing and cover size. Scrolling is allowed for enlarged text and very short viewports, so no content or controls are clipped. No fixed checkout bar, forced viewport height, runtime JavaScript or external font request is needed.
 
-Additional design and accessibility sources:
-- https://baymard.com/blog/product-page-price-discounts
-- https://www.w3.org/WAI/WCAG21/Understanding/reflow
-- https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+## Search + positioning revision — 15 September 2026
 
-This is a design application of usability research, not a measured conversion
-claim. Any responsive test fixtures are preview-only and excluded from production.
+Updated the landing page and library source to the finalized framework:
+- public identity moved from “AI book” toward manipulation / dark psychology / influence / deception / power
+- the AI framework remains included as a companion asset
+- selling line locked to “See the mechanism behind the message.”
+- search metadata now describes the actual subject rather than leading with the AI companion
+- Product/Offer structured data now declares availability
+- sitemap last-modified date refreshed
+- the bookstore receives a canonical URL, its own robots/sitemap files and an implicit-AI store description
 
-## Dark, compact composition — 14 September 2026
-
-Background artwork is limited to 24% opacity on desktop and 18% on phones,
-with a dark overlay on every pixel. The cover has priority over the painting.
-The cover occupies one visual column; the title, short copy, price and single
-purchase action share the other. On phones the composition becomes vertical.
-
-The approved original line, “Watch what life repeats and men neglect,” is
-the sole editorial statement. It is not attributed to Machiavelli.
-The four extras use a native, keyboard-accessible details disclosure that
-expands in normal flow. No overlay hides the purchase action.
-The original sample, USD 23.33 price, PayPal destination, and delivery notice
-are retained. The credit stays small and low on the page.
-
-The stylesheet is v12. The locally served Manrope variable font is from
-https://github.com/google/fonts/tree/main/ofl/manrope and is redistributed
-with assets/fonts/OFL.txt. Its file must be included in deployments.
-This revision changes only the book landing page, not the separate store.
-Viewport checks and release verification are reported after rendering;
-earlier verification notes above describe prior versions.
-
-Release checks: one purchase link; existing sample path retained; USD 23.33
-agrees between visible price, PayPal query and JSON-LD; PayPal recipient
-matches the existing source. GitHub and deployed source are compared on release.
-Fresh interactive browser verification was unavailable for this revision.
+The public package remains the currently published 157-page edition until a revised book binary is generated from the project-thread research sources. The new research taxonomy must not be advertised as already inside the customer ZIP until that replacement package exists.
