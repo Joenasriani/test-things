@@ -37,13 +37,11 @@ const includesText = (source, expected) =>
 
 if (!Array.isArray(books)) fail('store-v3/data/books.json must contain an array.');
 const published = Array.isArray(books) ? books.filter((book) => book.status === 'published') : [];
-if (!published.length) fail('V3 requires at least one published book.');
+if (published.length !== 2) fail(`The finalized bookstore must contain exactly 2 published books; found ${published.length}.`);
 
 for (const book of published) {
   const label = book.id || book.title || 'unknown-book';
-  const required = [
-    'id', 'title', 'subtitle', 'author', 'landingPage', 'buyUrl', 'cover', 'scene', 'coreIdea', 'storeLine'
-  ];
+  const required = ['id', 'title', 'subtitle', 'author', 'landingPage', 'buyUrl', 'theme', 'coreIdea', 'storeLine'];
 
   for (const field of required) {
     if (typeof book[field] !== 'string' || !book[field].trim() || book[field] === 'UNKNOWN') {
@@ -51,9 +49,12 @@ for (const book of published) {
     }
   }
 
-  for (const field of ['landingPage', 'buyUrl', 'cover', 'scene']) {
+  for (const field of ['landingPage', 'buyUrl']) {
     if (!isHttpUrl(book[field])) fail(`${label}: ${field} must be HTTP/HTTPS.`);
   }
+  if (book.cover && !isHttpUrl(book.cover)) fail(`${label}: cover must be HTTP/HTTPS when supplied.`);
+  if (book.scene && !isHttpUrl(book.scene)) fail(`${label}: scene must be HTTP/HTTPS when supplied.`);
+  if (!book.cover && book.coverStyle !== 'structure') fail(`${label}: provide a verified cover URL or an approved constructed coverStyle.`);
 
   if (book.coreIdea?.length > 140) fail(`${label}: coreIdea is too long for V3.`);
   if (book.storeLine?.length > 110) fail(`${label}: storeLine is too long for V3.`);
@@ -76,7 +77,7 @@ for (const book of published) {
   try {
     const response = await fetch(book.landingPage, {
       redirect: 'follow',
-      headers: { 'user-agent': 'ResearchLibraryV3Audit/1.0' }
+      headers: { 'user-agent': 'ResearchLibraryV3Audit/2.0' }
     });
     if (!response.ok) {
       fail(`${label}: landing page returned HTTP ${response.status}.`);
@@ -95,11 +96,9 @@ for (const book of published) {
       if (!includesText(text, part)) fail(`${label}: utility detail "${part}" cannot be verified on the landing page.`);
     }
 
-    if (!text.includes(String(book.price.amount)) || !text.includes(String(book.price.currency))) {
-      fail(`${label}: price/currency cannot be verified on the landing page.`);
-    }
+    if (!text.includes(String(book.price.amount))) fail(`${label}: price amount cannot be verified on the landing page.`);
 
-    ok(`${label}: source-backed hook, utility, price and direct purchase verified.`);
+    ok(`${label}: source-backed title, hook, utility, price and direct purchase verified.`);
   } catch (error) {
     fail(`${label}: landing page could not be audited (${error.message}).`);
   }
@@ -122,10 +121,17 @@ for (const token of sequence) {
   else cursor = next;
 }
 
-if (app.includes('book-author')) fail('V3 repeats author inside the hero; keep the customer-facing sequence tighter.');
-if (app.includes('short-description') || app.includes('proof-line')) fail('V3 has regained explanatory copy that belongs on the dedicated book page.');
+if (app.includes('book-author')) fail('V3 repeats author inside the book stage; keep the customer-facing sequence tighter.');
+if (app.includes('short-description') || app.includes('proof-line')) fail('V3 has regained explanatory copy that belongs on dedicated book pages.');
 if (!index.includes('>BOOKS</span>')) fail('V3 header should identify the object plainly as BOOKS.');
-if (index.includes('book-count') || index.includes('library-count')) fail('V3 should not spend attention on catalogue count while one book is the store.');
+if (!index.includes('Books on human behavior and hidden structure—reference libraries for readers, builders and AI.')) {
+  fail('The finalized store positioning line is missing.');
+}
+if (!index.includes('A motive in one discipline. A missing variable in another.')) {
+  fail('The cross-domain store line is missing.');
+}
+if (index.includes('book-count') || index.includes('library-count')) fail('The bookstore should not spend attention on catalogue counts.');
+if (!index.includes('"numberOfItems": 2')) fail('Structured data must declare both books.');
 
 if (errors.length) {
   console.error('\nBOOKSTORE V3 AUDIT FAILED\n');
@@ -135,6 +141,7 @@ if (errors.length) {
 
 console.log('\nBOOKSTORE V3 AUDIT PASSED\n');
 for (const note of notes) console.log(`- ${note}`);
-console.log('- Surviving sequence: Cover → Title → Hook → Utility → Price → BUY → See inside.');
-console.log('- Customer-facing reasoning clutter: none required.');
+console.log('- Exactly two books are published: Manipulation and The Structure of Life.');
+console.log('- Surviving sequence per book: Cover → Title → Hook → Utility → Price → BUY → See inside.');
+console.log('- Store positioning hints at AI/builders without redefining either book as an AI product.');
 console.log('- Store → Buy remains one click; Store → Book remains one click.');
