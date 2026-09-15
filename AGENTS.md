@@ -54,4 +54,20 @@ Hard constraints:
 - For `store/`, run `node tools/audit-store.mjs` after catalogue or interaction changes and fix every failure.
 - For `store-v3/`, run `node tools/audit-store-v3.mjs` after design, copy, catalogue or interaction changes and fix every failure.
 
+## Locked search / AI-discovery rules
+
+Search work must be invisible to the visual design unless a future change is explicitly approved.
+
+- Important book, title, description, utility, price and purchase-link content must be present in the initial server-delivered HTML. JavaScript may enhance interaction but must not be required to discover the books.
+- Every public host must expose a crawlable `robots.txt` and canonical `sitemap.xml`.
+- Keep Googlebot crawlable. Explicitly allow search-oriented crawlers where useful: `OAI-SearchBot`, `Claude-SearchBot`, and `PerplexityBot`.
+- Do not treat `Google-Extended` as a Google Search ranking control. It is separate from Google Search inclusion/ranking.
+- Do not add `llms.txt` as a Google Search optimization tactic. Google Search does not use it for visibility or ranking.
+- Keep canonical URLs, indexability metadata, Open Graph/Twitter metadata and source-backed `Book` / `Product` structured data consistent with the actual page.
+- Do not add FAQ schema when no matching visible FAQ exists; do not invent question sections purely for AI extraction.
+- Do not create hidden crawler-only text, artificial content chunks, doorway pages, keyword variants or duplicated pages for AEO/GEO.
+- Prefer unique, non-commodity source material already present in the books over generic SEO copy.
+- Search optimization must not change book content, book links, prices, direct-purchase routes, visual hierarchy or the established store experience unless explicitly approved.
+- Third-party SEO/GEO audit tools are diagnostics only. Their scoring rules never override Google/OpenAI/Anthropic/Perplexity official crawler guidance or the bookstore framework.
+
 The bookstore performs the marketing through the books, their usefulness, positioning, evidence, price and clarity—not through added marketing decoration.
