@@ -78,7 +78,7 @@ for (const book of published) {
   try {
     const response = await fetch(book.landingPage, {
       redirect: 'follow',
-      headers: { 'user-agent': 'ReasoningLibraryAudit/4.0' }
+      headers: { 'user-agent': 'ReasoningLibraryAudit/5.0' }
     });
     if (!response.ok) {
       fail(`${label}: landing page returned HTTP ${response.status}.`);
@@ -129,8 +129,10 @@ if (app.includes('book-author')) fail('Do not repeat author credit inside each b
 if (app.includes('short-description') || app.includes('proof-line')) fail('Long explanatory copy belongs on dedicated book pages, not the store spread.');
 
 if (!index.includes('>THE REASONING LIBRARY</a>')) fail('The store name must be visible and explicit.');
-if (!index.includes('Books on human behavior and hidden structure, built as reference libraries for readers, coders and AI.')) fail('The finalized store positioning line is missing.');
+if (!index.includes('Books on human behavior and hidden structure, built as reference systems for reasoning, research and new ideas.')) fail('The finalized store positioning line is missing.');
 if (!index.includes('A motive in one discipline. A missing variable in another.')) fail('The cross-domain store line is missing.');
+if (!index.includes('rel="canonical" href="https://reasoning-library.vercel.app/"')) fail('The store must declare its canonical production URL.');
+if (!index.includes('name="robots" content="index, follow, max-image-preview:large"')) fail('The store must remain explicitly indexable.');
 if (!index.includes('name="theme-color" content="#f7f5ef"')) fail('The bookstore must declare the bright visual system in browser chrome.');
 if (!styles.includes('--paper: #f7f5ef')) fail('The bookstore must use the bright paper visual base.');
 if (!styles.includes('grid-template-columns: repeat(2, minmax(0, 1fr))')) fail('Both books must be visible together in the desktop catalogue composition.');
@@ -153,3 +155,4 @@ console.log('- Thumbnail + title open the dedicated book landing page.');
 console.log('- Price is the direct one-click purchase surface.');
 console.log('- Copy stays short: title → selling line → utility → price/purchase.');
 console.log('- Interaction belongs to the book object, not decorative UI.');
+console.log('- Canonical URL and indexability metadata are present.');
