@@ -10,7 +10,7 @@ Master book-production rules: `BOOK_PRODUCTION_FRAMEWORK.md`
 
 ## Locked positioning — 15 September 2026
 
-The page now sells the book first as a serious study of the darker mechanics of human influence, deception and power.
+The page sells the book first as a serious study of the darker mechanics of human influence, deception and power.
 
 Locked public-facing direction:
 - **Watch what life repeats and men neglect.**
@@ -18,18 +18,44 @@ Locked public-facing direction:
 - Dark psychology / influence / deception / power remain visible subject signals.
 - AI material remains in the product package, but the landing page does not lead by redefining the book as an AI product.
 - Counts and package components are supporting proof, not the main promise.
-- No existing book content is to be removed merely to simplify the sale.
+- No existing book content is removed merely to simplify the sale.
+
+## 2026 research update — completed
+
+The original 157-page Study Edition remains intact. A supplemental 2026 Research Update has been generated from the later Influence Mechanics research rather than silently rewriting or deleting the original book.
+
+Current research precedence:
+- 156 Class-0 manipulation configurations
+- 117 Class-1 comparison configurations
+- 23 H-only hypotheses
+- 94 source anchors in the expanded research atlas
+- the original 15 chapters, six cases, workbook logic, AI/application material and exercises remain retained
+
+The update package adds:
+- `Manipulation_2026_Research_Update.pdf`
+- `Manipulation_2026_Research_Update.epub`
+- `Manipulation_2026_Update_Workbook.pdf`
+- `Manipulation_2026_Publishing_and_Sales_Kit_Update.pdf`
+- structured update register in CSV and JSON
+- source-additions register
+- package guide
+- disclosure/provenance record
+- update free sample
+- integration manifest
+
+New mechanism IDs are appended as U01-U12 and new hypotheses as H14-H23 so the original book's page references and IDs remain stable. Where counts or research status conflict, the 2026 Research Update takes precedence. The update is additive: it does not remove any book content.
+
+Paid update files remain outside this public repository and are delivered privately with the customer package.
 
 ## Purchase interface
 
 Exactly one purchase link appears in the document and stays in normal flow on
 all screen sizes. No duplicated header or fixed mobile checkout bar. The free
 sample is the secondary action beside the extras disclosure. The price is displayed separately beside the single Buy button. The price and offer remain
-USD 23.33, with workbook, research atlas, source register and AI companion files
-included at no extra cost.
+USD 23.33, with the Study Edition, workbook, research atlas + 2026 update, source material and AI companion files included in the complete customer package.
 Keyboard focus, touch targets and reduced-motion preferences are supported.
 
-The original free sample is available beside the offer on desktop and mobile.
+The original free sample remains available beside the offer on desktop and mobile.
 Paid packages and private instructions remain outside this repository.
 
 ## Deployment
@@ -43,14 +69,14 @@ No install or build command is needed. Git push does not imply automatic deploym
 
 PayPal opens an external payment page. Payment completion and file delivery have
 not been transaction-tested. The site has no automatic delivery integration.
-The seller must verify payment and provide the current customer ZIP privately.
+The seller must verify payment and provide the complete customer package privately.
 Do not place paid ZIP files or private instructions in this public repository.
 
 ## SEO
 
 The production page uses:
-- a descriptive title using real subject language
-- a unique meta description
+- descriptive title using real subject language
+- unique meta description
 - self-referencing canonical URL
 - index/follow robots directive
 - Open Graph/Twitter metadata
@@ -101,12 +127,11 @@ Phone layouts reduce spacing and cover size. Scrolling is allowed for enlarged t
 ## Search + positioning revision — 15 September 2026
 
 Updated the landing page and library source to the finalized framework:
-- public identity moved from “AI book” toward manipulation / dark psychology / influence / deception / power
+- public identity moved from "AI book" toward manipulation / dark psychology / influence / deception / power
 - the AI framework remains included as a companion asset
-- selling line locked to “See the mechanism behind the message.”
-- search metadata now describes the actual subject rather than leading with the AI companion
-- Product/Offer structured data now declares availability
+- selling line locked to "See the mechanism behind the message."
+- search metadata describes the actual subject rather than leading with the AI companion
+- Product/Offer structured data declares availability
 - sitemap last-modified date refreshed
-- the bookstore receives a canonical URL, its own robots/sitemap files and an implicit-AI store description
-
-The public package remains the currently published 157-page edition until a revised book binary is generated from the project-thread research sources. The new research taxonomy must not be advertised as already inside the customer ZIP until that replacement package exists.
+- the bookstore has a canonical URL, robots/sitemap files and an implicit-AI store description
+- the landing page now states that the research atlas includes a 2026 update while retaining the 157-page Study Edition
