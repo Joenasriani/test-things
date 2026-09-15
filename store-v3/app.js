@@ -61,38 +61,55 @@ const renderBook = (book) => {
   if (!landing || !buy || !price || !coverMarkup) return '';
 
   return `
-    <article class="book-stage book-stage--${theme}" data-book-theme="${theme}">
-      ${scene ? `
-        <div class="book-atmosphere" aria-hidden="true">
-          <img src="${esc(scene)}" alt="" loading="eager" decoding="async">
-        </div>` : ''}
-
-      <div class="book-stage-inner">
-        <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See inside ${esc(fullTitle)}">
+    <article class="book-entry book-entry--${theme}" data-book-theme="${theme}">
+      <div class="book-visual">
+        ${scene ? `<img class="book-context" src="${esc(scene)}" alt="" aria-hidden="true">` : ''}
+        <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">
           ${coverMarkup}
         </a>
+      </div>
 
-        <div class="book-copy">
-          <h2 class="book-title">
-            <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">
-              ${esc(book.title || '')}
-              ${book.subtitle ? `<span>${esc(book.subtitle)}</span>` : ''}
-            </a>
-          </h2>
+      <div class="book-copy">
+        <h2 class="book-title">
+          <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">
+            ${esc(book.title || '')}
+            ${book.subtitle ? `<span>${esc(book.subtitle)}</span>` : ''}
+          </a>
+        </h2>
 
-          ${book.coreIdea ? `<p class="book-hook">${esc(book.coreIdea)}</p>` : ''}
-          ${book.storeLine ? `<p class="book-value">${esc(book.storeLine)}</p>` : ''}
+        ${book.coreIdea ? `<p class="book-hook">${esc(book.coreIdea)}</p>` : ''}
+        ${book.storeLine ? `<p class="book-value">${esc(book.storeLine)}</p>` : ''}
 
-          <div class="purchase-block" aria-label="Purchase ${esc(fullTitle)}">
-            <span class="price">${esc(price)}</span>
-            <a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">BUY</a>
-          </div>
-
-          <a class="see-inside" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See inside ${esc(fullTitle)}">See inside <span aria-hidden="true">→</span></a>
+        <div class="book-actions">
+          <span class="price">${esc(price)}</span>
+          <a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">BUY</a>
+          <a class="see-inside" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">SEE THE BOOK <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </article>
   `;
+};
+
+const installBookInteraction = () => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  for (const entry of document.querySelectorAll('.book-entry')) {
+    const visual = entry.querySelector('.book-visual');
+    if (!visual) continue;
+
+    visual.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch') return;
+      const rect = visual.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      entry.style.setProperty('--tilt-x', `${(x * 4).toFixed(2)}px`);
+      entry.style.setProperty('--tilt-y', `${(y * 3).toFixed(2)}px`);
+    });
+
+    visual.addEventListener('pointerleave', () => {
+      entry.style.setProperty('--tilt-x', '0px');
+      entry.style.setProperty('--tilt-y', '0px');
+    });
+  }
 };
 
 fetch('./data/books.json')
@@ -103,6 +120,7 @@ fetch('./data/books.json')
   .then((books) => {
     const published = books.filter((book) => book.status === 'published');
     catalogue.innerHTML = published.map(renderBook).join('') || '<p class="load-error">No published books are available.</p>';
+    installBookInteraction();
   })
   .catch(() => {
     catalogue.innerHTML = '<p class="load-error">The books could not be loaded. Please refresh.</p>';
