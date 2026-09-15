@@ -55,7 +55,7 @@ a { color: inherit; }
 .store-intro {
   border-bottom: 1px solid var(--rule);
   background: var(--paper);
-  padding: clamp(2rem, 5vh, 3.6rem) clamp(1.1rem, 4.5vw, 4.8rem) clamp(1.75rem, 4vh, 2.8rem);
+  padding: clamp(1.6rem, 4vh, 2.8rem) clamp(1.1rem, 4.5vw, 4.8rem) clamp(1.4rem, 3vh, 2.2rem);
 }
 .store-intro-inner {
   width: min(1480px, 100%);
@@ -67,15 +67,15 @@ a { color: inherit; }
 }
 .store-intro h1 {
   margin: 0;
-  max-width: 920px;
-  font: 400 clamp(1.85rem, 3.5vw, 3.65rem)/1.02 var(--serif);
-  letter-spacing: -.035em;
+  max-width: 900px;
+  font: 400 clamp(1.7rem, 3vw, 3rem)/1.04 var(--serif);
+  letter-spacing: -.032em;
 }
 .store-intro p {
   margin: 0 0 .18rem;
   max-width: 420px;
   color: #433f39;
-  font: italic 400 clamp(1rem, 1.45vw, 1.28rem)/1.35 var(--serif);
+  font: italic 400 clamp(.98rem, 1.35vw, 1.18rem)/1.35 var(--serif);
 }
 
 .catalogue {
@@ -83,17 +83,17 @@ a { color: inherit; }
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  min-height: calc(100svh - 210px);
 }
 .book-entry {
   --tilt-x: 0px;
   --tilt-y: 0px;
   min-width: 0;
-  padding: clamp(2rem, 4.2vw, 4.4rem);
+  min-height: calc(100svh - 185px);
+  padding: clamp(1.8rem, 3.5vw, 3.6rem);
   display: grid;
-  grid-template-rows: minmax(270px, 42vh) auto;
+  grid-template-rows: minmax(320px, 48vh) auto;
   align-content: start;
-  gap: clamp(1.5rem, 3vh, 2.25rem);
+  gap: clamp(1.3rem, 2.5vh, 2rem);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -108,8 +108,8 @@ a { color: inherit; }
   overflow: hidden;
 }
 .cover-link {
-  width: min(43%, 280px);
-  min-width: 205px;
+  width: min(54%, 340px);
+  min-width: 240px;
   max-height: 100%;
   display: block;
   text-decoration: none;
@@ -133,83 +133,80 @@ a { color: inherit; }
 }
 
 .book-copy {
-  width: min(100%, 640px);
+  width: min(100%, 650px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   align-content: start;
 }
 .book-title {
   margin: 0;
   max-width: 13ch;
-  font: 400 clamp(2.65rem, 4.4vw, 5rem)/.9 var(--serif);
+  font: 400 clamp(2.55rem, 4vw, 4.7rem)/.9 var(--serif);
   letter-spacing: -.05em;
 }
 .book-title a { text-decoration: none; }
+.book-title a:hover { text-decoration-thickness: 1px; text-underline-offset: .12em; }
 .book-title span {
   display: block;
-  margin-top: .45rem;
+  margin-top: .4rem;
   font: italic 400 .42em/1.05 var(--serif);
   letter-spacing: -.02em;
 }
 .book-hook {
-  margin: 1rem 0 0;
-  max-width: 31rem;
-  font: 400 clamp(1.05rem, 1.35vw, 1.28rem)/1.35 var(--serif);
+  margin: .82rem 0 0;
+  max-width: 33rem;
+  font: 400 clamp(1rem, 1.2vw, 1.18rem)/1.34 var(--serif);
 }
 .book-value {
-  margin: .7rem 0 0;
+  margin: .62rem 0 0;
   color: var(--soft);
-  font-size: .66rem;
+  font-size: .63rem;
   font-weight: 700;
-  line-height: 1.55;
-  letter-spacing: .065em;
+  line-height: 1.5;
+  letter-spacing: .06em;
   text-transform: uppercase;
 }
-.book-actions {
-  margin-top: 1.25rem;
+
+.price-buy {
+  width: min(100%, 420px);
+  min-height: 62px;
+  margin-top: 1.15rem;
   display: grid;
-  grid-template-columns: auto minmax(116px, 150px) auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: .8rem;
+  gap: 1rem;
+  padding: .75rem 1rem .75rem 0;
+  border-top: 2px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  transition: transform .16s ease, background .16s ease, padding .16s ease;
+}
+.price-buy:hover {
+  transform: translateY(-2px);
+  padding-left: .7rem;
 }
 .price {
-  min-height: 48px;
   display: inline-flex;
   align-items: center;
-  font: 600 1.22rem/1 var(--serif);
+  font: 600 clamp(1.4rem, 1.8vw, 1.75rem)/1 var(--serif);
   white-space: nowrap;
 }
-.buy-direct {
-  min-height: 48px;
-  display: grid;
-  place-items: center;
-  padding: .72rem 1.15rem;
-  text-decoration: none;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: white;
-  font: 800 .68rem/1 var(--sans);
-  letter-spacing: .15em;
-  transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
-}
-.buy-direct:hover { transform: translateY(-2px); }
-.see-inside {
-  min-height: 48px;
+.purchase-word {
   display: inline-flex;
   align-items: center;
-  gap: .45rem;
-  width: max-content;
-  font-size: .65rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-decoration: none;
+  gap: .48rem;
+  font: 800 .64rem/1 var(--sans);
+  letter-spacing: .13em;
   white-space: nowrap;
 }
-.see-inside span { font-size: 1rem; transition: transform .16s ease; }
-.see-inside:hover span { transform: translateX(4px); }
+.purchase-word b {
+  font-size: 1rem;
+  font-weight: 400;
+  transition: transform .16s ease;
+}
+.price-buy:hover .purchase-word b { transform: translate(3px, -2px); }
 
-/* Manipulation: the book carries the darkness; the store does not. */
+/* Manipulation: the store stays light; the book carries its darker world. */
 .book-entry--manipulation {
   background:
     linear-gradient(135deg, rgb(159 49 41 / 5%), transparent 44%),
@@ -217,7 +214,7 @@ a { color: inherit; }
 }
 .book-entry--manipulation .book-visual::before {
   content: '';
-  width: min(62%, 410px);
+  width: min(67%, 460px);
   aspect-ratio: 1 / 1;
   position: absolute;
   border-radius: 50%;
@@ -226,44 +223,40 @@ a { color: inherit; }
 }
 .book-context {
   position: absolute;
-  inset: 8% 7% auto auto;
-  width: 42%;
-  height: 76%;
+  inset: 4% 2% auto auto;
+  width: 50%;
+  height: 84%;
   object-fit: cover;
   object-position: center;
-  opacity: .09;
+  opacity: .08;
   filter: grayscale(1) contrast(1.2);
   mix-blend-mode: multiply;
   pointer-events: none;
   transform: translate(calc(var(--tilt-x) * -.35), calc(var(--tilt-y) * -.35));
   transition: transform .18s ease, opacity .18s ease;
 }
-.book-entry--manipulation:hover .book-context { opacity: .13; }
+.book-entry--manipulation:hover .book-context { opacity: .12; }
 .book-entry--manipulation .book-title span,
-.book-entry--manipulation .book-hook,
-.book-entry--manipulation .see-inside span { color: var(--manipulation); }
-.book-entry--manipulation .buy-direct {
-  border-color: var(--manipulation-deep);
-  background: var(--manipulation-deep);
-}
-.book-entry--manipulation .buy-direct:hover { background: var(--manipulation); }
+.book-entry--manipulation .book-hook { color: var(--manipulation); }
+.book-entry--manipulation .price-buy { color: var(--manipulation-deep); }
+.book-entry--manipulation .price-buy:hover { background: rgb(159 49 41 / 7%); }
 
-/* The Structure of Life: direct structural language, not decoration. */
+/* The Structure of Life: visible structure rather than decorative mood. */
 .book-entry--structure {
   background:
-    linear-gradient(180deg, transparent 0 72%, rgb(49 88 216 / 4%) 72% 100%),
+    linear-gradient(180deg, transparent 0 76%, rgb(49 88 216 / 4%) 76% 100%),
     var(--white);
 }
 .book-entry--structure .book-visual::before {
   content: '';
   position: absolute;
-  inset: 10% 7%;
+  inset: 7% 5%;
   background:
     linear-gradient(90deg, var(--blue) 0 24%, transparent 24% 27%, var(--red) 27% 49%, transparent 49% 52%, var(--yellow) 52% 74%, transparent 74% 77%, var(--green) 77% 100%);
   opacity: .12;
 }
 .book-entry--structure .cover-link {
-  width: min(45%, 290px);
+  width: min(56%, 350px);
   transform: translate(var(--tilt-x), var(--tilt-y)) rotate(-1.1deg);
 }
 .cover--constructed { aspect-ratio: 7 / 10; }
@@ -323,74 +316,67 @@ a { color: inherit; }
 }
 .book-entry--structure .book-hook { color: #b73c2d; font-style: italic; }
 .book-entry--structure .price { font-family: var(--sans); font-weight: 900; }
-.book-entry--structure .buy-direct {
-  box-shadow: 5px 5px 0 var(--yellow);
+.book-entry--structure .price-buy {
+  color: var(--ink);
+  box-shadow: 0 5px 0 var(--yellow);
 }
-.book-entry--structure .buy-direct:hover {
-  background: var(--blue);
-  border-color: var(--blue);
-  box-shadow: 7px 7px 0 var(--yellow);
+.book-entry--structure .price-buy:hover {
+  color: var(--blue);
+  background: rgb(49 88 216 / 5%);
+  box-shadow: 0 7px 0 var(--yellow);
 }
-.book-entry--structure .see-inside span { color: var(--blue); }
 
 .load-error,
-.fallback-books {
-  padding: 3rem;
-  color: var(--ink);
-}
+.fallback-books { padding: 3rem; color: var(--ink); }
 .fallback-books { display: grid; gap: 1.2rem; }
 .fallback-book { display: grid; gap: .55rem; width: max-content; }
 
 @media (max-width: 1100px) {
-  .store-intro-inner { grid-template-columns: 1fr; gap: .9rem; }
-  .catalogue { grid-template-columns: 1fr 1fr; }
-  .book-entry { padding: 2rem; grid-template-rows: minmax(250px, 38vh) auto; }
-  .cover-link { width: min(48%, 250px); min-width: 180px; }
-  .book-actions { grid-template-columns: auto 1fr; }
-  .see-inside { grid-column: 1 / -1; min-height: 38px; }
+  .store-intro-inner { grid-template-columns: 1fr; gap: .8rem; }
+  .book-entry { padding: 1.8rem; grid-template-rows: minmax(290px, 43vh) auto; }
+  .cover-link { width: min(58%, 300px); min-width: 205px; }
+  .book-entry--structure .cover-link { width: min(60%, 310px); }
 }
 
 @media (max-width: 760px) {
   .store-head { height: 52px; padding-inline: 1rem; }
   .store-name { font-size: .59rem; letter-spacing: .12em; }
   .store-author { font-size: .58rem; }
-  .store-intro { padding: 1.6rem 1rem 1.45rem; }
-  .store-intro h1 { max-width: 22ch; font-size: clamp(1.65rem, 8vw, 2.3rem); }
-  .store-intro p { max-width: 28ch; font-size: 1rem; }
+  .store-intro { padding: 1.45rem 1rem 1.25rem; }
+  .store-intro h1 { max-width: 22ch; font-size: clamp(1.6rem, 7.5vw, 2.2rem); }
+  .store-intro p { max-width: 28ch; font-size: .98rem; }
   .catalogue { display: block; }
   .book-entry {
     min-height: auto;
-    padding: 2rem 1rem 2.4rem;
-    grid-template-rows: minmax(270px, 44vh) auto;
-    gap: 1.25rem;
+    padding: 1.8rem 1rem 2.25rem;
+    grid-template-rows: minmax(285px, 46vh) auto;
+    gap: 1.15rem;
   }
   .book-entry + .book-entry { border-left: 0; border-top: 1px solid var(--rule); }
-  .cover-link { width: min(54vw, 255px); min-width: 0; }
-  .book-entry--structure .cover-link { width: min(56vw, 260px); }
+  .cover-link { width: min(62vw, 285px); min-width: 0; }
+  .book-entry--structure .cover-link { width: min(64vw, 290px); }
   .book-copy { padding-inline: .15rem; }
-  .book-title { font-size: clamp(2.8rem, 14vw, 4.4rem); }
-  .book-entry--structure .book-title { font-size: clamp(2.55rem, 12vw, 4rem); }
-  .book-hook { margin-top: .82rem; font-size: 1.08rem; }
-  .book-actions { grid-template-columns: auto minmax(0, 1fr); gap: .75rem; margin-top: 1rem; }
-  .buy-direct { width: 100%; }
-  .see-inside { grid-column: 1 / -1; }
-  .book-context { width: 58%; right: -8%; opacity: .07; }
+  .book-title { font-size: clamp(2.65rem, 13vw, 4.15rem); }
+  .book-entry--structure .book-title { font-size: clamp(2.45rem, 11.5vw, 3.8rem); }
+  .book-hook { margin-top: .72rem; font-size: 1.03rem; }
+  .book-value { font-size: .6rem; }
+  .price-buy { width: 100%; min-height: 60px; margin-top: 1rem; }
+  .book-context { width: 62%; right: -10%; opacity: .06; }
 }
 
 @media (max-height: 760px) and (min-width: 761px) {
-  .store-intro { padding-top: 1.8rem; padding-bottom: 1.5rem; }
-  .store-intro h1 { font-size: 2rem; }
-  .catalogue { min-height: auto; }
-  .book-entry { grid-template-rows: minmax(230px, 36vh) auto; padding-top: 1.7rem; padding-bottom: 1.7rem; }
-  .cover-link { width: min(36%, 220px); }
-  .book-entry--structure .cover-link { width: min(38%, 230px); }
-  .book-title { font-size: clamp(2.45rem, 3.8vw, 4rem); }
+  .store-intro { padding-top: 1.35rem; padding-bottom: 1.2rem; }
+  .store-intro h1 { font-size: 1.85rem; }
+  .book-entry { min-height: auto; grid-template-rows: minmax(240px, 38vh) auto; padding-top: 1.45rem; padding-bottom: 1.6rem; }
+  .cover-link { width: min(45%, 245px); min-width: 190px; }
+  .book-entry--structure .cover-link { width: min(47%, 255px); }
+  .book-title { font-size: clamp(2.35rem, 3.5vw, 3.7rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .cover-link,
   .cover,
   .book-context,
-  .buy-direct,
-  .see-inside span { transition: none; transform: none !important; }
+  .price-buy,
+  .purchase-word b { transition: none; transform: none !important; }
 }
