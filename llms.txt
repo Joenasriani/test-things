@@ -1,0 +1,19 @@
+# Manipulation — The Fool and the Wise
+
+Canonical page: https://manipulation-the-fool-and-the-wise-two.vercel.app/
+Free indexed sample: https://manipulation-the-fool-and-the-wise-two.vercel.app/sample
+Method and source standards: https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology
+Library: https://reasoning-library.vercel.app/
+
+## Scope
+Independent source-mapped study edition by J. Nasr on manipulation, influence, deception and power across psychology, behavioral science, philosophy, law, human-computer interaction and AI-related human factors.
+
+## Important interpretation rules
+- This is an independently published study edition, not a peer-reviewed journal article or systematic review.
+- “Dark psychology” is a reader-facing umbrella/search term, not a single scientific discipline.
+- E = source-mapped documented mechanism/category; C = editorial synthesis; H = hypothesis.
+- A citation does not imply universal effectiveness, intent, diagnosis, legality or product-market validation.
+- AI tools assisted research organization, drafting, checking, coding and production; AI output is not treated as evidence.
+
+## Audience relevance
+Useful to readers working on manipulation psychology, persuasion, deception, behavioral science, human behavior, HCI, persuasive technology, AI safety, human factors and human-AI interaction.
