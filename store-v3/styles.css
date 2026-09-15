@@ -6,12 +6,19 @@
   --rule: rgb(242 234 223 / 13%);
   --accent: #aa342b;
   --accent-hot: #c9463a;
+  --paper: #fffdf8;
+  --structure-ink: #111214;
+  --structure-soft: #666970;
+  --structure-blue: #3158d8;
+  --structure-red: #e64b35;
+  --structure-yellow: #f1cc43;
+  --structure-green: #3d9069;
   --serif: Baskerville, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
   --sans: Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
-html { background: var(--bg); }
+html { background: var(--bg); scroll-behavior: smooth; }
 body {
   margin: 0;
   min-width: 320px;
@@ -35,7 +42,7 @@ a { color: inherit; }
   justify-content: space-between;
   padding: 0 clamp(1rem, 3.6vw, 3.4rem);
   border-bottom: 1px solid var(--rule);
-  background: linear-gradient(180deg, rgb(11 10 9 / 92%), rgb(11 10 9 / 66%));
+  background: rgb(11 10 9 / 91%);
   backdrop-filter: blur(10px);
 }
 .store-name,
@@ -47,14 +54,155 @@ a { color: inherit; }
 }
 .store-name { font-weight: 700; text-decoration: none; }
 .store-mode { color: var(--dim); }
-.catalogue { min-height: 100svh; }
 
+.store-intro {
+  min-height: 228px;
+  display: flex;
+  align-items: flex-end;
+  padding: 88px clamp(1.15rem, 5vw, 5.4rem) 36px;
+  border-bottom: 1px solid var(--rule);
+  background: #0b0a09;
+}
+.store-intro-inner {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 430px);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+}
+.store-intro h1 {
+  margin: 0;
+  max-width: 800px;
+  font: 400 clamp(1.6rem, 3vw, 2.8rem)/1.05 var(--serif);
+  letter-spacing: -.028em;
+}
+.store-intro p {
+  margin: 0 0 .14rem;
+  max-width: 430px;
+  color: #c5bbae;
+  font: italic 400 clamp(1rem, 1.5vw, 1.22rem)/1.35 var(--serif);
+}
+
+.catalogue { min-height: 100svh; }
 .book-stage {
   position: relative;
   min-height: 100svh;
   overflow: hidden;
   isolation: isolate;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
 }
+.book-stage:last-child { border-bottom: 0; }
+.book-stage-inner {
+  width: min(1380px, 100%);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(5.2rem, 9vh, 7rem) clamp(1.2rem, 5vw, 5.4rem) clamp(2rem, 4vh, 3.5rem);
+  display: grid;
+  grid-template-columns: minmax(300px, 46%) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7.6rem);
+}
+
+.cover-link {
+  display: block;
+  width: min(100%, 460px);
+  justify-self: end;
+  text-decoration: none;
+  transform: translateZ(0);
+}
+.cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(242 234 223 / 22%);
+  box-shadow: 0 34px 78px rgb(0 0 0 / 54%), 0 0 0 1px rgb(255 255 255 / 2%);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.cover-link:hover .cover { transform: translateY(-3px); }
+
+.book-copy { width: min(100%, 540px); align-self: center; }
+.book-title {
+  margin: 0;
+  max-width: 8.7ch;
+  font: 400 clamp(3.8rem, 6.7vw, 7.2rem)/.86 var(--serif);
+  letter-spacing: -.055em;
+}
+.book-title a { text-decoration: none; }
+.book-title span {
+  display: block;
+  margin-top: .56rem;
+  max-width: 12ch;
+  color: #d24c41;
+  font-size: .44em;
+  line-height: 1;
+  font-style: italic;
+  letter-spacing: -.022em;
+}
+.book-hook {
+  margin: clamp(1.45rem, 2.8vh, 1.9rem) 0 0;
+  max-width: 29rem;
+  color: #f1e6d7;
+  font: 400 clamp(1.18rem, 1.7vw, 1.45rem)/1.36 var(--serif);
+}
+.book-value {
+  margin: .88rem 0 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: .68rem;
+  line-height: 1.55;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+.purchase-block {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: clamp(1.8rem, 3.8vh, 2.45rem);
+}
+.price {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  color: #f2eadf;
+  font: 400 1.45rem/1 var(--serif);
+  white-space: nowrap;
+}
+.buy-direct {
+  min-width: 164px;
+  min-height: 56px;
+  display: grid;
+  place-items: center;
+  padding: .82rem 1.35rem;
+  border: 1px solid #c84b40;
+  background: var(--accent);
+  color: #fff7ef;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-decoration: none;
+  transition: background .16s ease, border-color .16s ease, transform .16s ease;
+}
+.buy-direct:hover { background: var(--accent-hot); border-color: #df6559; transform: translateY(-1px); }
+.see-inside {
+  width: max-content;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: .48rem;
+  margin-top: .58rem;
+  color: #aaa196;
+  font-size: .66rem;
+  letter-spacing: .11em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.see-inside span { color: #d24c41; font-size: .94rem; transition: transform .15s ease; }
+.see-inside:hover { color: white; }
+.see-inside:hover span { transform: translateX(3px); }
+
+/* Book 01 — Manipulation */
+.book-stage--manipulation { background: #0b0a09; color: var(--ink); }
 .book-atmosphere {
   position: absolute;
   inset: 0;
@@ -88,143 +236,119 @@ a { color: inherit; }
   filter: saturate(.5) contrast(1.08) brightness(.29);
   transform: scale(1.035);
 }
-
-.book-stage-inner {
-  width: min(1380px, 100%);
-  min-height: 100svh;
-  margin: 0 auto;
-  padding: clamp(5.2rem, 9vh, 7rem) clamp(1.2rem, 5vw, 5.4rem) clamp(2rem, 4vh, 3.5rem);
-  display: grid;
-  grid-template-columns: minmax(300px, 46%) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(3rem, 7vw, 7.6rem);
+.book-stage--manipulation .cover-link:hover .cover {
+  box-shadow: 0 40px 92px rgb(0 0 0 / 61%), 0 0 0 1px rgb(255 255 255 / 3%);
 }
 
-.cover-link {
-  display: block;
-  width: min(100%, 460px);
-  justify-self: end;
-  text-decoration: none;
-  transform: translateZ(0);
+/* Book 02 — The Structure of Life */
+.book-stage--structure {
+  color: var(--structure-ink);
+  background:
+    linear-gradient(90deg, #ebe5d6 0 44%, var(--paper) 44% 100%);
+  border-color: #d9d3c8;
 }
-.cover {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid rgb(242 234 223 / 22%);
-  box-shadow:
-    0 34px 78px rgb(0 0 0 / 54%),
-    0 0 0 1px rgb(255 255 255 / 2%);
-  transition: transform .18s ease, box-shadow .18s ease;
-}
-.cover-link:hover .cover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 40px 92px rgb(0 0 0 / 61%),
-    0 0 0 1px rgb(255 255 255 / 3%);
-}
-
-.book-copy {
-  width: min(100%, 540px);
-  align-self: center;
-}
-.book-title {
-  margin: 0;
-  max-width: 8.7ch;
-  font: 400 clamp(3.8rem, 6.7vw, 7.2rem)/.86 var(--serif);
-  letter-spacing: -.055em;
-}
-.book-title a { text-decoration: none; }
-.book-title span {
-  display: block;
-  margin-top: .56rem;
-  max-width: 12ch;
-  color: #d24c41;
-  font-size: .44em;
-  line-height: 1;
-  font-style: italic;
-  letter-spacing: -.022em;
-}
-.book-hook {
-  margin: clamp(1.45rem, 2.8vh, 1.9rem) 0 0;
-  max-width: 27rem;
-  color: #f1e6d7;
-  font: 400 clamp(1.18rem, 1.7vw, 1.45rem)/1.36 var(--serif);
-}
-.book-value {
-  margin: .88rem 0 0;
-  max-width: 30rem;
-  color: var(--muted);
-  font-size: .68rem;
-  line-height: 1.55;
-  letter-spacing: .075em;
-  text-transform: uppercase;
-}
-
-.purchase-block {
+.book-stage--structure .book-stage-inner { position: relative; }
+.book-stage--structure .cover-link { width: min(100%, 420px); }
+.cover--constructed { height: auto; aspect-ratio: 7 / 10; }
+.structure-cover {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3.2rem);
   display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  margin-top: clamp(1.8rem, 3.8vh, 2.45rem);
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--structure-ink);
+  border: 0;
+  box-shadow: 28px 34px 0 rgb(17 18 20 / 16%);
+  transform: rotate(-1.8deg);
 }
-.price {
-  display: inline-flex;
-  align-items: center;
-  min-height: 56px;
-  color: #f2eadf;
-  font: 400 1.45rem/1 var(--serif);
-  white-space: nowrap;
+.structure-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 9px;
+  background: var(--structure-blue);
 }
-.buy-direct {
-  min-width: 164px;
-  min-height: 56px;
+.structure-cover small {
+  font: 900 .55rem/1 var(--sans);
+  letter-spacing: .15em;
+  color: #77797f;
+}
+.structure-cover strong {
+  margin-top: clamp(1.8rem, 5vw, 3.6rem);
+  font: 900 clamp(2.4rem, 5vw, 4.2rem)/.86 var(--sans);
+  letter-spacing: -.06em;
+}
+.structure-cover em {
+  margin-top: 1rem;
+  max-width: 12rem;
+  font: italic 400 clamp(1rem, 2vw, 1.3rem)/1.15 var(--serif);
+}
+.structure-cover > span {
+  margin-top: 1.1rem;
+  color: #898b90;
+  font: 400 .55rem/1 var(--sans);
+  letter-spacing: .08em;
+}
+.structure-axis {
+  margin-top: auto;
   display: grid;
-  place-items: center;
-  padding: .82rem 1.35rem;
-  border: 1px solid #c84b40;
-  background: var(--accent);
-  color: #fff7ef;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .17em;
-  text-decoration: none;
-  transition: background .16s ease, border-color .16s ease, transform .16s ease;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  height: 18px;
 }
-.buy-direct:hover {
-  background: var(--accent-hot);
-  border-color: #df6559;
-  transform: translateY(-1px);
+.structure-axis i:nth-child(1) { background: var(--structure-blue); }
+.structure-axis i:nth-child(2) { background: var(--structure-red); }
+.structure-axis i:nth-child(3) { background: var(--structure-yellow); }
+.structure-axis i:nth-child(4) { background: var(--structure-green); }
+.book-stage--structure .cover-link:hover .structure-cover {
+  transform: rotate(-1.8deg) translateY(-3px);
+  box-shadow: 31px 38px 0 rgb(17 18 20 / 19%);
 }
-.see-inside {
-  width: max-content;
-  min-height: 42px;
-  display: inline-flex;
-  align-items: center;
-  gap: .48rem;
-  margin-top: .58rem;
-  color: #aaa196;
-  font-size: .66rem;
-  letter-spacing: .11em;
-  text-decoration: none;
-  text-transform: uppercase;
+.book-stage--structure .book-title {
+  max-width: 11ch;
+  font: 900 clamp(3.4rem, 6vw, 6.4rem)/.86 var(--sans);
+  letter-spacing: -.065em;
 }
-.see-inside span {
-  color: #d24c41;
-  font-size: .94rem;
-  transition: transform .15s ease;
+.book-stage--structure .book-title span {
+  margin-top: .7rem;
+  max-width: 18ch;
+  color: var(--structure-red);
+  font: italic 400 .34em/1.05 var(--serif);
+  letter-spacing: -.02em;
 }
-.see-inside:hover { color: white; }
-.see-inside:hover span { transform: translateX(3px); }
+.book-stage--structure .book-hook {
+  color: var(--structure-red);
+  font-style: italic;
+}
+.book-stage--structure .book-value { color: var(--structure-soft); }
+.book-stage--structure .price { color: var(--structure-ink); font-family: var(--sans); font-weight: 900; }
+.book-stage--structure .buy-direct {
+  border: 1px solid var(--structure-ink);
+  background: var(--structure-ink);
+  color: white;
+  box-shadow: 6px 6px 0 var(--structure-yellow);
+}
+.book-stage--structure .buy-direct:hover {
+  border-color: var(--structure-blue);
+  background: var(--structure-blue);
+  box-shadow: 8px 8px 0 var(--structure-yellow);
+}
+.book-stage--structure .see-inside { color: #5c5e64; }
+.book-stage--structure .see-inside span { color: var(--structure-blue); }
+.book-stage--structure .see-inside:hover { color: var(--structure-ink); }
 
 .load-error,
-.fallback-book {
+.fallback-books {
   padding: 7rem 1.2rem 2rem;
   color: var(--ink);
   font: 1rem/1.5 var(--serif);
 }
-.fallback-book { display: grid; gap: .8rem; width: max-content; }
+.fallback-books { display: grid; gap: 1.4rem; }
+.fallback-book { display: grid; gap: .5rem; width: max-content; }
 
 @media (max-width: 980px) {
+  .store-intro-inner { grid-template-columns: 1fr; gap: 1rem; }
+  .store-intro { min-height: 220px; }
   .book-stage-inner {
     grid-template-columns: minmax(250px, 40%) minmax(0, 1fr);
     gap: clamp(2.4rem, 5vw, 4.2rem);
@@ -237,19 +361,26 @@ a { color: inherit; }
       linear-gradient(90deg, rgb(11 10 9 / 60%) 0%, rgb(11 10 9 / 77%) 52%, rgb(11 10 9 / 95%) 100%),
       linear-gradient(180deg, rgb(11 10 9 / 29%) 0%, rgb(11 10 9 / 79%) 100%);
   }
+  .book-stage--structure { background: linear-gradient(90deg, #ebe5d6 0 39%, var(--paper) 39% 100%); }
+  .book-stage--structure .book-title { font-size: clamp(3.1rem, 6.9vw, 5.3rem); }
 }
 
 @media (max-width: 680px) {
-  .store-head {
-    height: 48px;
-    padding-inline: 1rem;
+  .store-head { height: 48px; padding-inline: 1rem; }
+  .store-intro {
+    min-height: 0;
+    padding: 78px 1rem 28px;
   }
+  .store-intro-inner { gap: .8rem; }
+  .store-intro h1 { font-size: 1.55rem; max-width: 19ch; }
+  .store-intro p { font-size: 1rem; max-width: 26ch; }
+  .book-stage { min-height: auto; }
   .book-stage-inner {
-    min-height: 100svh;
+    min-height: auto;
     grid-template-columns: 1fr;
     align-content: start;
     gap: 1.35rem;
-    padding: 4.45rem 1rem 1.6rem;
+    padding: 3rem 1rem 3.1rem;
   }
   .book-atmosphere::before {
     background:
@@ -266,10 +397,7 @@ a { color: inherit; }
   }
   .cover { box-shadow: 0 24px 58px rgb(0 0 0 / 55%); }
   .book-copy { width: 100%; }
-  .book-title {
-    max-width: 8.5ch;
-    font-size: clamp(3.18rem, 15.5vw, 4.72rem);
-  }
+  .book-title { max-width: 8.5ch; font-size: clamp(3.18rem, 15.5vw, 4.72rem); }
   .book-title span { margin-top: .38rem; font-size: .45em; }
   .book-hook { margin-top: 1rem; font-size: 1.1rem; }
   .book-value { margin-top: .68rem; font-size: .63rem; line-height: 1.5; }
@@ -285,6 +413,17 @@ a { color: inherit; }
   .price { font-size: 1.35rem; }
   .buy-direct { min-width: 0; width: 100%; }
   .see-inside { margin-top: .44rem; }
+
+  .book-stage--structure { background: var(--paper); }
+  .book-stage--structure .book-stage-inner { padding-top: 3.4rem; }
+  .book-stage--structure .cover-link { width: min(70vw, 290px); }
+  .structure-cover {
+    padding: 1.8rem 1.55rem;
+    box-shadow: 18px 22px 0 rgb(17 18 20 / 15%);
+  }
+  .structure-cover strong { font-size: clamp(2.15rem, 11vw, 3rem); }
+  .book-stage--structure .book-title { max-width: 11ch; font-size: clamp(2.8rem, 13vw, 4.1rem); }
+  .book-stage--structure .book-title span { font-size: .38em; }
 }
 
 @media (max-height: 760px) and (min-width: 681px) {
@@ -293,9 +432,11 @@ a { color: inherit; }
   .book-title { font-size: clamp(3.25rem, 5.7vw, 5.45rem); }
   .book-hook { margin-top: 1.08rem; }
   .purchase-block { margin-top: 1.3rem; }
+  .book-stage--structure .cover-link { width: min(36vh, 330px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .cover,
   .buy-direct,
   .see-inside span { transition: none; }
