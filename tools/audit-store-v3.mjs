@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 const books = JSON.parse(await fs.readFile('store-v3/data/books.json', 'utf8'));
 const app = await fs.readFile('store-v3/app.js', 'utf8');
 const index = await fs.readFile('store-v3/index.html', 'utf8');
+const styles = await fs.readFile('store-v3/styles.css', 'utf8');
 const errors = [];
 const notes = [];
 
@@ -77,7 +78,7 @@ for (const book of published) {
   try {
     const response = await fetch(book.landingPage, {
       redirect: 'follow',
-      headers: { 'user-agent': 'ResearchLibraryV3Audit/2.0' }
+      headers: { 'user-agent': 'ReasoningLibraryAudit/3.0' }
     });
     if (!response.ok) {
       fail(`${label}: landing page returned HTTP ${response.status}.`);
@@ -97,7 +98,6 @@ for (const book of published) {
     }
 
     if (!text.includes(String(book.price.amount))) fail(`${label}: price amount cannot be verified on the landing page.`);
-
     ok(`${label}: source-backed title, hook, utility, price and direct purchase verified.`);
   } catch (error) {
     fail(`${label}: landing page could not be audited (${error.message}).`);
@@ -121,16 +121,21 @@ for (const token of sequence) {
   else cursor = next;
 }
 
-if (app.includes('book-author')) fail('V3 repeats author inside the book stage; keep the customer-facing sequence tighter.');
-if (app.includes('short-description') || app.includes('proof-line')) fail('V3 has regained explanatory copy that belongs on dedicated book pages.');
-if (!index.includes('>BOOKS</span>')) fail('V3 header should identify the object plainly as BOOKS.');
-if (!index.includes('Books on human behavior and hidden structure—reference libraries for readers, builders and AI.')) {
+if (app.includes('book-author')) fail('Do not repeat author credit inside each book entry.');
+if (app.includes('short-description') || app.includes('proof-line')) fail('Explanatory copy belongs on dedicated book pages, not the store spread.');
+if (!index.includes('>THE REASONING LIBRARY</a>')) fail('The store name must be visible and explicit.');
+if (!index.includes('Books on human behavior and hidden structure, built as reference libraries for readers, coders and AI.')) {
   fail('The finalized store positioning line is missing.');
 }
 if (!index.includes('A motive in one discipline. A missing variable in another.')) {
   fail('The cross-domain store line is missing.');
 }
-if (index.includes('book-count') || index.includes('library-count')) fail('The bookstore should not spend attention on catalogue counts.');
+if (!index.includes('name="theme-color" content="#f7f5ef"')) fail('The bookstore must declare the bright visual system in browser chrome.');
+if (!styles.includes('--paper: #f7f5ef')) fail('The bookstore must use the bright paper visual base.');
+if (!styles.includes('grid-template-columns: repeat(2, minmax(0, 1fr))')) fail('Both books must be visible together in the desktop catalogue composition.');
+if (!app.includes("pointermove")) fail('The bookstore must retain restrained, scenario-appropriate book interaction.');
+if (styles.includes('glassmorphism') || styles.includes('linear-gradient(135deg, #667eea')) fail('Generic AI/SaaS visual language detected.');
+if (index.includes('book-count') || index.includes('library-count')) fail('Do not spend attention on catalogue counts.');
 if (!index.includes('"numberOfItems": 2')) fail('Structured data must declare both books.');
 
 if (errors.length) {
@@ -141,7 +146,8 @@ if (errors.length) {
 
 console.log('\nBOOKSTORE V3 AUDIT PASSED\n');
 for (const note of notes) console.log(`- ${note}`);
-console.log('- Exactly two books are published: Manipulation and The Structure of Life.');
-console.log('- Surviving sequence per book: Cover → Title → Hook → Utility → Price → BUY → See inside.');
-console.log('- Store positioning hints at AI/builders without redefining either book as an AI product.');
+console.log('- Exactly two books are published and visible in the main desktop composition.');
+console.log('- Bright store shell; each book keeps its own authored visual identity.');
+console.log('- Surviving sequence: Cover → Title → Hook → Utility → Price → BUY → See the book.');
+console.log('- Interaction is restrained and attached to the physical book object, not decorative UI.');
 console.log('- Store → Buy remains one click; Store → Book remains one click.');
