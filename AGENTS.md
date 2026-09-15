@@ -18,30 +18,34 @@ Canonical store description:
 
 The V3 council + reasoning framework must stay active for design, copy, UX and conversion decisions:
 - James Clear lens: instant comprehension, minimum friction, immediate purchase legibility.
-- Mark Manson lens: each book must inherit its own worldview and voice without forcing the whole store into that mood.
-- Tim Ferriss lens: surface unusual utility and leverage without turning the page into a feature list or promising outcomes.
-- Reasoning kernel: FRAME → TRY → CHECK → UPDATE → STOP. Every proposed element is a candidate and survives only if it improves the buying decision more than it costs in friction, clutter, ambiguity or visual weight.
-- Council intersection per book: Cover → Title → Provocative idea → Compressed utility → Price → BUY → See the book.
+- Mark Manson lens: each book inherits its own worldview without forcing the entire store into that mood.
+- Tim Ferriss lens: surface unusual utility and leverage without feature-list clutter or promises.
+- Reasoning kernel: FRAME → TRY → CHECK → UPDATE → STOP.
 
-Hard constraints for bookstore changes:
+## Locked customer-facing grammar
+
+**Large thumbnail → Title → Very short selling line → Compressed utility → Clickable price / direct purchase**
+
+Hard constraints:
 
 - **The bookstore shell is bright, clear, useful and easy to browse.**
 - **On desktop, both books and their core buying information should be visible together when space allows.**
-- **Do not hide important information behind mood, low contrast, unnecessary scrolling, hover-only discovery, accordions, silent placement or decorative treatment.**
-- Keep the books visually dominant and the interface minimal.
-- The store description stays short and immediately explains the library's usefulness.
-- Preserve the path: Store → Buy = 1 click; Store → Book page → Buy/Sample = maximum 2 clicks.
-- No signup, account, backend, CMS, database, store-side checkout, pop-up, newsletter interruption, or conversion clutter unless a future requirement explicitly justifies it.
+- **Each book is a large visual object, never a small generic ecommerce card.**
+- **Thumbnail click → dedicated book landing page.**
+- **Title click → dedicated book landing page.**
+- **Visible price/purchase line click → direct payment route in one click.** Do not add a redundant generic Buy button beside it.
+- **Each dedicated book landing page must always expose a clearly visible route back to `https://reasoning-library.vercel.app/`.** The return control must use that book's own visual language, not a generic Back button.
+- Keep selling descriptions extremely short. Do not explain the book on the store page.
+- Do not hide important information behind mood, low contrast, unnecessary scrolling, hover-only discovery, accordions, silent placement or decorative treatment.
+- No signup, account, backend, CMS, database, store-side checkout, pop-up, newsletter interruption, generic card grid, SaaS styling, generic AI aesthetics, fashionable gradients, glass, pills, badges, or fake urgency.
 - Use source-backed book facts only. Unknown or inferred marketing claims must not be published as fact.
-- Keep one dominant purchase action per book and one clear path to the dedicated book page.
-- Do not replace the editorial composition with generic product cards, ecommerce templates, SaaS styling, generic AI aesthetics, decorative UI, fashionable gradients, glass effects, pills or badges.
-- Each book retains its authored identity inside the shared bright store. Manipulation uses its cover, crimson cues and controlled psychological imagery; The Structure of Life uses structural geometry, typographic logic and its own color system.
-- **No arbitrary placement and no mood for mood's sake.** Every element must make sense for the exact selling scenario, its neighboring information and the action it supports.
-- Interactivity must be restrained and meaningful: book-object movement, hover response, purchase response or navigation feedback. No decorative floating motion.
-- Preserve mobile, tablet, and desktop as deliberate compositions.
-- Prefer zero-dependency/static solutions while the catalogue can be handled safely with files.
+- Each book keeps its authored identity inside the shared bright store: Manipulation through its cover, crimson cues and controlled psychological imagery; The Structure of Life through structural geometry, typographic logic and its own color system.
+- **No arbitrary placement. No mood for mood's sake.** Every element must have an obvious relationship to the exact selling scenario, its neighboring information, or the action it supports.
+- Interactivity must be restrained and meaningful: book-object movement, hover response, direct-purchase response or navigation feedback. No decorative floating motion.
+- Preserve mobile, tablet and desktop as deliberate compositions.
+- Prefer zero-dependency/static solutions while files remain sufficient.
 - Do not expose internal reasoning architecture as customer-facing copy or interface.
 - For `store/`, run `node tools/audit-store.mjs` after catalogue or interaction changes and fix every failure.
 - For `store-v3/`, run `node tools/audit-store-v3.mjs` after design, copy, catalogue or interaction changes and fix every failure.
 
-The bookstore should perform the marketing through the books, their usefulness, positioning, evidence, price and clarity—not through added marketing decoration.
+The bookstore performs the marketing through the books, their usefulness, positioning, evidence, price and clarity—not through added marketing decoration.
