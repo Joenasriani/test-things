@@ -4,10 +4,9 @@ const MEDIA = {
   font: { file: 'fonts/manrope.ttf', type: 'font/ttf' }
 };
 
-const ORIGIN = Buffer.from(
-  'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvZW5hc3JpYW5pL3Rlc3QtdGhpbmdzL21haW4vYXNzZXRzLw==',
-  'base64'
-).toString('utf8');
+// Public asset origin. Kept explicit rather than obfuscated: this endpoint exists only
+// for same-origin asset compatibility and does not contain a credential or secret.
+const ORIGIN = 'https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/';
 
 export default async function handler(req, res) {
   if (!['GET', 'HEAD'].includes(req.method || 'GET')) {
