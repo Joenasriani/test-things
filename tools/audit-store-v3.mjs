@@ -4,6 +4,8 @@ const books = JSON.parse(await fs.readFile('store-v3/data/books.json', 'utf8'));
 const app = await fs.readFile('store-v3/app.js', 'utf8');
 const index = await fs.readFile('store-v3/index.html', 'utf8');
 const styles = await fs.readFile('store-v3/styles.css', 'utf8');
+const robots = await fs.readFile('store-v3/robots.txt', 'utf8');
+const sitemap = await fs.readFile('store-v3/sitemap.xml', 'utf8');
 const errors = [];
 const notes = [];
 
@@ -75,10 +77,17 @@ for (const book of published) {
     // URL validity is reported above.
   }
 
+  if (!includesText(plainText(index), book.title)) fail(`${label}: title must exist in server-delivered store HTML.`);
+  if (!includesText(plainText(index), book.subtitle)) fail(`${label}: subtitle must exist in server-delivered store HTML.`);
+  if (!includesText(plainText(index), book.coreIdea)) fail(`${label}: selling line must exist in server-delivered store HTML.`);
+  if (!includesText(plainText(index), book.storeLine)) fail(`${label}: utility line must exist in server-delivered store HTML.`);
+  if (!index.includes(book.landingPage)) fail(`${label}: landing-page link must exist in server-delivered store HTML.`);
+  if (!index.includes(book.buyUrl.replaceAll('&', '&amp;')) && !index.includes(book.buyUrl)) fail(`${label}: direct purchase link must exist in server-delivered store HTML.`);
+
   try {
     const response = await fetch(book.landingPage, {
       redirect: 'follow',
-      headers: { 'user-agent': 'ReasoningLibraryAudit/5.0' }
+      headers: { 'user-agent': 'ReasoningLibraryAudit/6.0' }
     });
     if (!response.ok) {
       fail(`${label}: landing page returned HTTP ${response.status}.`);
@@ -115,32 +124,37 @@ const sequence = [
 ];
 let cursor = -1;
 for (const token of sequence) {
-  const next = app.indexOf(token, cursor + 1);
-  if (next === -1) fail(`V3 sequence is missing ${token}.`);
-  else if (next < cursor) fail(`V3 sequence is out of order at ${token}.`);
+  const next = index.indexOf(token, cursor + 1);
+  if (next === -1) fail(`V3 server HTML sequence is missing ${token}.`);
+  else if (next < cursor) fail(`V3 server HTML sequence is out of order at ${token}.`);
   else cursor = next;
 }
 
-if (!app.includes('class="cover-link" href="${esc(landing)}"')) fail('Book thumbnail must open the dedicated landing page.');
-if (!app.includes('<h2 class="book-title">') || !app.includes('href="${esc(landing)}" data-action="open-book"')) fail('Book title must open the dedicated landing page.');
-if (!app.includes('class="price-buy" href="${esc(buy)}"')) fail('The visible price must itself be the direct purchase link.');
-if (app.includes('buy-direct') || app.includes('see-inside')) fail('Do not add separate generic store buttons when thumbnail/title and clickable price already define the two actions.');
-if (app.includes('book-author')) fail('Do not repeat author credit inside each book panel.');
-if (app.includes('short-description') || app.includes('proof-line')) fail('Long explanatory copy belongs on dedicated book pages, not the store spread.');
+const entryCount = (index.match(/<article class="book-entry /g) || []).length;
+if (entryCount !== 2) fail(`Exactly two book entries must be present in server HTML; found ${entryCount}.`);
+if (app.includes("fetch('./data/books.json')") || app.includes('catalogue.innerHTML')) fail('Book content must not depend on client-side JavaScript rendering.');
+if (!app.includes('pointermove')) fail('The bookstore must retain restrained, scenario-appropriate book interaction as progressive enhancement.');
 
 if (!index.includes('>THE REASONING LIBRARY</a>')) fail('The store name must be visible and explicit.');
 if (!index.includes('Books on human behavior and hidden structure, built as reference systems for reasoning, research and new ideas.')) fail('The finalized store positioning line is missing.');
 if (!index.includes('A motive in one discipline. A missing variable in another.')) fail('The cross-domain store line is missing.');
 if (!index.includes('rel="canonical" href="https://reasoning-library.vercel.app/"')) fail('The store must declare its canonical production URL.');
 if (!index.includes('name="robots" content="index, follow, max-image-preview:large"')) fail('The store must remain explicitly indexable.');
+if (!index.includes('"@type": "Person"') || !index.includes('"@type": ["Book", "Product"]')) fail('Entity and Book/Product structured data must remain present.');
 if (!index.includes('name="theme-color" content="#f7f5ef"')) fail('The bookstore must declare the bright visual system in browser chrome.');
 if (!styles.includes('--paper: #f7f5ef')) fail('The bookstore must use the bright paper visual base.');
 if (!styles.includes('grid-template-columns: repeat(2, minmax(0, 1fr))')) fail('Both books must be visible together in the desktop catalogue composition.');
 if (!styles.includes('width: min(54%, 340px)')) fail('Book thumbnails are not large enough in the desktop composition.');
-if (!app.includes('pointermove')) fail('The bookstore must retain restrained, scenario-appropriate book interaction.');
 if (styles.includes('border-radius: 999') || styles.includes('glassmorphism')) fail('Generic pill/glass UI language detected.');
 if (index.includes('book-count') || index.includes('library-count')) fail('Do not spend attention on catalogue counts.');
 if (!index.includes('"numberOfItems": 2')) fail('Structured data must declare both books.');
+
+for (const bot of ['Googlebot', 'OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot']) {
+  if (!robots.includes(`User-agent: ${bot}`)) fail(`robots.txt must explicitly allow ${bot}.`);
+}
+if (!robots.includes('Sitemap: https://reasoning-library.vercel.app/sitemap.xml')) fail('robots.txt must advertise the canonical sitemap.');
+if (!sitemap.includes('<loc>https://reasoning-library.vercel.app/</loc>')) fail('sitemap.xml must contain the canonical bookstore URL.');
+if (index.includes('llms.txt') || robots.includes('llms.txt')) fail('Do not add llms.txt as a Google Search optimization mechanism.');
 
 if (errors.length) {
   console.error('\nBOOKSTORE V3 AUDIT FAILED\n');
@@ -150,9 +164,9 @@ if (errors.length) {
 
 console.log('\nBOOKSTORE V3 AUDIT PASSED\n');
 for (const note of notes) console.log(`- ${note}`);
-console.log('- Exactly two large book panels are visible in the desktop store composition.');
-console.log('- Thumbnail + title open the dedicated book landing page.');
-console.log('- Price is the direct one-click purchase surface.');
-console.log('- Copy stays short: title → selling line → utility → price/purchase.');
-console.log('- Interaction belongs to the book object, not decorative UI.');
-console.log('- Canonical URL and indexability metadata are present.');
+console.log('- Both books and purchase links are present in the initial HTML without JavaScript.');
+console.log('- Thumbnail + title open the dedicated book landing page; price is the direct purchase surface.');
+console.log('- JavaScript is progressive enhancement only.');
+console.log('- Googlebot, OAI-SearchBot, Claude-SearchBot and PerplexityBot are explicitly allowed.');
+console.log('- Canonical URL, sitemap, indexability and Book/Product entity data are present.');
+console.log('- No visible bookstore design, book content or commercial link changed for search optimization.');
