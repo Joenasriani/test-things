@@ -8,15 +8,15 @@ Use this framework for every design, copy, UX and conversion decision in `store-
 - Keep the value proposition concrete, short and immediately scannable.
 - Make the path to purchase obvious without conversion clutter.
 
-## Mark Manson lens — the book sells through its worldview
-- The page must feel inseparable from the specific book being sold.
+## Mark Manson lens — each book sells through its worldview
+- Every book must feel inseparable from its own subject and visual world.
 - Lead with the strongest thought, not an explanation of the thought.
-- Preserve tension, personality and specificity. Never flatten the book into generic ecommerce language.
-- The visual atmosphere should belong to the book, not to a template.
+- Preserve tension, personality and specificity. Never flatten a book into generic ecommerce language.
+- The visual atmosphere belongs to the book, not to a store template.
 
 ## Tim Ferriss lens — visible utility and leverage
 - Make the package feel useful, actionable and richer than an ordinary ebook.
-- Surface the unusual material inside the product without writing a feature list.
+- Surface unusual material without turning the page into a feature list.
 - Let the buyer infer intellectual leverage from what is included; never promise outcomes or profit.
 
 ## Reasoning kernel — how every proposed change is judged
@@ -53,30 +53,42 @@ Every candidate is classified:
 - **REFRAME** — the underlying page assumption was wrong.
 
 ### STOP
-Stop adding when the page is the simplest version that preserves desire, clarity, trust and direct purchase. Stopping does not mean the design is universally optimal; it means no tested addition currently earns its visual or cognitive cost.
+Stop adding when the store is the simplest version that preserves desire, clarity, trust and direct purchase. Stopping does not mean the design is universally optimal; it means no tested addition currently earns its visual or cognitive cost.
 
-## Council intersection — canonical V3 sequence
+## Store-level positioning
+
+The store currently contains exactly two books:
+1. **Manipulation — The Fool and the Wise**
+2. **The Structure of Life — The Structure of Reasoning**
+
+Canonical store description:
+
+> **Books on human behavior and hidden structure—reference libraries for readers, builders and AI. A motive in one discipline. A missing variable in another.**
+
+This line may hint that builders and AI systems can use the books as high-rigor reference material, but the books remain the product. Do not turn the store into an AI-tool landing page.
+
+## Council intersection — canonical per-book sequence
 
 **Cover → Title → Provocative idea → Compressed utility → Price → BUY → See inside**
 
 Hard rules:
-1. The book is the page. The store brand stays nearly invisible.
-2. No explanatory paragraph above the fold.
+1. The books are the store. Store branding stays visually secondary.
+2. The store description stays short and subordinate to the books.
 3. No testimonials, badges, feature cards, newsletter capture, pop-ups, repeated CTA or fake urgency.
 4. Price is visually separate from BUY. BUY is one clear decision.
 5. `See inside` is available but visibly subordinate to BUY.
-6. The cover must dominate the composition and carry substantial visual weight.
+6. Each cover must dominate its own composition and carry substantial visual weight.
 7. Use only source-backed book facts.
-8. AI relevance may be signaled through the included material, never by redefining the book as an AI product.
-9. One book must feel complete. Future books must enter as authored editorial objects, not product cards.
+8. AI relevance may be signaled through included material and store positioning, never by redefining either book as an AI product.
+9. Each book enters as an authored editorial environment, not a reusable product card. Manipulation remains dark and psychological; The Structure of Life remains bright, structural and cross-disciplinary.
 10. Desktop, tablet and mobile are composed independently and checked perceptually.
 11. Do not expose the reasoning framework in the customer-facing interface. It governs decisions; it is not page content.
-12. If an element does not help the visitor decide, remove it.
+12. If an element does not help the visitor understand, desire, trust, browse or buy a book, remove it.
 
 Council test before accepting a change:
 - **Clear:** Is it understood immediately?
-- **Manson:** Does it unmistakably feel like this book?
-- **Ferriss:** Is the practical/intellectual value visible without explanation?
+- **Manson:** Does each book unmistakably feel like itself?
+- **Ferriss:** Is practical/intellectual value visible without explanation?
 - **Reasoning check:** Did the element survive a concrete benefit-versus-cost test?
 - **Intersection:** Does anything stand between desire and the purchase decision?
 
