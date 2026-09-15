@@ -16,6 +16,8 @@ const safeHttpUrl = (value) => {
   }
 };
 
+const safeTheme = (value) => ['manipulation', 'structure'].includes(value) ? value : 'neutral';
+
 const money = (amount, currency) => {
   const value = Number(amount);
   if (!Number.isFinite(value) || value < 0 || !/^[A-Z]{3}$/.test(currency || '')) return '';
@@ -31,19 +33,35 @@ const money = (amount, currency) => {
   }
 };
 
+const constructedCover = (book) => {
+  if (book.coverStyle !== 'structure') return '';
+  return `
+    <div class="cover cover--constructed structure-cover" aria-hidden="true">
+      <small>STUDY EDITION</small>
+      <strong>THE STRUCTURE<br>OF LIFE</strong>
+      <em>The Structure of Reasoning</em>
+      <div class="structure-axis"><i></i><i></i><i></i><i></i></div>
+      <span>by J. NASR</span>
+    </div>`;
+};
+
 const renderBook = (book) => {
   const landing = safeHttpUrl(book.landingPage);
   const cover = safeHttpUrl(book.cover);
   const scene = safeHttpUrl(book.scene);
   const buy = safeHttpUrl(book.buyUrl);
   const price = money(book.price?.amount, book.price?.currency || '');
-  if (!landing || !cover || !buy || !price) return '';
-
   const fullTitle = [book.title, book.subtitle].filter(Boolean).join(' — ');
   const bookId = esc(book.id || fullTitle);
+  const theme = safeTheme(book.theme);
+  const coverMarkup = cover
+    ? `<img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="eager" decoding="async">`
+    : constructedCover(book);
+
+  if (!landing || !buy || !price || !coverMarkup) return '';
 
   return `
-    <article class="book-stage">
+    <article class="book-stage book-stage--${theme}" data-book-theme="${theme}">
       ${scene ? `
         <div class="book-atmosphere" aria-hidden="true">
           <img src="${esc(scene)}" alt="" loading="eager" decoding="async">
@@ -51,21 +69,21 @@ const renderBook = (book) => {
 
       <div class="book-stage-inner">
         <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See inside ${esc(fullTitle)}">
-          <img class="cover" src="${esc(cover)}" alt="${esc(fullTitle)} book cover" loading="eager" decoding="async">
+          ${coverMarkup}
         </a>
 
         <div class="book-copy">
-          <h1 class="book-title">
+          <h2 class="book-title">
             <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">
               ${esc(book.title || '')}
               ${book.subtitle ? `<span>${esc(book.subtitle)}</span>` : ''}
             </a>
-          </h1>
+          </h2>
 
           ${book.coreIdea ? `<p class="book-hook">${esc(book.coreIdea)}</p>` : ''}
           ${book.storeLine ? `<p class="book-value">${esc(book.storeLine)}</p>` : ''}
 
-          <div class="purchase-block" aria-label="Purchase">
+          <div class="purchase-block" aria-label="Purchase ${esc(fullTitle)}">
             <span class="price">${esc(price)}</span>
             <a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">BUY</a>
           </div>
@@ -87,7 +105,7 @@ fetch('./data/books.json')
     catalogue.innerHTML = published.map(renderBook).join('') || '<p class="load-error">No published books are available.</p>';
   })
   .catch(() => {
-    catalogue.innerHTML = '<p class="load-error">The book could not be loaded. Please refresh.</p>';
+    catalogue.innerHTML = '<p class="load-error">The books could not be loaded. Please refresh.</p>';
   });
 
 document.addEventListener('click', (event) => {
