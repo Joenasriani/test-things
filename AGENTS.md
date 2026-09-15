@@ -1,6 +1,10 @@
 # BOOKSTORE AI EXECUTION RULES
 
-For any work affecting `store/`, treat these files as canonical and mandatory:
+For any work on books, publishing, landing pages, SEO or the bookstore, first read and follow:
+
+- `BOOK_PRODUCTION_FRAMEWORK.md`
+
+For any work affecting `store/`, also treat these files as canonical and mandatory:
 
 - `store/DESIGN_RULES.md`
 - `store/MARKETING_RULES.md`
@@ -14,7 +18,7 @@ Current finalized V3 catalogue:
 2. **The Structure of Life — The Structure of Reasoning**
 
 Canonical store description:
-**Books on human behavior and hidden structure, built as reference libraries for readers, coders and AI. A motive in one discipline. A missing variable in another.**
+**Books on human behavior and hidden structure, built as reference systems for reasoning, research and new ideas. A motive in one discipline. A missing variable in another.**
 
 The V3 council + reasoning framework must stay active for design, copy, UX and conversion decisions:
 - James Clear lens: instant comprehension, minimum friction, immediate purchase legibility.
@@ -45,6 +49,8 @@ Hard constraints:
 - Preserve mobile, tablet and desktop as deliberate compositions.
 - Prefer zero-dependency/static solutions while files remain sufficient.
 - Do not expose internal reasoning architecture as customer-facing copy or interface.
+- AI usefulness should be discoverable through the books' structure and included material, not by making the public store an AI-tool landing page.
+- Never simplify or remove book content merely to make selling easier. Research and the finished book remain the source of truth.
 - For `store/`, run `node tools/audit-store.mjs` after catalogue or interaction changes and fix every failure.
 - For `store-v3/`, run `node tools/audit-store-v3.mjs` after design, copy, catalogue or interaction changes and fix every failure.
 
