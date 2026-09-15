@@ -57,8 +57,8 @@ for (const book of published) {
   if (book.scene && !isHttpUrl(book.scene)) fail(`${label}: scene must be HTTP/HTTPS when supplied.`);
   if (!book.cover && book.coverStyle !== 'structure') fail(`${label}: provide a verified cover URL or an approved constructed coverStyle.`);
 
-  if (book.coreIdea?.length > 140) fail(`${label}: coreIdea is too long for V3.`);
-  if (book.storeLine?.length > 110) fail(`${label}: storeLine is too long for V3.`);
+  if (book.coreIdea?.length > 120) fail(`${label}: coreIdea is too long for the selling spread.`);
+  if (book.storeLine?.length > 110) fail(`${label}: storeLine is too long for the selling spread.`);
 
   const amount = Number(book.price?.amount);
   const currency = book.price?.currency;
@@ -78,7 +78,7 @@ for (const book of published) {
   try {
     const response = await fetch(book.landingPage, {
       redirect: 'follow',
-      headers: { 'user-agent': 'ReasoningLibraryAudit/3.0' }
+      headers: { 'user-agent': 'ReasoningLibraryAudit/4.0' }
     });
     if (!response.ok) {
       fail(`${label}: landing page returned HTTP ${response.status}.`);
@@ -90,7 +90,7 @@ for (const book of published) {
 
     if (!includesText(text, book.title)) fail(`${label}: title cannot be verified on the landing page.`);
     if (!includesText(text, book.subtitle)) fail(`${label}: subtitle cannot be verified on the landing page.`);
-    if (!includesText(text, book.coreIdea)) fail(`${label}: hook cannot be verified on the landing page.`);
+    if (!includesText(text, book.coreIdea)) fail(`${label}: short selling line cannot be verified on the landing page.`);
     if (!html.includes(book.buyUrl)) fail(`${label}: direct purchase URL is not present on the landing page.`);
 
     for (const part of book.storeLine.split('·').map((value) => value.trim()).filter(Boolean)) {
@@ -98,7 +98,7 @@ for (const book of published) {
     }
 
     if (!text.includes(String(book.price.amount))) fail(`${label}: price amount cannot be verified on the landing page.`);
-    ok(`${label}: source-backed title, hook, utility, price and direct purchase verified.`);
+    ok(`${label}: source-backed title, selling line, utility, price and direct purchase verified.`);
   } catch (error) {
     fail(`${label}: landing page could not be audited (${error.message}).`);
   }
@@ -109,9 +109,9 @@ const sequence = [
   'class="book-title"',
   'class="book-hook"',
   'class="book-value"',
+  'class="price-buy"',
   'class="price"',
-  'class="buy-direct"',
-  'class="see-inside"'
+  'class="purchase-word"'
 ];
 let cursor = -1;
 for (const token of sequence) {
@@ -121,20 +121,22 @@ for (const token of sequence) {
   else cursor = next;
 }
 
-if (app.includes('book-author')) fail('Do not repeat author credit inside each book entry.');
-if (app.includes('short-description') || app.includes('proof-line')) fail('Explanatory copy belongs on dedicated book pages, not the store spread.');
+if (!app.includes('class="cover-link" href="${esc(landing)}"')) fail('Book thumbnail must open the dedicated landing page.');
+if (!app.includes('<h2 class="book-title">') || !app.includes('href="${esc(landing)}" data-action="open-book"')) fail('Book title must open the dedicated landing page.');
+if (!app.includes('class="price-buy" href="${esc(buy)}"')) fail('The visible price must itself be the direct purchase link.');
+if (app.includes('buy-direct') || app.includes('see-inside')) fail('Do not add separate generic store buttons when thumbnail/title and clickable price already define the two actions.');
+if (app.includes('book-author')) fail('Do not repeat author credit inside each book panel.');
+if (app.includes('short-description') || app.includes('proof-line')) fail('Long explanatory copy belongs on dedicated book pages, not the store spread.');
+
 if (!index.includes('>THE REASONING LIBRARY</a>')) fail('The store name must be visible and explicit.');
-if (!index.includes('Books on human behavior and hidden structure, built as reference libraries for readers, coders and AI.')) {
-  fail('The finalized store positioning line is missing.');
-}
-if (!index.includes('A motive in one discipline. A missing variable in another.')) {
-  fail('The cross-domain store line is missing.');
-}
+if (!index.includes('Books on human behavior and hidden structure, built as reference libraries for readers, coders and AI.')) fail('The finalized store positioning line is missing.');
+if (!index.includes('A motive in one discipline. A missing variable in another.')) fail('The cross-domain store line is missing.');
 if (!index.includes('name="theme-color" content="#f7f5ef"')) fail('The bookstore must declare the bright visual system in browser chrome.');
 if (!styles.includes('--paper: #f7f5ef')) fail('The bookstore must use the bright paper visual base.');
 if (!styles.includes('grid-template-columns: repeat(2, minmax(0, 1fr))')) fail('Both books must be visible together in the desktop catalogue composition.');
-if (!app.includes("pointermove")) fail('The bookstore must retain restrained, scenario-appropriate book interaction.');
-if (styles.includes('glassmorphism') || styles.includes('linear-gradient(135deg, #667eea')) fail('Generic AI/SaaS visual language detected.');
+if (!styles.includes('width: min(54%, 340px)')) fail('Book thumbnails are not large enough in the desktop composition.');
+if (!app.includes('pointermove')) fail('The bookstore must retain restrained, scenario-appropriate book interaction.');
+if (styles.includes('border-radius: 999') || styles.includes('glassmorphism')) fail('Generic pill/glass UI language detected.');
 if (index.includes('book-count') || index.includes('library-count')) fail('Do not spend attention on catalogue counts.');
 if (!index.includes('"numberOfItems": 2')) fail('Structured data must declare both books.');
 
@@ -146,8 +148,8 @@ if (errors.length) {
 
 console.log('\nBOOKSTORE V3 AUDIT PASSED\n');
 for (const note of notes) console.log(`- ${note}`);
-console.log('- Exactly two books are published and visible in the main desktop composition.');
-console.log('- Bright store shell; each book keeps its own authored visual identity.');
-console.log('- Surviving sequence: Cover → Title → Hook → Utility → Price → BUY → See the book.');
-console.log('- Interaction is restrained and attached to the physical book object, not decorative UI.');
-console.log('- Store → Buy remains one click; Store → Book remains one click.');
+console.log('- Exactly two large book panels are visible in the desktop store composition.');
+console.log('- Thumbnail + title open the dedicated book landing page.');
+console.log('- Price is the direct one-click purchase surface.');
+console.log('- Copy stays short: title → selling line → utility → price/purchase.');
+console.log('- Interaction belongs to the book object, not decorative UI.');
