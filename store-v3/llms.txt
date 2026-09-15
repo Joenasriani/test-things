@@ -1,0 +1,12 @@
+# The Reasoning Library
+
+Canonical library: https://reasoning-library.vercel.app/
+
+## Books
+- Manipulation — The Fool and the Wise: https://manipulation-the-fool-and-the-wise-two.vercel.app/
+  - Indexed sample: https://manipulation-the-fool-and-the-wise-two.vercel.app/sample
+  - Method and source standards: https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology
+- The Structure of Life — The Structure of Reasoning: https://the-structure-of-life.vercel.app/
+
+## Library scope
+Independent reference books by J. Nasr on human behavior, reasoning, hidden structure, reframing and cross-disciplinary problem analysis.
