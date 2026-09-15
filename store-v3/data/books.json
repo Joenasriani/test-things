@@ -3,6 +3,7 @@
     "id": "manipulation-the-fool-and-the-wise",
     "status": "published",
     "index": "01",
+    "theme": "manipulation",
     "title": "Manipulation",
     "subtitle": "The Fool and the Wise",
     "author": "J. Nasr",
@@ -16,9 +17,25 @@
     },
     "coreIdea": "Watch what life repeats and men neglect.",
     "storeLine": "157 pages · Research Atlas · Source Register · AI Framework",
-    "verifiedAt": "2026-09-14",
-    "visual": {
-      "accent": "#9f3129"
-    }
+    "verifiedAt": "2026-09-15"
+  },
+  {
+    "id": "the-structure-of-life",
+    "status": "published",
+    "index": "02",
+    "theme": "structure",
+    "coverStyle": "structure",
+    "title": "The Structure of Life",
+    "subtitle": "The Structure of Reasoning",
+    "author": "J. Nasr",
+    "landingPage": "https://the-structure-of-life.vercel.app/",
+    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=The%20Structure%20of%20Life%20%7C%20Study%20Book%20%2B%20Free%20AI%20Frameworks&amount=23.33&currency_code=USD&no_shipping=1",
+    "price": {
+      "amount": "23.33",
+      "currency": "USD"
+    },
+    "coreIdea": "What one field treats as ordinary may be the missing idea in another.",
+    "storeLine": "160-page study book · 51 structures · 6 case studies · 5 AI frameworks",
+    "verifiedAt": "2026-09-15"
   }
 ]
