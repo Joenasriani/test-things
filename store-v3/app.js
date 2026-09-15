@@ -64,14 +64,14 @@ const renderBook = (book) => {
     <article class="book-entry book-entry--${theme}" data-book-theme="${theme}">
       <div class="book-visual">
         ${scene ? `<img class="book-context" src="${esc(scene)}" alt="" aria-hidden="true">` : ''}
-        <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">
+        <a class="cover-link" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="Open ${esc(fullTitle)}">
           ${coverMarkup}
         </a>
       </div>
 
       <div class="book-copy">
         <h2 class="book-title">
-          <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}">
+          <a href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="Open ${esc(fullTitle)}">
             ${esc(book.title || '')}
             ${book.subtitle ? `<span>${esc(book.subtitle)}</span>` : ''}
           </a>
@@ -80,11 +80,10 @@ const renderBook = (book) => {
         ${book.coreIdea ? `<p class="book-hook">${esc(book.coreIdea)}</p>` : ''}
         ${book.storeLine ? `<p class="book-value">${esc(book.storeLine)}</p>` : ''}
 
-        <div class="book-actions">
+        <a class="price-buy" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">
           <span class="price">${esc(price)}</span>
-          <a class="buy-direct" href="${esc(buy)}" data-action="buy" data-book="${bookId}" aria-label="Buy ${esc(fullTitle)} for ${esc(price)}">BUY</a>
-          <a class="see-inside" href="${esc(landing)}" data-action="open-book" data-book="${bookId}" aria-label="See ${esc(fullTitle)}">SEE THE BOOK <span aria-hidden="true">→</span></a>
-        </div>
+          <span class="purchase-word">BUY BOOK <b aria-hidden="true">↗</b></span>
+        </a>
       </div>
     </article>
   `;
