@@ -9,8 +9,8 @@
     "author": "J. Nasr",
     "landingPage": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
     "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amount=23.33&currency_code=USD&no_shipping=1",
-    "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/cover.jpg",
-    "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/collection-scene.webp",
+    "cover": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/cover.jpg",
+    "scene": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/collection-scene.webp",
     "price": {
       "amount": "23.33",
       "currency": "USD"
@@ -34,7 +34,7 @@
       "amount": "23.33",
       "currency": "USD"
     },
-    "coreIdea": "Structures from coding and engineering can expose hidden causes, missing variables.",
+    "coreIdea": "Structures from coding and engineering can expose hidden causes, missing variables",
     "storeLine": "160-page study book · 51 structures · 6 case studies · 5 free AI frameworks",
     "verifiedAt": "2026-09-15"
   }
