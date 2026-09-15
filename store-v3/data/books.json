@@ -8,9 +8,9 @@
     "subtitle": "The Fool and the Wise",
     "author": "J. Nasr",
     "landingPage": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
-    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=Manipulation%20%E2%80%94%20The%20Fool%20and%20the%20Wise%20%E2%80%94%20Complete%20Collection&amount=23.33&currency_code=USD&no_shipping=1",
-    "cover": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/cover.jpg",
-    "scene": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/collection-scene.webp",
+    "buyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/buy",
+    "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=cover",
+    "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=scene",
     "price": {
       "amount": "23.33",
       "currency": "USD"
@@ -29,7 +29,7 @@
     "subtitle": "The Structure of Reasoning",
     "author": "J. Nasr",
     "landingPage": "https://the-structure-of-life.vercel.app/",
-    "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=The%20Structure%20of%20Life%20%7C%20Study%20Book%20%2B%20Free%20AI%20Frameworks&amount=23.33&currency_code=USD&no_shipping=1",
+    "buyUrl": "https://the-structure-of-life.vercel.app/",
     "price": {
       "amount": "23.33",
       "currency": "USD"
