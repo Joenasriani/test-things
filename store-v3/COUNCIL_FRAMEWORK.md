@@ -2,6 +2,8 @@
 
 Use this framework for every design, copy, UX and conversion decision in `store-v3/`.
 
+The master production order and book-level rules live in `../BOOK_PRODUCTION_FRAMEWORK.md` and override downstream store convenience.
+
 ## James Clear lens — instant comprehension
 - A visitor should understand the store, both books, their usefulness, price and purchase actions within seconds.
 - Remove anything that delays comprehension.
@@ -46,6 +48,7 @@ It must not materially worsen:
 - visual hierarchy
 - source accuracy
 - scenario fit
+- search visibility
 
 ### UPDATE
 Every candidate is classified:
@@ -55,7 +58,7 @@ Every candidate is classified:
 - **REFRAME** — the underlying page assumption was wrong.
 
 ### STOP
-Stop adding when the store is the simplest version that preserves desire, clarity, trust, direct purchase and browsing pleasure. Stopping does not mean the design is universally optimal; it means no tested addition currently earns its visual or cognitive cost.
+Stop adding when the store is the simplest version that preserves desire, clarity, trust, direct purchase, search visibility and browsing pleasure. Stopping does not mean the design is universally optimal; it means no tested addition currently earns its visual or cognitive cost.
 
 ## Store-level positioning
 
@@ -65,9 +68,9 @@ The store currently contains exactly two books:
 
 Canonical store description:
 
-> **Books on human behavior and hidden structure, built as reference libraries for readers, coders and AI. A motive in one discipline. A missing variable in another.**
+> **Books on human behavior and hidden structure, built as reference systems for reasoning, research and new ideas. A motive in one discipline. A missing variable in another.**
 
-This line may hint that coders and AI systems can use the books as high-rigor reference material, but the books remain the product. Do not turn the store into an AI-tool landing page.
+The books may include AI frameworks, structured data or AI-facing applications where relevant, but AI usefulness should be inferred from the architecture and included material. Do not turn the store into an AI-tool landing page.
 
 ## Council intersection — canonical store grammar
 
@@ -86,7 +89,7 @@ Hard rules:
 10. No testimonials, badges, feature cards, newsletter capture, pop-ups, repeated CTA, fake urgency, generic ecommerce cards, SaaS styling or AI decoration.
 11. Each cover must carry substantial visual weight and remain immediately identifiable.
 12. Use only source-backed book facts.
-13. AI relevance may be signaled through included material and store positioning, never by redefining either book as an AI product.
+13. AI relevance may be signaled through included material, but never by redefining either book or the store as an AI product.
 14. Each book retains its own authored identity inside the shared bright store: Manipulation through its cover, crimson cues and controlled psychological imagery; The Structure of Life through structural geometry, typographic logic and its own color system.
 15. **No mood for mood's sake.** Atmosphere is allowed only when it helps identify the book or understand its subject. It must never reduce clarity or usefulness.
 16. **No arbitrary placement.** Every element must have an obvious relationship to the book, information hierarchy or action beside it. If placement looks accidental, isolated, decorative or unexplained, recompose it.
@@ -95,6 +98,15 @@ Hard rules:
 19. Desktop, tablet and mobile are composed independently and checked perceptually.
 20. Do not expose the reasoning framework in the customer-facing interface. It governs decisions; it is not page content.
 21. If an element does not help the visitor understand, desire, trust, browse or buy a book, remove it.
+22. The store and each landing page must remain crawlable, canonical, semantically structured and free of hidden SEO content or duplicate-indexing anomalies.
+23. Never change or remove confirmed book content merely to simplify store copy. The book is upstream; the store is downstream.
+
+### Manipulation — locked store direction
+- Selling line: **See the mechanism behind the message.**
+- Keep the dark psychology / darker human behavior attraction.
+- Compressed utility should signal evidence, mechanisms and case analysis.
+- AI remains part of the product where present, but is not the leading identity.
+- Counts are proof of depth, not the headline.
 
 Council test before accepting a change:
 - **Clear:** Is everything important understood and visible immediately?
@@ -102,6 +114,7 @@ Council test before accepting a change:
 - **Ferriss:** Is practical/intellectual value visible without explanation?
 - **Scenario-fit:** Does every placement, visual treatment and interaction make sense for selling these exact books here?
 - **Navigation:** Thumbnail/title → book page; price → direct purchase; book page → obvious return to the library.
+- **Search:** Can crawlers understand the page without executing a decorative interaction?
 - **Reasoning check:** Did the element survive a concrete benefit-versus-cost test?
 - **Intersection:** Does anything stand between the visitor and understanding or buying the books?
 
