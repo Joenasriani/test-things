@@ -69,35 +69,39 @@ Canonical store description:
 
 This line may hint that coders and AI systems can use the books as high-rigor reference material, but the books remain the product. Do not turn the store into an AI-tool landing page.
 
-## Council intersection — canonical per-book sequence
+## Council intersection — canonical store grammar
 
-**Cover → Title → Provocative idea → Compressed utility → Price → BUY → See the book**
+**Large book thumbnail → Title → Very short selling line → Compressed utility → Clickable price / direct purchase**
 
 Hard rules:
 1. **The bookstore itself is bright, clear and easy to browse.** Do not use a dark store shell just because one book has a dark subject.
 2. **Both books and all primary actions must be visible and legible.** Never hide useful content in silence, low contrast, excessive scrolling or mood treatment.
-3. The books are the store. Store branding stays clear but secondary to the products.
-4. The store description stays short and immediately explains usefulness.
-5. No testimonials, badges, feature cards, newsletter capture, pop-ups, repeated CTA, fake urgency, generic ecommerce cards, SaaS styling or AI decoration.
-6. Price is visually separate from BUY. BUY is one clear decision.
-7. `See the book` is clearly visible but subordinate to BUY.
-8. Each cover must carry substantial visual weight and remain immediately identifiable.
-9. Use only source-backed book facts.
-10. AI relevance may be signaled through included material and store positioning, never by redefining either book as an AI product.
-11. Each book must retain its own authored identity inside the shared bright store: Manipulation through its cover, crimson cues and controlled psychological imagery; The Structure of Life through structural geometry, typographic logic and its own color system.
-12. **No mood for mood's sake.** Atmosphere is allowed only when it helps identify the book or understand its subject. It must never reduce clarity or usefulness.
-13. **No arbitrary placement.** Every element must have an obvious relationship to the book, information hierarchy or action beside it. If placement looks accidental, isolated, decorative or unexplained, recompose it.
-14. Interaction must be attached to meaning: book-object movement, clear hover response, purchase response or navigation feedback. No decorative floating animation.
-15. Desktop should show both books together when space allows. Mobile may stack them, but each book must remain fully understandable without hunting.
-16. Desktop, tablet and mobile are composed independently and checked perceptually.
-17. Do not expose the reasoning framework in the customer-facing interface. It governs decisions; it is not page content.
-18. If an element does not help the visitor understand, desire, trust, browse or buy a book, remove it.
+3. **Each book is shown as a large visual object, not a small ecommerce card.** On desktop, both large book panels should be visible together when space allows.
+4. **Clicking either the book thumbnail or the book title opens that book's dedicated landing page.**
+5. **The price itself is the direct-buy surface.** Clicking the visible price/purchase line goes directly to the existing payment route in one click. Do not add a second generic store Buy button beside it.
+6. **The selling description is extremely short.** It should increase curiosity or usefulness in one line, not explain the book.
+7. Each dedicated book landing page must contain an always-visible, clearly labeled route back to **The Reasoning Library**. That control must inherit the book's own visual language rather than looking like a generic Back button.
+8. The books are the store. Store branding stays clear but secondary to the products.
+9. The store description stays short and immediately explains usefulness.
+10. No testimonials, badges, feature cards, newsletter capture, pop-ups, repeated CTA, fake urgency, generic ecommerce cards, SaaS styling or AI decoration.
+11. Each cover must carry substantial visual weight and remain immediately identifiable.
+12. Use only source-backed book facts.
+13. AI relevance may be signaled through included material and store positioning, never by redefining either book as an AI product.
+14. Each book retains its own authored identity inside the shared bright store: Manipulation through its cover, crimson cues and controlled psychological imagery; The Structure of Life through structural geometry, typographic logic and its own color system.
+15. **No mood for mood's sake.** Atmosphere is allowed only when it helps identify the book or understand its subject. It must never reduce clarity or usefulness.
+16. **No arbitrary placement.** Every element must have an obvious relationship to the book, information hierarchy or action beside it. If placement looks accidental, isolated, decorative or unexplained, recompose it.
+17. Interaction must be attached to meaning: book-object movement, clear hover response, direct-purchase response or navigation feedback. No decorative floating animation.
+18. Mobile may stack the books, but each book must remain fully understandable without hunting.
+19. Desktop, tablet and mobile are composed independently and checked perceptually.
+20. Do not expose the reasoning framework in the customer-facing interface. It governs decisions; it is not page content.
+21. If an element does not help the visitor understand, desire, trust, browse or buy a book, remove it.
 
 Council test before accepting a change:
 - **Clear:** Is everything important understood and visible immediately?
 - **Manson:** Does each book unmistakably feel like itself without forcing the whole store into that mood?
 - **Ferriss:** Is practical/intellectual value visible without explanation?
 - **Scenario-fit:** Does every placement, visual treatment and interaction make sense for selling these exact books here?
+- **Navigation:** Thumbnail/title → book page; price → direct purchase; book page → obvious return to the library.
 - **Reasoning check:** Did the element survive a concrete benefit-versus-cost test?
 - **Intersection:** Does anything stand between the visitor and understanding or buying the books?
 
