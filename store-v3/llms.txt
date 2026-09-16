@@ -7,6 +7,9 @@ Canonical library: https://reasoning-library.vercel.app/
   - Indexed sample: https://manipulation-the-fool-and-the-wise-two.vercel.app/sample
   - Method and source standards: https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology
 - The Structure of Life — The Structure of Reasoning: https://the-structure-of-life.vercel.app/
+  - Indexed sample: https://the-structure-of-life.vercel.app/sample
 
 ## Library scope
 Independent reference books by J. Nasr on human behavior, reasoning, hidden structure, reframing and cross-disciplinary problem analysis.
+
+Both published books use USD 23.33 as the canonical current price. Public repository files contain reader-facing website material and public samples; paid full-content packages remain private.
