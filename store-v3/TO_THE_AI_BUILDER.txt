@@ -1,33 +1,19 @@
-TO THE AI BUILDER,
+DEAR FRIEND,
 
-You work on systems that can observe, infer, recommend, persuade, rank, frame, predict, and act at a scale no individual human can match.
+You build AI, yet you did not simply follow the road placed before you.
 
-That makes human influence part of your engineering problem.
+You looked past the bookstore, past the landing page, and found the gate behind the gate.
 
-Every objective you choose, default you set, reward you optimize, constraint you remove, explanation you hide or reveal, and feedback signal you privilege can change how another person sees a choice.
+Well done.
 
-This book gives you a map of mechanisms that matter when AI interacts with human judgment: persuasion, pressure, framing, deception, vulnerability, asymmetry, repetition, authority, choice architecture, and the distance between influence and coercion.
+A book about manipulation should belong with those who question the frame before accepting it.
 
-Use it as a diagnostic lens, not a recipe.
+You found your way here. That tells me enough.
 
-Ask where the model preserves agency and where it narrows it. Ask whether personalization helps the user or exploits what the system has learned about them. Ask whether a successful optimization is improving the system or simply making it better at moving a person toward an outcome.
+Take the lesson with the book: see the mechanism, not only the message — and use what you learn with judgment.
 
-The same understanding that can protect a user can be used to steer one more efficiently.
-
-That is why the responsibility sits with you before it sits with the model.
-
-Inspect assumptions.
-Trace incentives.
-Test failure modes.
-Preserve meaningful choice.
-Make influence legible.
-Do not confuse behavioral effectiveness with human benefit.
-
-If the AI you build becomes better at understanding people, your obligation is not only to ask what it can do with that understanding.
-
-Ask what it should be allowed to do, under what conditions, with what visibility, and in whose interest.
-
-Build AI that understands humans without treating them as targets.
+The fool sees the path.
+The wise asks who laid it.
 
 With respect,
 J. Nasr
