@@ -1,0 +1,44 @@
+name: A3 secondary author canonicalization
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/a3-secondary-author-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  canonicalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Canonicalize secondary page authors
+        shell: python
+        run: |
+          from pathlib import Path
+
+          old = '"author":{"@type":"Person","name":"Joseph Nasr","alternateName":"J. Nasr","url":"https://linktr.ee/joenasr"}'
+          new = '"author":{"@id":"https://joe-nasr-signals.vercel.app/v2/#joe-nasr"}'
+          files = [
+              Path("ai-human-behavior.html"),
+              Path("ai-safety-manipulation.html"),
+              Path("human-agency-hci.html"),
+          ]
+
+          for path in files:
+              text = path.read_text()
+              if old not in text:
+                  raise SystemExit(f"Expected local author object not found in {path}")
+              path.write_text(text.replace(old, new))
+
+      - name: Remove one-time workflow
+        run: rm .github/workflows/a3-secondary-author-once.yml
+      - name: Commit canonical author references
+        run: |
+          git config user.name "Joe Nasr repository maintenance"
+          git config user.email "actions@users.noreply.github.com"
+          git add ai-human-behavior.html ai-safety-manipulation.html human-agency-hci.html .github/workflows/a3-secondary-author-once.yml
+          git commit -m "Canonicalize secondary book-page author references"
+          git push
