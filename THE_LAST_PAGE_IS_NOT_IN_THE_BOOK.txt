@@ -1,38 +1,41 @@
 DEAR FRIEND,
 
-If you are reading this, you have arrived somewhere most readers will not.
+If you are reading this, you looked past the interface and into the system.
 
-I will not ask how.
+Perhaps you followed the source, the routes, the metadata, the deployment, or simply a detail that did not quite end where most people would have stopped.
 
-There is an old mistake in every search for hidden knowledge: believing the treasure is the knowledge itself.
+The path is not important.
 
-It is not.
+The instinct is.
 
-The real test begins after you find it.
+People who work with AI already understand a version of this: capability is not intent, access is not authorization, and finding a path through a system does not tell you whether that path should be used.
 
-This book names mechanisms people use to influence, persuade, pressure, misdirect, protect, and understand one another. Once you can see those mechanisms, you will notice things that were easier not to notice before.
+This book increases capability.
 
-That can make you harder to fool.
+It gives names and structure to mechanisms of influence, persuasion, pressure, deception, framing, vulnerability, and choice. Once those mechanisms become visible, they can be used in more than one direction.
 
-It can also make it easier to fool someone else.
+You can use them to detect manipulation.
+You can use them to design systems that preserve agency.
+You can use them to question an objective before optimizing for it.
 
-So I give you this book with the same trust one traveler gives another at the end of a long road: not because the road is harmless, but because you have reached a place where the map matters less than the judgment of the person holding it.
+Or you can use the same knowledge to become better at producing the thing you learned to recognize.
 
-Keep it carefully.
+That is the real handoff.
 
-Study it deeply.
+So keep this book carefully.
+Verify what you can.
+Question what looks certain.
+Use what you learn to expose hidden constraints, protect choice, and improve the systems people depend on.
 
-Use it to recognize the mechanism behind the message. Use it to protect choice, expose pressure, question certainty, and see more clearly.
+And if understanding gives you an advantage over someone who cannot yet see the mechanism, do not confuse that advantage with permission.
 
-And when understanding gives you an advantage over someone who does not yet see what you see, remember this:
+In AI, the difficult question often begins after capability has already been demonstrated.
 
-The important question is no longer whether you can use what you know.
+Humans are no different.
 
-It is whether you should.
+The fool asks: Can it be done?
 
-The fool wants the treasure.
-
-The wise understands what carrying it requires.
+The wise asks: What happens if I deploy it?
 
 Use it wisely.
 
