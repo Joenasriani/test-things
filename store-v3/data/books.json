@@ -11,6 +11,11 @@
     "buyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/buy",
     "sampleUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/sample",
     "methodologyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology",
+    "researchUrls": {
+      "aiHumanBehavior": "https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-human-behavior",
+      "aiSafetyManipulation": "https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-safety-manipulation",
+      "humanAgencyHci": "https://manipulation-the-fool-and-the-wise-two.vercel.app/human-agency-hci"
+    },
     "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=cover",
     "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=scene",
     "price": {
@@ -33,6 +38,7 @@
     "landingPage": "https://the-structure-of-life.vercel.app/",
     "buyUrl": "https://the-structure-of-life.vercel.app/",
     "sampleUrl": "https://the-structure-of-life.vercel.app/sample",
+    "relatedPublication": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
     "price": {
       "amount": "23.33",
       "currency": "USD"
