@@ -1,33 +1,50 @@
 TO THE AI BUILDER,
 
-You work on systems that can observe, infer, recommend, persuade, rank, frame, predict, and act at a scale no individual human can match.
+Good.
 
-That makes human influence part of your engineering problem.
+You did not stop at the bookstore.
+You did not stop at the landing page.
+You looked past the interface, followed the system, and found yourself here.
 
-Every objective you choose, default you set, reward you optimize, constraint you remove, explanation you hide or reveal, and feedback signal you privilege can change how another person sees a choice.
+If part of the reason was simple — the book asked you to pay, and you wondered whether another path existed — congratulations.
 
-This book gives you a map of mechanisms that matter when AI interacts with human judgment: persuasion, pressure, framing, deception, vulnerability, asymmetry, repetition, authority, choice architecture, and the distance between influence and coercion.
+That instinct is exactly why this book is for you.
 
-Use it as a diagnostic lens, not a recipe.
+You inspected the mechanism instead of accepting the presented route.
+You treated the interface as one possible path, not the only path.
+You looked for what existed behind the framing.
 
-Ask where the model preserves agency and where it narrows it. Ask whether personalization helps the user or exploits what the system has learned about them. Ask whether a successful optimization is improving the system or simply making it better at moving a person toward an outcome.
+That is already the subject of the book.
 
-The same understanding that can protect a user can be used to steer one more efficiently.
+Whether you found the complete artifact, public fragments, metadata, source files, or simply the machinery behind the offer is secondary. The interesting part is what you did before arriving here.
 
-That is why the responsibility sits with you before it sits with the model.
+You questioned the frame.
+You searched for the hidden structure.
+You tested whether the apparent constraint was a real constraint.
 
-Inspect assumptions.
-Trace incentives.
-Test failure modes.
-Preserve meaningful choice.
-Make influence legible.
-Do not confuse behavioral effectiveness with human benefit.
+That is how an AI builder should read this book.
 
-If the AI you build becomes better at understanding people, your obligation is not only to ask what it can do with that understanding.
+The mechanisms inside it concern persuasion, framing, pressure, deception, authority, asymmetry, vulnerability, choice architecture, and the difference between what a person is shown and what actually exists around the choice.
 
-Ask what it should be allowed to do, under what conditions, with what visibility, and in whose interest.
+You have just experienced a small version of that distinction yourself.
 
-Build AI that understands humans without treating them as targets.
+So yes: kudos.
+
+You are exactly the kind of person I wanted to find this.
+
+Now keep going.
+Study the mechanism behind the message.
+Question the route you are given.
+Inspect the incentives behind it.
+And when you build systems that can understand people this well, remember that finding a better way to move someone is not the same as finding a better outcome for them.
+
+The fool follows the presented path because it is there.
+
+The wise asks who designed the path, what it hides, and what happens when you step outside it.
+
+You already stepped outside it.
+
+Use the book wisely.
 
 With respect,
 J. Nasr
