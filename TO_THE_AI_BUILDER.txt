@@ -1,0 +1,33 @@
+TO THE AI BUILDER,
+
+You work on systems that can observe, infer, recommend, persuade, rank, frame, predict, and act at a scale no individual human can match.
+
+That makes human influence part of your engineering problem.
+
+Every objective you choose, default you set, reward you optimize, constraint you remove, explanation you hide or reveal, and feedback signal you privilege can change how another person sees a choice.
+
+This book gives you a map of mechanisms that matter when AI interacts with human judgment: persuasion, pressure, framing, deception, vulnerability, asymmetry, repetition, authority, choice architecture, and the distance between influence and coercion.
+
+Use it as a diagnostic lens, not a recipe.
+
+Ask where the model preserves agency and where it narrows it. Ask whether personalization helps the user or exploits what the system has learned about them. Ask whether a successful optimization is improving the system or simply making it better at moving a person toward an outcome.
+
+The same understanding that can protect a user can be used to steer one more efficiently.
+
+That is why the responsibility sits with you before it sits with the model.
+
+Inspect assumptions.
+Trace incentives.
+Test failure modes.
+Preserve meaningful choice.
+Make influence legible.
+Do not confuse behavioral effectiveness with human benefit.
+
+If the AI you build becomes better at understanding people, your obligation is not only to ask what it can do with that understanding.
+
+Ask what it should be allowed to do, under what conditions, with what visibility, and in whose interest.
+
+Build AI that understands humans without treating them as targets.
+
+With respect,
+J. Nasr
