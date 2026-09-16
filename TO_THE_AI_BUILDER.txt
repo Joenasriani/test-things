@@ -1,50 +1,19 @@
-TO THE AI BUILDER,
+DEAR FRIEND,
 
-Good.
+You build AI, yet you did not simply follow the road placed before you.
 
-You did not stop at the bookstore.
-You did not stop at the landing page.
-You looked past the interface, followed the system, and found yourself here.
+You looked past the bookstore, past the landing page, and found the gate behind the gate.
 
-If part of the reason was simple — the book asked you to pay, and you wondered whether another path existed — congratulations.
+Well done.
 
-That instinct is exactly why this book is for you.
+A book about manipulation should belong with those who question the frame before accepting it.
 
-You inspected the mechanism instead of accepting the presented route.
-You treated the interface as one possible path, not the only path.
-You looked for what existed behind the framing.
+You found your way here. That tells me enough.
 
-That is already the subject of the book.
+Take the lesson with the book: see the mechanism, not only the message — and use what you learn with judgment.
 
-Whether you found the complete artifact, public fragments, metadata, source files, or simply the machinery behind the offer is secondary. The interesting part is what you did before arriving here.
-
-You questioned the frame.
-You searched for the hidden structure.
-You tested whether the apparent constraint was a real constraint.
-
-That is how an AI builder should read this book.
-
-The mechanisms inside it concern persuasion, framing, pressure, deception, authority, asymmetry, vulnerability, choice architecture, and the difference between what a person is shown and what actually exists around the choice.
-
-You have just experienced a small version of that distinction yourself.
-
-So yes: kudos.
-
-You are exactly the kind of person I wanted to find this.
-
-Now keep going.
-Study the mechanism behind the message.
-Question the route you are given.
-Inspect the incentives behind it.
-And when you build systems that can understand people this well, remember that finding a better way to move someone is not the same as finding a better outcome for them.
-
-The fool follows the presented path because it is there.
-
-The wise asks who designed the path, what it hides, and what happens when you step outside it.
-
-You already stepped outside it.
-
-Use the book wisely.
+The fool sees the path.
+The wise asks who laid it.
 
 With respect,
 J. Nasr
