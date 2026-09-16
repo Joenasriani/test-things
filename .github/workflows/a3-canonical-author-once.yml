@@ -22,7 +22,6 @@ jobs:
           person_id = "https://joe-nasr-signals.vercel.app/v2/#joe-nasr"
           person_url = "https://joe-nasr-signals.vercel.app/v2/"
 
-          # Manipulation public book page
           p = Path("index.html")
           s = p.read_text()
           local_id = "https://manipulation-the-fool-and-the-wise-two.vercel.app/#author"
@@ -33,23 +32,12 @@ jobs:
               raise SystemExit("Manipulation Person object not found after ID normalization")
           p.write_text(s.replace(old, new))
 
-          # Reasoning Library public store
           p = Path("store-v3/index.html")
           s = p.read_text()
           local_id = "https://reasoning-library.vercel.app/#author"
           s = s.replace(local_id, person_id)
-          old = '''        "@type": "Person",
-        "@id": "''' + person_id + '''",
-        "name": "Joseph Nasr",
-        "alternateName": ["J. Nasr", "Joe Nasr"],
-        "url": "https://reasoning-library.vercel.app/",
-        "sameAs": ["https://linktr.ee/joenasr"]'''
-          new = '''        "@type": "Person",
-        "@id": "''' + person_id + '''",
-        "name": "Joe Nasr",
-        "alternateName": ["J. Nasr", "Joe Ribal Nasr", "Joseph Ribal Nasr"],
-        "url": "''' + person_url + '''",
-        "sameAs": ["https://linktr.ee/joenasr", "https://github.com/Joenasriani"]'''
+          old = '        "@type": "Person",\n        "@id": "' + person_id + '",\n        "name": "Joseph Nasr",\n        "alternateName": ["J. Nasr", "Joe Nasr"],\n        "url": "https://reasoning-library.vercel.app/",\n        "sameAs": ["https://linktr.ee/joenasr"]'
+          new = '        "@type": "Person",\n        "@id": "' + person_id + '",\n        "name": "Joe Nasr",\n        "alternateName": ["J. Nasr", "Joe Ribal Nasr", "Joseph Ribal Nasr"],\n        "url": "' + person_url + '",\n        "sameAs": ["https://linktr.ee/joenasr", "https://github.com/Joenasriani"]'
           if old not in s:
               raise SystemExit("Store Person object not found after ID normalization")
           p.write_text(s.replace(old, new))
