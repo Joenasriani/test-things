@@ -2,7 +2,7 @@
 
 Reader-facing source for The Reasoning Library and its public book pages.
 
-**Current canonical release:** 2026-09-16. See [`CANONICAL_RELEASE.md`](./CANONICAL_RELEASE.md). Older drafts, obsolete prices, detached “2026 Research Update” marketing claims, and older store purchase behavior are superseded by that release.
+**Current canonical release:** 2026-09-16. See [`CANONICAL_RELEASE.md`](./CANONICAL_RELEASE.md). Older drafts and previous commercial or navigation variants are superseded by that release.
 
 ## Canonical public routes
 
