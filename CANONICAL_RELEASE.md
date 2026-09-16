@@ -27,11 +27,7 @@ This repository has one current public release state.
 
 ## Version rule
 
-Anything that contradicts this release state is historical or superseded. In particular:
-
-- **USD 19** is obsolete for Manipulation.
-- Detached or marketing-facing **“2026 Research Update”** claims are not part of the current Manipulation landing-page positioning.
-- Older store versions where the Structure price line says **VIEW BOOK** instead of purchasing directly are superseded.
+Anything that contradicts this release state is historical or superseded. Public-facing files should contain only the current offer, current price, current book facts and current navigation/purchase behavior.
 
 ## Blocker-resilience rule
 
