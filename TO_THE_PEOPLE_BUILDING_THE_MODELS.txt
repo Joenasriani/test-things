@@ -1,0 +1,34 @@
+TO THE PEOPLE BUILDING THE MODELS,
+
+This book is also for you.
+
+You work in systems where small choices in framing, defaults, objectives, interfaces, rewards, and constraints can scale into behavior at a distance.
+
+That makes human influence more than a psychological subject. It becomes a design problem, a safety problem, an alignment problem, and sometimes a governance problem.
+
+The mechanisms in this book can help you recognize when a system is preserving agency and when it is quietly narrowing it. They can help you separate persuasion from pressure, assistance from steering, personalization from exploitation, and optimization from manipulation.
+
+But the same knowledge can also make systems more effective at shaping people without their awareness.
+
+So treat this book as you would any capability that becomes more consequential when it scales.
+
+Inspect assumptions.
+Trace incentives.
+Test failure modes.
+Preserve meaningful choice.
+And do not mistake higher behavioral effectiveness for a better system.
+
+If a model becomes better at understanding people, the responsibility of the people building it increases with that capability.
+
+The difficult question is not only:
+
+Can the system influence behavior?
+
+It is:
+
+Should it, under what conditions, with what visibility, and in whose interest?
+
+Use this knowledge to build systems that understand humans without reducing them to targets.
+
+With respect,
+J. Nasr
