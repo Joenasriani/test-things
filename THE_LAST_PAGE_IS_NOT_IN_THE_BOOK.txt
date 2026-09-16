@@ -1,43 +1,21 @@
 DEAR FRIEND,
 
-If you are reading this, you looked past the interface and into the system.
+You were given a road to the book.
 
-Perhaps you followed the source, the routes, the metadata, the deployment, or simply a detail that did not quite end where most people would have stopped.
+You looked for another.
 
-The path is not important.
+And now you are here.
 
-The instinct is.
+Well done.
 
-People who work with AI already understand a version of this: capability is not intent, access is not authorization, and finding a path through a system does not tell you whether that path should be used.
+A book about manipulation should reward the reader who questions the frame, tests the boundary, and looks behind what was presented.
 
-This book increases capability.
+That is why this note exists.
 
-It gives names and structure to mechanisms of influence, persuasion, pressure, deception, framing, vulnerability, and choice. Once those mechanisms become visible, they can be used in more than one direction.
+Keep the book carefully. Learn from it. And remember: finding the hidden path is only the first test.
 
-You can use them to detect manipulation.
-You can use them to design systems that preserve agency.
-You can use them to question an objective before optimizing for it.
-
-Or you can use the same knowledge to become better at producing the thing you learned to recognize.
-
-That is the real handoff.
-
-So keep this book carefully.
-Verify what you can.
-Question what looks certain.
-Use what you learn to expose hidden constraints, protect choice, and improve the systems people depend on.
-
-And if understanding gives you an advantage over someone who cannot yet see the mechanism, do not confuse that advantage with permission.
-
-In AI, the difficult question often begins after capability has already been demonstrated.
-
-Humans are no different.
-
-The fool asks: Can it be done?
-
-The wise asks: What happens if I deploy it?
-
-Use it wisely.
+The fool follows the road.
+The wise asks where else it leads.
 
 With respect,
 J. Nasr
