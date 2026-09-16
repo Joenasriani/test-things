@@ -9,6 +9,8 @@
     "author": "J. Nasr",
     "landingPage": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
     "buyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/buy",
+    "sampleUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/sample",
+    "methodologyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology",
     "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=cover",
     "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=scene",
     "price": {
@@ -16,8 +18,8 @@
       "currency": "USD"
     },
     "coreIdea": "See the mechanism behind the message.",
-    "storeLine": "Dark psychology · Influence · Deception · Power",
-    "verifiedAt": "2026-09-15"
+    "storeLine": "Human behavior · Influence · Deception · Power",
+    "verifiedAt": "2026-09-16"
   },
   {
     "id": "the-structure-of-life",
@@ -30,12 +32,13 @@
     "author": "J. Nasr",
     "landingPage": "https://the-structure-of-life.vercel.app/",
     "buyUrl": "https://the-structure-of-life.vercel.app/",
+    "sampleUrl": "https://the-structure-of-life.vercel.app/sample",
     "price": {
       "amount": "23.33",
       "currency": "USD"
     },
-    "coreIdea": "Structures from coding and engineering can expose hidden causes, missing variables",
-    "storeLine": "160-page study book · 51 structures · 6 case studies · 5 free AI frameworks",
-    "verifiedAt": "2026-09-15"
+    "coreIdea": "See the output. Infer the structure. Test the model.",
+    "storeLine": "160 pages · 51 structures · 52 source records · 20-page workbook · AI reasoning framework",
+    "verifiedAt": "2026-09-16"
   }
 ]
