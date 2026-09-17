@@ -17,12 +17,12 @@
       "aiSafetyManipulation": "https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-safety-manipulation",
       "humanAgencyHci": "https://manipulation-the-fool-and-the-wise-two.vercel.app/human-agency-hci"
     },
-    "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=cover",
-    "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=scene",
+    "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/cover.jpg",
+    "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/collection-scene.webp",
     "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the mechanism behind the message.",
     "storeLine": "Human behavior · Influence · Deception · Power",
-    "verifiedAt": "2026-09-16"
+    "verifiedAt": "2026-09-17"
   },
   {
     "id": "the-structure-of-life",
@@ -42,6 +42,6 @@
     "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the output. Infer the structure. Test the model.",
     "storeLine": "160 pages · 51 structures · 52 source records · 20-page workbook · AI reasoning framework",
-    "verifiedAt": "2026-09-16"
+    "verifiedAt": "2026-09-17"
   }
 ]
