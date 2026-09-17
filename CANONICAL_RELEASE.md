@@ -7,9 +7,10 @@ This repository defines the current public-source state for **Manipulation — T
 ### Manipulation — The Fool and the Wise
 - Edition: **First Study Edition — September 2026**
 - Public descriptor: **Independent Source-Mapped Study Edition**
+- Canonical design: **V4 visual lineage + current SEO/accessibility/publication corrections**
 - Canonical price: **USD 23.33**
 - Canonical page: `https://manipulation-the-fool-and-the-wise-two.vercel.app/`
-- Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`
+- Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`, `/terms.html`
 - Canonical publication manifest: `/MANIPULATION_RELEASE_MANIFEST.md`
 
 ### The Structure of Life — The Structure of Reasoning
@@ -34,9 +35,14 @@ Use these object names consistently:
 - AI Reasoning Framework
 - Free Sample
 - Buyer Edition Package
+- Buyer Guide
 - Release Manifest
 
 See `/PUBLISHING_RELEASE_STANDARD.md`.
+
+## Buyer delivery rule
+
+A commercial release should expose the Main Book PDF and EPUB directly to the buyer for immediate reading and also provide the complete Buyer Edition ZIP containing the canonical book, study, research, machine-readable, AI and terms layers. The ZIP is the complete archival bundle; it is not the only reading path.
 
 ## Version rule
 
@@ -54,10 +60,26 @@ A GitHub commit is not considered live merely because it is canonical source. A 
 
 1. the intended canonical source is deployed to the correct Vercel project;
 2. the canonical URL is fetched and compared against the source;
-3. sample, methodology, sitemap and checkout routes are tested;
+3. sample, methodology, terms, sitemap and checkout routes are tested;
 4. payment-to-delivery is tested separately.
 
-As of the 2026-09-17 reconciliation, **Vercel production is not synchronized with this repository's current Manipulation source**. The earlier production-sync workflow failed before deployment because its Vercel credential was unavailable. This must remain a release blocker until production is re-verified.
+## Live Manipulation reconciliation — 2026-09-17
+
+Production is currently **not synchronized** with canonical V4 source.
+
+Observed on the canonical production domain:
+
+- root returns the older compact September-14 design rather than repository V4;
+- live metadata/copy still uses `Dark Psychology`;
+- live copy still contains an undefined `2026 research update`;
+- live extras still use `AI framework + prompts`;
+- `/sample` returns 200 but is `noindex` in the stale deployment;
+- `/methodology` returns 404;
+- `/terms` returns 404.
+
+The older Vercel project/domain `https://manipulation-the-fool-and-the-wise-mu.vercel.app/` also still returns an obsolete, indexable `BOOK + KNOWLEDGE SYSTEM` version. That old project must be retired or permanently redirected to the canonical URL. It must not be treated as a second public edition.
+
+Therefore Manipulation remains **source-locked but not production-locked** until canonical V4 is deployed and the duplicate legacy project no longer exposes a competing indexable version.
 
 ## Blocker-resilience rule
 
