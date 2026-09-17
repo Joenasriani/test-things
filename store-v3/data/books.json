@@ -17,8 +17,8 @@
       "aiSafetyManipulation": "https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-safety-manipulation",
       "humanAgencyHci": "https://manipulation-the-fool-and-the-wise-two.vercel.app/human-agency-hci"
     },
-    "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/cover.jpg",
-    "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/assets/collection-scene.webp",
+    "cover": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/cover.jpg",
+    "scene": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/collection-scene.webp",
     "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the mechanism behind the message.",
     "storeLine": "Human behavior · Influence · Deception · Power",
