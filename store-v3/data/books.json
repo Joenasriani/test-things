@@ -11,6 +11,7 @@
     "buyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/buy",
     "sampleUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/sample",
     "methodologyUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology",
+    "termsUrl": "https://manipulation-the-fool-and-the-wise-two.vercel.app/terms",
     "researchUrls": {
       "aiHumanBehavior": "https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-human-behavior",
       "aiSafetyManipulation": "https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-safety-manipulation",
@@ -18,10 +19,7 @@
     },
     "cover": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=cover",
     "scene": "https://manipulation-the-fool-and-the-wise-two.vercel.app/api/media?asset=scene",
-    "price": {
-      "amount": "23.33",
-      "currency": "USD"
-    },
+    "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the mechanism behind the message.",
     "storeLine": "Human behavior · Influence · Deception · Power",
     "verifiedAt": "2026-09-16"
@@ -38,11 +36,10 @@
     "landingPage": "https://the-structure-of-life.vercel.app/",
     "buyUrl": "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=joenasr%40gmail.com&item_name=The%20Structure%20of%20Life%20%7C%20Study%20Book%20%2B%20Reasoning%20System&amount=23.33&currency_code=USD&no_shipping=1",
     "sampleUrl": "https://the-structure-of-life.vercel.app/sample",
+    "methodologyUrl": "https://the-structure-of-life.vercel.app/methodology",
+    "termsUrl": "https://the-structure-of-life.vercel.app/terms",
     "relatedPublication": "https://manipulation-the-fool-and-the-wise-two.vercel.app/",
-    "price": {
-      "amount": "23.33",
-      "currency": "USD"
-    },
+    "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the output. Infer the structure. Test the model.",
     "storeLine": "160 pages · 51 structures · 52 source records · 20-page workbook · AI reasoning framework",
     "verifiedAt": "2026-09-16"
