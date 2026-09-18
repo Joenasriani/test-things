@@ -3,12 +3,12 @@
 Canonical library: https://reasoning-library.vercel.app/
 
 ## Books
-- Manipulation — The Fool and the Wise: https://manipulation-the-fool-and-the-wise-two.vercel.app/
-  - Indexed sample: https://manipulation-the-fool-and-the-wise-two.vercel.app/sample
-  - Method and source standards: https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology
-  - AI / HCI research route: https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-human-behavior
-  - Manipulation and AI safety: https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-safety-manipulation
-  - Human agency and AI interface design: https://manipulation-the-fool-and-the-wise-two.vercel.app/human-agency-hci
+- Manipulation — The Fool and the Wise: https://manipulation-book.vercel.app/
+  - Indexed sample: https://manipulation-book.vercel.app/sample
+  - Method and source standards: https://manipulation-book.vercel.app/methodology
+  - AI / HCI research route: https://manipulation-book.vercel.app/ai-human-behavior
+  - Manipulation and AI safety: https://manipulation-book.vercel.app/ai-safety-manipulation
+  - Human agency and AI interface design: https://manipulation-book.vercel.app/human-agency-hci
 - The Structure of Life — The Structure of Reasoning: https://the-structure-of-life.vercel.app/
   - Indexed sample: https://the-structure-of-life.vercel.app/sample
 
