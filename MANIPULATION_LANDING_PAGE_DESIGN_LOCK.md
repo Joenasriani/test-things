@@ -5,11 +5,11 @@ Control date: **2026-09-17**
 
 ## Canonical design
 
-**V4 visual lineage is the locked art direction.**
+**The current dark editorial confrontation/keyhole composition is the locked art direction.**
 
-The canonical production page is the current root `index.html`. It preserves the approved V4 hero composition, dark editorial atmosphere, V4 cover treatment, title hierarchy, USD 23.33 offer and free-sample action while incorporating later publishing, SEO, accessibility, navigation, methodology and terms corrections.
+The canonical production page is the current root `index.html`. It preserves the approved hero composition, dark editorial atmosphere, single canonical cover treatment, title hierarchy, USD 23.33 offer and free-sample action while incorporating publishing, SEO, accessibility, navigation, methodology and terms corrections.
 
-Do not revive V1/V2/V3 or the earlier seven-file / “AI Knowledge System” storefront variants as the main landing page.
+Do not revive superseded earlier landing-page layouts or the earlier seven-file / “AI Knowledge System” storefront as public alternatives.
 
 ## Locked visible traits
 
@@ -25,7 +25,7 @@ Do not revive V1/V2/V3 or the earlier seven-file / “AI Knowledge System” sto
 
 ## Canonical publication-language overlay
 
-Keep the V4 art direction, but use the current publication vocabulary:
+Keep the locked art direction and use the current publication vocabulary:
 
 - **Independent Source-Mapped Study Edition**
 - **Human Behavior / Influence / Deception / Power**
@@ -44,4 +44,4 @@ Do not restore:
 
 ## Version rule
 
-A future visual redesign must be explicitly reviewed and versioned. Technical SEO, accessibility, security, routing, metadata, methodology or terms corrections do not create a new art-direction version when the visible V4 composition remains intact.
+A future visual redesign must be explicitly reviewed and versioned. Technical SEO, accessibility, security, routing, metadata, methodology or terms corrections do not create a separate public edition when the locked composition remains intact.
