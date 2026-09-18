@@ -44,6 +44,10 @@ Use these object names consistently:
 
 See `/PUBLISHING_RELEASE_STANDARD.md`.
 
+## Canonical cover
+
+Canonical cover asset: `assets/cover.jpg` — Git blob `a7134dfa144c50493a4e7495772703bc5f3ede19` (restored clean historical artwork; no alternate public cover asset).
+
 ## Buyer delivery rule
 
 A commercial release should expose the Main Book PDF and EPUB directly to the buyer for immediate reading and also provide the complete Buyer Edition ZIP containing the canonical book, study, research, machine-readable, AI and terms layers. The ZIP is the complete archival bundle; it is not the only reading path.
