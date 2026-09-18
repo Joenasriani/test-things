@@ -44,7 +44,7 @@ Do not restore:
 - `2026 Research Update` as an undefined extra;
 - `AI framework + prompts`;
 - `Source atlas` as the buyer-facing publication-object name;
-- obsolete USD 19 pricing.
+- superseded pricing.
 
 ## Change control
 
