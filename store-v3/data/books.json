@@ -17,7 +17,7 @@
       "aiSafetyManipulation": "https://manipulation-book.vercel.app/ai-safety-manipulation",
       "humanAgencyHci": "https://manipulation-book.vercel.app/human-agency-hci"
     },
-    "cover": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/cover.jpg",
+    "cover": "https://manipulation-book.vercel.app/assets/cover.jpg",
     "scene": "https://raw.githubusercontent.com/Joenasriani/test-things/main/assets/collection-scene.webp",
     "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the mechanism behind the message.",
