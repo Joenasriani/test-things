@@ -24,7 +24,7 @@ This repository defines the current public-source state for **Manipulation — T
 ### The Reasoning Library
 - Public source: `/store-v3/`
 - Public page: `https://reasoning-library.vercel.app/`
-- Production deployment: `dpl_7uctYsrFaXi6zDxctt72ixMKTjX1`
+- Production deployment: `dpl_F4iAS7TJnfBj38ev9tEXepCEshAr`
 
 ## Canonical publication terminology
 
