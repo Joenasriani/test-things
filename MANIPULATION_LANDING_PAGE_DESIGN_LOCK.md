@@ -11,6 +11,10 @@ The canonical production page is the current root `index.html`. It preserves the
 
 Do not revive superseded earlier landing-page layouts or the earlier seven-file / “AI Knowledge System” storefront as public alternatives.
 
+## Canonical cover
+
+Canonical cover asset: `assets/cover.jpg` — Git blob `a7134dfa144c50493a4e7495772703bc5f3ede19` (restored clean historical artwork; no alternate public cover asset).
+
 ## Locked visible traits
 
 - dark editorial field derived from the book cover;
