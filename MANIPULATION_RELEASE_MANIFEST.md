@@ -51,6 +51,13 @@ Canonical buyer archive:
 | Release Manifest | `RELEASE_MANIFEST.json` | **GENERATE AFTER FINAL BUYER BYTES LOCK** |
 | Checksums | `SHA256SUMS.txt` | **GENERATE AFTER FINAL BUYER BYTES LOCK** |
 
+## Publication-support package
+
+Canonical support archive: `Manipulation_Publication_Assets_2026-09.zip`  
+SHA-256: `eee77287bfaf30240cc84344125f5ccbc846f0ee3a3b5674976b202719aed3b3`
+
+This archive contains the audited START HERE document, R01–R60 Source Register in CSV/JSON/XLSX, AI Reasoning Framework, Licence & Usage, Edition Notes, manifest and integrity hashes. It is a companion publication asset set; it does not substitute for the complete Buyer Edition archive.
+
 ## Archive structure
 
 ```text
