@@ -1,7 +1,7 @@
 # Manipulation — The Fool and the Wise
 ## Landing Page Design Lock
 
-Control date: **2026-09-17**
+Control date: **2026-09-18**
 
 ## Canonical design
 
@@ -42,6 +42,6 @@ Do not restore:
 - `Source atlas` as the buyer-facing publication-object name;
 - obsolete USD 19 pricing.
 
-## Version rule
+## Change control
 
-A future visual redesign must be explicitly reviewed and versioned. Technical SEO, accessibility, security, routing, metadata, methodology or terms corrections do not create a separate public edition when the locked composition remains intact.
+A future visual redesign must be explicitly reviewed before replacing the canonical design. Technical SEO, accessibility, security, routing, metadata, methodology or terms corrections do not create a separate public edition when the locked composition remains intact.
