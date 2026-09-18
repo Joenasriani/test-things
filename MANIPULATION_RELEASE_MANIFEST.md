@@ -86,7 +86,7 @@ The recovered 157-page PDF cover says **EVIDENCE MAPPED STUDY EDITION**, while t
 ## Public production verification — 2026-09-18
 
 Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`).
-Production deployment: `dpl_4y5b2hijcZ1E8XtRZseze28ZA2bz` — READY, production target, no alias error.
+Production deployment: `dpl_E171R9fL6Tj6wgj3a5ZSUnvYH39V` — READY, production target, no alias error.
 
 Verified HTTP 200:
 - canonical root page;
