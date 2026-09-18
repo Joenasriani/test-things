@@ -19,7 +19,7 @@ This repository defines the current public-source state for **Manipulation — T
 - Canonical source repository: `Joenasriani/structure-of-life-book`
 - Canonical price: **USD 23.33**
 - Canonical page: `https://the-structure-of-life.vercel.app/`
-- Production deployment: `dpl_BJNGu3nzyhqxuSxmtSoGqrJVju8c`
+- Production deployment: `dpl_FSGUfFuFi2CwCkrqDqKssobn8pgF`
 
 ### The Reasoning Library
 - Public source: `/store-v3/`
