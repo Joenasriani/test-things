@@ -5,13 +5,13 @@ Control date: **2026-09-18**
 Author: **J. Nasr**  
 Edition: **First Study Edition — September 2026**  
 Canonical price: **USD 23.33**  
-Canonical public page: `https://manipulation-the-fool-and-the-wise-two.vercel.app/`
+Canonical public page: `https://manipulation-book.vercel.app/`
 
 ## Publication identity
 
 Public publishing descriptor: **Independent Source-Mapped Study Edition**.
 
-The canonical design lineage is **V4**, implemented by the current repository-root `index.html` plus its current supporting assets and later SEO/accessibility/publication corrections.
+The canonical design is the current locked dark editorial confrontation/keyhole composition implemented by the repository-root `index.html` and its current supporting assets. Earlier visual variants are superseded and are not separate public editions.
 
 Do not use **Dark Psychology** as an academic-discipline label. Do not use **2026 Research Update** as an offer component unless a dated, inspectable update record is separately published and defined. Do not market the AI object as generic “prompts”; its canonical identity is **AI Reasoning Framework**.
 
@@ -81,10 +81,10 @@ The recovered 157-page PDF cover says **EVIDENCE MAPPED STUDY EDITION**, while t
 
 ## Public production verification — 2026-09-18
 
-Production deployment: `dpl_Bkwa52ezfQCLz68oh5gJQiPR5zpL` — READY, production target, no alias error.
+Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`).
 
 Verified HTTP 200:
-- root V4 page;
+- canonical root page;
 - `/sample`;
 - `/methodology`;
 - `/terms`;
