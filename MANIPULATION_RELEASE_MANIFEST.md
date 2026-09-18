@@ -80,6 +80,7 @@ The recovered 157-page PDF cover says **EVIDENCE MAPPED STUDY EDITION**, while t
 ## Public production verification — 2026-09-18
 
 Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`).
+Production deployment: `dpl_4y5b2hijcZ1E8XtRZseze28ZA2bz` — READY, production target, no alias error.
 
 Verified HTTP 200:
 - canonical root page;
@@ -91,7 +92,7 @@ Verified HTTP 200:
 
 Live root now uses current source language and no longer serves the prior compact September-14 page.
 
-The obsolete separate project was replaced by redirect-only deployment `dpl_Hz6a5T2nPLRY2mzJWVkZQucSoSJi`; the old public `manipulation-the-fool-and-the-wise-mu.vercel.app` domain returns a permanent 308 redirect to the canonical page.
+The two prior Manipulation projects are redirect-only compatibility shells. `manipulation-the-fool-and-the-wise-v2` (`dpl_GNaFvP1hEHJ4z6qKWRpbmnfkSxiP`) and `manipulation-the-fool-and-the-wise` (`dpl_7EHLLzchG1nYy7ZqqrawrH8XiiA6`) permanently redirect to the canonical page. They must not be treated as separate editions or indexed destinations.
 
 ## Current release status
 
