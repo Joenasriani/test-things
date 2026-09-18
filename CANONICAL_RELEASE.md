@@ -47,9 +47,9 @@ See `/PUBLISHING_RELEASE_STANDARD.md`.
 
 A commercial release should expose the Main Book PDF and EPUB directly to the buyer for immediate reading and also provide the complete Buyer Edition ZIP containing the canonical book, study, research, machine-readable, AI and terms layers. The ZIP is the complete archival bundle; it is not the only reading path.
 
-## Version rule
+## Canonical identity rule
 
-Anything that contradicts this state is historical or superseded. A filename containing `FINAL`, `latest`, `(1)`, `v2`, `v3`, or `ULTIMATE` is not sufficient evidence of canonical status. Canonical status requires an explicit manifest entry and release audit.
+Anything that contradicts this state is historical or superseded. Historical filenames or deployment labels do not determine canonical status. Canonical status requires the current manifest and release audit.
 
 The historical **$19** Manipulation offer is obsolete. **USD 23.33** is the only current Manipulation price.
 
