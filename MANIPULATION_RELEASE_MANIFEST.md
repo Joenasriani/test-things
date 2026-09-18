@@ -40,7 +40,7 @@ Canonical buyer archive:
 | EPUB | `Manipulation_The_Fool_and_the_Wise_Study_Edition_2026-09.epub` | **SOURCE REFERENCED / FINAL BYTES NOT MOUNTED IN ACTIVE RELEASE WORKSPACE** |
 | Study Workbook | `Manipulation_Study_Workbook_2026-09.pdf` | **VERIFIED SOURCE** — 16 pages recovered and inspected |
 | Research Atlas | `Manipulation_Research_Atlas_2026-09.pdf` | **VERIFIED SOURCE** — 28-page research source recovered and inspected |
-| Source Register | `Manipulation_Source_Register_2026-09.csv` | **REQUIRED / FINAL BINARY UNRESOLVED** |
+| Source Register | `Manipulation_Source_Register_2026-09.csv` | **REBUILT AND AUDITED** — R01–R60 canonical source architecture; CSV/JSON/XLSX publication assets generated |
 | Structured Knowledge Register (CSV) | `Manipulation_Structured_Knowledge_Register_2026-09.csv` | **REQUIRED / FINAL BINARY UNRESOLVED** |
 | Structured Knowledge Register (JSON) | `Manipulation_Structured_Knowledge_Register_2026-09.json` | **REQUIRED / FINAL BINARY UNRESOLVED** |
 | AI Reasoning Framework | `Manipulation_AI_Reasoning_Framework_2026-09.md` | **ISSUED AS RELEASE-CANDIDATE SOURCE** |
@@ -100,14 +100,17 @@ Live root now uses current source language and no longer serves the prior compac
 
 The two prior Manipulation projects are redirect-only compatibility shells. `manipulation-the-fool-and-the-wise-v2` (`dpl_GNaFvP1hEHJ4z6qKWRpbmnfkSxiP`) and `manipulation-the-fool-and-the-wise` (`dpl_7EHLLzchG1nYy7ZqqrawrH8XiiA6`) permanently redirect to the canonical page. They must not be treated as separate editions or indexed destinations.
 
+## Source-register boundary
+
+The canonical Source Register is limited to **R01–R60**, matching the First Study Edition's stated research architecture. Later expanded research containing R61+ records is not silently merged into this edition. Any future expansion requires an explicit edition-level revision.
+
 ## Current release status
 
 **PUBLIC SOURCE + PRODUCTION LOCKED / PAID BUYER BYTES NOT YET FULLY LOCKED.**
 
 Remaining commercial blockers:
 1. Final exact EPUB bytes must be recovered/mounted and validated.
-2. Source Register CSV must be recovered/regenerated and audited.
-3. Structured Knowledge Register CSV/JSON must be recovered/regenerated and audited.
+2. Structured Knowledge Register CSV/JSON must be exported from the recovered canonical 223-row source workbook and audited.
 4. Final paid PDF/EPUB descriptor treatment must be locked.
 5. Exact final buyer files must be assembled into the canonical archive.
 6. `RELEASE_MANIFEST.json`, per-file SHA-256 values and final archive hash must be generated from the shipped bytes.
