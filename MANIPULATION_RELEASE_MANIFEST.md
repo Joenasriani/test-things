@@ -15,6 +15,12 @@ The canonical design is the current locked dark editorial confrontation/keyhole 
 
 Do not use **Dark Psychology** as an academic-discipline label. Do not use **2026 Research Update** as an offer component unless a dated, inspectable update record is separately published and defined. Do not market the AI object as generic “prompts”; its canonical identity is **AI Reasoning Framework**.
 
+## Canonical cover
+
+Canonical cover asset: `assets/cover.jpg` — Git blob `a7134dfa144c50493a4e7495772703bc5f3ede19` (restored clean historical artwork; no alternate public cover asset).
+
+The landing page, store listing, social metadata and final buyer package must use this cover identity. Superseded cover assets must not be shipped.
+
 ## Canonical commercial delivery
 
 A completed sale must expose:
