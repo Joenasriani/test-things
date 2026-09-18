@@ -56,7 +56,7 @@ A commercial release should expose the Main Book PDF and EPUB directly to the bu
 
 Anything that contradicts this state is historical or superseded. Historical filenames or deployment labels do not determine canonical status. Canonical status requires the current manifest and release audit.
 
-The historical **$19** Manipulation offer is obsolete. **USD 23.33** is the only current Manipulation price.
+**USD 23.33** is the canonical Manipulation price.
 
 ## Public/private rule
 
@@ -75,7 +75,7 @@ The single canonical Manipulation site is live and production-ready at the canon
 - `/sitemap.xml`
 - `/robots.txt`
 
-All prior Manipulation projects are redirect-only compatibility shells. `manipulation-the-fool-and-the-wise-v2` now uses production deployment `dpl_GNaFvP1hEHJ4z6qKWRpbmnfkSxiP`, and `manipulation-the-fool-and-the-wise` uses `dpl_7EHLLzchG1nYy7ZqqrawrH8XiiA6`. Their public addresses permanently redirect to `https://manipulation-book.vercel.app/` and are not independent publication versions.
+Retired Manipulation addresses are redirect-only compatibility routes to `https://manipulation-book.vercel.app/`; they are not independent publication versions.
 
 ### The Structure of Life
 Canonical source is live at the canonical URL. Verified HTTP 200:
