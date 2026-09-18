@@ -22,7 +22,7 @@
     "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the mechanism behind the message.",
     "storeLine": "Human behavior · Influence · Deception · Power",
-    "verifiedAt": "2026-09-17"
+    "verifiedAt": "2026-09-18"
   },
   {
     "id": "the-structure-of-life",
@@ -42,6 +42,6 @@
     "price": {"amount": "23.33", "currency": "USD"},
     "coreIdea": "See the output. Infer the structure. Test the model.",
     "storeLine": "160 pages · 51 structures · 52 source records · 20-page workbook · AI reasoning framework",
-    "verifiedAt": "2026-09-17"
+    "verifiedAt": "2026-09-18"
   }
 ]
