@@ -70,7 +70,7 @@ The public Free Sample remains separate from the paid archive.
 ## Buyer-package exclusions
 
 Do not ship:
-- historical $19 sales material;
+- superseded sales material;
 - seller-facing Publishing/Sales Kits;
 - landing-page source/deployment files;
 - public Free Sample merely because it exists;
@@ -98,7 +98,7 @@ Verified HTTP 200:
 
 Live root now uses current source language and no longer serves the prior compact September-14 page.
 
-The two prior Manipulation projects are redirect-only compatibility shells. `manipulation-the-fool-and-the-wise-v2` (`dpl_GNaFvP1hEHJ4z6qKWRpbmnfkSxiP`) and `manipulation-the-fool-and-the-wise` (`dpl_7EHLLzchG1nYy7ZqqrawrH8XiiA6`) permanently redirect to the canonical page. They must not be treated as separate editions or indexed destinations.
+Retired Manipulation addresses are redirect-only compatibility routes to the canonical page and are not separate editions or indexed destinations.
 
 ## Source-register boundary
 
