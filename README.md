@@ -7,13 +7,13 @@ Reader-facing source for The Reasoning Library and its public book pages.
 ## Canonical public routes
 
 - Library: https://reasoning-library.vercel.app/
-- Manipulation — The Fool and the Wise: https://manipulation-the-fool-and-the-wise-two.vercel.app/
-  - Sample: https://manipulation-the-fool-and-the-wise-two.vercel.app/sample
-  - Method and source standards: https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology
-  - Terms & delivery: https://manipulation-the-fool-and-the-wise-two.vercel.app/terms
-  - Human influence mechanisms for AI builders: https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-human-behavior
-  - Manipulation and AI safety: https://manipulation-the-fool-and-the-wise-two.vercel.app/ai-safety-manipulation
-  - Human agency, choice architecture and AI interface design: https://manipulation-the-fool-and-the-wise-two.vercel.app/human-agency-hci
+- Manipulation — The Fool and the Wise: https://manipulation-book.vercel.app/
+  - Sample: https://manipulation-book.vercel.app/sample
+  - Method and source standards: https://manipulation-book.vercel.app/methodology
+  - Terms & delivery: https://manipulation-book.vercel.app/terms
+  - Human influence mechanisms for AI builders: https://manipulation-book.vercel.app/ai-human-behavior
+  - Manipulation and AI safety: https://manipulation-book.vercel.app/ai-safety-manipulation
+  - Human agency, choice architecture and AI interface design: https://manipulation-book.vercel.app/human-agency-hci
 - The Structure of Life — The Structure of Reasoning: https://the-structure-of-life.vercel.app/
   - Sample: https://the-structure-of-life.vercel.app/sample
   - Method and source standards: https://the-structure-of-life.vercel.app/methodology
