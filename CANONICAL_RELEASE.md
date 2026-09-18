@@ -7,10 +7,10 @@ This repository defines the current public-source state for **Manipulation — T
 ### Manipulation — The Fool and the Wise
 - Edition: **First Study Edition — September 2026**
 - Public descriptor: **Independent Source-Mapped Study Edition**
-- Canonical design: **V4 visual lineage + current SEO/accessibility/publication corrections**
+- Canonical design: **locked dark editorial confrontation/keyhole art direction + current SEO/accessibility/publication corrections**
 - Canonical price: **USD 23.33**
-- Canonical page: `https://manipulation-the-fool-and-the-wise-two.vercel.app/`
-- Production deployment: `dpl_Bkwa52ezfQCLz68oh5gJQiPR5zpL`
+- Canonical page: `https://manipulation-book.vercel.app/`
+- Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`)
 - Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`, `/terms.html`
 - Canonical publication manifest: `/MANIPULATION_RELEASE_MANIFEST.md`
 
@@ -62,7 +62,7 @@ The public repository may contain the website, methodology, public sample, selec
 The public deployment drift has been repaired.
 
 ### Manipulation
-Canonical V4 is live and production-ready at the canonical URL. Verified HTTP 200:
+The single canonical Manipulation site is live and production-ready at the canonical URL. Verified HTTP 200:
 - `/`
 - `/sample`
 - `/methodology`
@@ -70,7 +70,7 @@ Canonical V4 is live and production-ready at the canonical URL. Verified HTTP 20
 - `/sitemap.xml`
 - `/robots.txt`
 
-The prior competing project `manipulation-the-fool-and-the-wise` was replaced by a redirect-only production deployment `dpl_Hz6a5T2nPLRY2mzJWVkZQucSoSJi`. Its old public `-mu.vercel.app` domain now returns a permanent 308 redirect to the canonical V4 domain.
+The prior competing project `manipulation-the-fool-and-the-wise` was replaced by a redirect-only production deployment `dpl_Hz6a5T2nPLRY2mzJWVkZQucSoSJi`. Its old public `-mu.vercel.app` domain now returns a permanent 308 redirect to the canonical domain.
 
 ### The Structure of Life
 Canonical source is live at the canonical URL. Verified HTTP 200:
