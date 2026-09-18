@@ -26,8 +26,6 @@ A completed sale must expose:
 Canonical buyer archive:
 `Manipulation_The_Fool_and_the_Wise_Buyer_Edition_2026-09.zip`
 
-Historical `Manipulation_2026_FINAL.zip` is superseded as a canonical filename.
-
 ## Canonical buyer package
 
 | Object | Canonical buyer filename | Verification state |
@@ -35,7 +33,7 @@ Historical `Manipulation_2026_FINAL.zip` is superseded as a canonical filename.
 | Main Book | `Manipulation_The_Fool_and_the_Wise_Study_Edition_2026-09.pdf` | **VERIFIED SOURCE** — 157-page First Study Edition recovered and inspected |
 | EPUB | `Manipulation_The_Fool_and_the_Wise_Study_Edition_2026-09.epub` | **SOURCE REFERENCED / FINAL BYTES NOT MOUNTED IN ACTIVE RELEASE WORKSPACE** |
 | Study Workbook | `Manipulation_Study_Workbook_2026-09.pdf` | **VERIFIED SOURCE** — 16 pages recovered and inspected |
-| Research Atlas | `Manipulation_Research_Atlas_2026-09.pdf` | **VERIFIED SOURCE** — source file `Manipulation_Taxonomy_Evidence_Mapped_Ultimate_2026.pdf`, 28 pages |
+| Research Atlas | `Manipulation_Research_Atlas_2026-09.pdf` | **VERIFIED SOURCE** — 28-page research source recovered and inspected |
 | Source Register | `Manipulation_Source_Register_2026-09.csv` | **REQUIRED / FINAL BINARY UNRESOLVED** |
 | Structured Knowledge Register (CSV) | `Manipulation_Structured_Knowledge_Register_2026-09.csv` | **REQUIRED / FINAL BINARY UNRESOLVED** |
 | Structured Knowledge Register (JSON) | `Manipulation_Structured_Knowledge_Register_2026-09.json` | **REQUIRED / FINAL BINARY UNRESOLVED** |
@@ -72,7 +70,7 @@ Do not ship:
 - public Free Sample merely because it exists;
 - private production scratch notes;
 - credentials or customer information;
-- duplicate/version-junk filenames;
+- duplicate or superseded filenames;
 - obsolete sales copy.
 
 ## Book/PDF identity note
