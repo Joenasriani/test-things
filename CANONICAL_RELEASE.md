@@ -1,4 +1,4 @@
-# Canonical Release State — 2026-09-17
+# Canonical Release State — 2026-09-18
 
 This repository defines the current public-source state for **Manipulation — The Fool and the Wise** and **The Reasoning Library**. The Structure of Life public source is maintained in `Joenasriani/structure-of-life-book`.
 
@@ -10,6 +10,7 @@ This repository defines the current public-source state for **Manipulation — T
 - Canonical design: **V4 visual lineage + current SEO/accessibility/publication corrections**
 - Canonical price: **USD 23.33**
 - Canonical page: `https://manipulation-the-fool-and-the-wise-two.vercel.app/`
+- Production deployment: `dpl_Bkwa52ezfQCLz68oh5gJQiPR5zpL`
 - Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`, `/terms.html`
 - Canonical publication manifest: `/MANIPULATION_RELEASE_MANIFEST.md`
 
@@ -17,10 +18,12 @@ This repository defines the current public-source state for **Manipulation — T
 - Canonical source repository: `Joenasriani/structure-of-life-book`
 - Canonical price: **USD 23.33**
 - Canonical page: `https://the-structure-of-life.vercel.app/`
+- Production deployment: `dpl_6ZtUcHeMgWBKbEDnDYCkEDPRxLAu`
 
 ### The Reasoning Library
 - Public source: `/store-v3/`
 - Public page: `https://reasoning-library.vercel.app/`
+- Production deployment: `dpl_13Awq61Dp1x73pHDV1N2SDrhYMJk`
 
 ## Canonical publication terminology
 
@@ -54,32 +57,38 @@ The historical **$19** Manipulation offer is obsolete. **USD 23.33** is the only
 
 The public repository may contain the website, methodology, public sample, selected source material, metadata and release documentation. Full paid publication files and the buyer archive must remain outside publicly enumerable web paths.
 
-## Deployment rule
+## Deployment verification — 2026-09-18
 
-A GitHub commit is not considered live merely because it is canonical source. A production release is current only after:
+The public deployment drift has been repaired.
 
-1. the intended canonical source is deployed to the correct Vercel project;
-2. the canonical URL is fetched and compared against the source;
-3. sample, methodology, terms, sitemap and checkout routes are tested;
-4. payment-to-delivery is tested separately.
+### Manipulation
+Canonical V4 is live and production-ready at the canonical URL. Verified HTTP 200:
+- `/`
+- `/sample`
+- `/methodology`
+- `/terms`
+- `/sitemap.xml`
+- `/robots.txt`
 
-## Live Manipulation reconciliation — 2026-09-17
+The prior competing project `manipulation-the-fool-and-the-wise` was replaced by a redirect-only production deployment `dpl_Hz6a5T2nPLRY2mzJWVkZQucSoSJi`. Its old public `-mu.vercel.app` domain now returns a permanent 308 redirect to the canonical V4 domain.
 
-Production is currently **not synchronized** with canonical V4 source.
+### The Structure of Life
+Canonical source is live at the canonical URL. Verified HTTP 200:
+- `/`
+- `/sample`
+- `/methodology`
+- `/terms`
+- `/sitemap.xml`
+- `/robots.txt`
 
-Observed on the canonical production domain:
+The obsolete **5 FREE AI FRAMEWORKS** live copy is no longer the production root.
 
-- root returns the older compact September-14 design rather than repository V4;
-- live metadata/copy still uses `Dark Psychology`;
-- live copy still contains an undefined `2026 research update`;
-- live extras still use `AI framework + prompts`;
-- `/sample` returns 200 but is `noindex` in the stale deployment;
-- `/methodology` returns 404;
-- `/terms` returns 404.
+### The Reasoning Library
+Current `store-v3` source is deployed and the canonical store root, sitemap and robots return HTTP 200. Store sitemap lastmod is 2026-09-17.
 
-The older Vercel project/domain `https://manipulation-the-fool-and-the-wise-mu.vercel.app/` also still returns an obsolete, indexable `BOOK + KNOWLEDGE SYSTEM` version. That old project must be retired or permanently redirected to the canonical URL. It must not be treated as a second public edition.
+## Remaining commercial-release boundary
 
-Therefore Manipulation remains **source-locked but not production-locked** until canonical V4 is deployed and the duplicate legacy project no longer exposes a competing indexable version.
+Public-source and production synchronization are now complete. Commercial BOOK LOCK still additionally requires the exact paid buyer binaries, final per-file hashes, final Buyer Edition archive hashes and an end-to-end successful payment-to-delivery/access test.
 
 ## Blocker-resilience rule
 
