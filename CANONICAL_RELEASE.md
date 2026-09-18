@@ -11,6 +11,7 @@ This repository defines the current public-source state for **Manipulation — T
 - Canonical price: **USD 23.33**
 - Canonical page: `https://manipulation-book.vercel.app/`
 - Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`)
+- Production deployment: `dpl_4y5b2hijcZ1E8XtRZseze28ZA2bz`
 - Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`, `/terms.html`
 - Canonical publication manifest: `/MANIPULATION_RELEASE_MANIFEST.md`
 
@@ -18,12 +19,12 @@ This repository defines the current public-source state for **Manipulation — T
 - Canonical source repository: `Joenasriani/structure-of-life-book`
 - Canonical price: **USD 23.33**
 - Canonical page: `https://the-structure-of-life.vercel.app/`
-- Production deployment: `dpl_6ZtUcHeMgWBKbEDnDYCkEDPRxLAu`
+- Production deployment: `dpl_BJNGu3nzyhqxuSxmtSoGqrJVju8c`
 
 ### The Reasoning Library
 - Public source: `/store-v3/`
 - Public page: `https://reasoning-library.vercel.app/`
-- Production deployment: `dpl_13Awq61Dp1x73pHDV1N2SDrhYMJk`
+- Production deployment: `dpl_JCGMUwK4rd6Qe2WsFRjKAM1eueVc`
 
 ## Canonical publication terminology
 
@@ -70,7 +71,7 @@ The single canonical Manipulation site is live and production-ready at the canon
 - `/sitemap.xml`
 - `/robots.txt`
 
-The prior competing project `manipulation-the-fool-and-the-wise` was replaced by a redirect-only production deployment `dpl_Hz6a5T2nPLRY2mzJWVkZQucSoSJi`. Its old public `-mu.vercel.app` domain now returns a permanent 308 redirect to the canonical domain.
+All prior Manipulation projects are redirect-only compatibility shells. `manipulation-the-fool-and-the-wise-v2` now uses production deployment `dpl_GNaFvP1hEHJ4z6qKWRpbmnfkSxiP`, and `manipulation-the-fool-and-the-wise` uses `dpl_7EHLLzchG1nYy7ZqqrawrH8XiiA6`. Their public addresses permanently redirect to `https://manipulation-book.vercel.app/` and are not independent publication versions.
 
 ### The Structure of Life
 Canonical source is live at the canonical URL. Verified HTTP 200:
