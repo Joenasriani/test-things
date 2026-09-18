@@ -11,7 +11,7 @@ This repository defines the current public-source state for **Manipulation — T
 - Canonical price: **USD 23.33**
 - Canonical page: `https://manipulation-book.vercel.app/`
 - Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`)
-- Production deployment: `dpl_E171R9fL6Tj6wgj3a5ZSUnvYH39V`
+- Production deployment: `dpl_6k8pLkMcadx5rfoTWEHKNdYXVN8d`
 - Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`, `/terms.html`
 - Canonical publication manifest: `/MANIPULATION_RELEASE_MANIFEST.md`
 
