@@ -47,7 +47,7 @@ jobs:
         working-directory: test-things
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: prj_enAbuUeWubH2zaeKIcb8komOlIZZ
+          VERCEL_PROJECT_ID: prj_LM2IRHgaBTjJ397TBzNux308FuEw
         run: vercel deploy --prod --yes --force --token="$VERCEL_TOKEN"
 
       - name: Deploy Structure of Life
@@ -61,10 +61,10 @@ jobs:
         run: |
           cat <<'EOF'
           Reasoning Library: https://reasoning-library.vercel.app/
-          Manipulation: https://manipulation-the-fool-and-the-wise-two.vercel.app/
-          Manipulation sample: https://manipulation-the-fool-and-the-wise-two.vercel.app/sample
-          Manipulation methodology: https://manipulation-the-fool-and-the-wise-two.vercel.app/methodology
-          Manipulation terms: https://manipulation-the-fool-and-the-wise-two.vercel.app/terms
+          Manipulation: https://manipulation-book.vercel.app/
+          Manipulation sample: https://manipulation-book.vercel.app/sample
+          Manipulation methodology: https://manipulation-book.vercel.app/methodology
+          Manipulation terms: https://manipulation-book.vercel.app/terms
           Structure of Life: https://the-structure-of-life.vercel.app/
           Structure sample: https://the-structure-of-life.vercel.app/sample
           Structure methodology: https://the-structure-of-life.vercel.app/methodology
