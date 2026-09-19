@@ -3,6 +3,10 @@ name: Bookstore production sync
 on:
   workflow_dispatch:
 
+concurrency:
+  group: bookstore-production
+  cancel-in-progress: false
+
 permissions:
   contents: read
 
@@ -57,16 +61,6 @@ jobs:
           VERCEL_PROJECT_ID: prj_tnA6mm9ivIayBSUAfLRxIiTxtYzb
         run: vercel deploy --prod --yes --force --token="$VERCEL_TOKEN"
 
-      - name: Production routes to verify
-        run: |
-          cat <<'EOF'
-          Reasoning Library: https://reasoning-library.vercel.app/
-          Manipulation: https://manipulation-book.vercel.app/
-          Manipulation sample: https://manipulation-book.vercel.app/sample
-          Manipulation methodology: https://manipulation-book.vercel.app/methodology
-          Manipulation terms: https://manipulation-book.vercel.app/terms
-          Structure of Life: https://the-structure-of-life.vercel.app/
-          Structure sample: https://the-structure-of-life.vercel.app/sample
-          Structure methodology: https://the-structure-of-life.vercel.app/methodology
-          Structure terms: https://the-structure-of-life.vercel.app/terms
-          EOF
+      - name: Verify deployed pages, checkout mappings and cover
+        working-directory: test-things
+        run: node scripts/verify-production.mjs

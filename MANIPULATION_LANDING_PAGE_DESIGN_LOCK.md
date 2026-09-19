@@ -13,7 +13,7 @@ Do not revive superseded earlier landing-page layouts or the earlier seven-file 
 
 ## Canonical cover
 
-Canonical cover asset: `assets/cover.jpg` — Git blob `a7134dfa144c50493a4e7495772703bc5f3ede19` (restored clean historical artwork; no alternate public cover asset).
+Canonical cover asset: `assets/cover.jpg` — Git blob `56262bf0fdc93d3aade1a1967626f04fa4227e6f` (complete 1,076,151-byte Study Package original restored on 2026-09-19; the previous 14,394-byte blob was corrupt).
 
 ## Locked visible traits
 

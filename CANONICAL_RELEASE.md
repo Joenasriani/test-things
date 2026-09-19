@@ -1,100 +1,47 @@
-# Canonical Release State — 2026-09-18
+# Canonical source and buyer files — 2026-09-19
 
-This repository defines the current public-source state for **Manipulation — The Fool and the Wise** and **The Reasoning Library**. The Structure of Life public source is maintained in `Joenasriani/structure-of-life-book`.
+The intended public sources are this repository for Manipulation and the store, and `Joenasriani/structure-of-life-book` for The Structure of Life. Source readiness, deployed behavior and successful buyer delivery are separate checks.
 
-## Canonical public products
+## Public addresses
 
-### Manipulation — The Fool and the Wise
-- Edition: **First Study Edition — September 2026**
-- Public descriptor: **Independent Source-Mapped Study Edition**
-- Canonical design: **locked dark editorial confrontation/keyhole art direction + current SEO/accessibility/publication corrections**
-- Canonical price: **USD 23.33**
-- Canonical page: `https://manipulation-book.vercel.app/`
-- Production project: `manipulation-book` (`prj_LM2IRHgaBTjJ397TBzNux308FuEw`)
-- Production deployment: `dpl_Fy9jATJrfXjQKqEAy4RN33xCLnqx`
-- Public source: `/index.html`, `/styles.css`, `/toprail.css`, `/api/`, `/sample.html`, `/methodology.html`, `/terms.html`
-- Canonical publication manifest: `/MANIPULATION_RELEASE_MANIFEST.md`
+| Property | Canonical URL | Source | Vercel project |
+|---|---|---|---|
+| The Reasoning Library | https://reasoning-library.vercel.app/ | `store-v3/` | `prj_wOatJv2jARExk7008J15Jv7HbcNn` |
+| Manipulation — The Fool and the Wise | https://manipulation-book.vercel.app/ | repository root | `prj_LM2IRHgaBTjJ397TBzNux308FuEw` |
+| The Structure of Life | https://the-structure-of-life.vercel.app/ | sibling repository | `prj_tnA6mm9ivIayBSUAfLRxIiTxtYzb` |
 
-### The Structure of Life — The Structure of Reasoning
-- Canonical source repository: `Joenasriani/structure-of-life-book`
-- Canonical price: **USD 23.33**
-- Canonical page: `https://the-structure-of-life.vercel.app/`
-- Production deployment: `dpl_FSGUfFuFi2CwCkrqDqKssobn8pgF`
+Use the store URL once. A second full URL appended to its path is malformed.
 
-### The Reasoning Library
-- Public source: `/store-v3/`
-- Public page: `https://reasoning-library.vercel.app/`
-- Production deployment: `dpl_F4iAS7TJnfBj38ev9tEXepCEshAr`
+## September 19 repairs
 
-## Canonical publication terminology
+The original 1,076,151-byte, 1512 × 2160 Manipulation cover replaces a corrupt 14,394-byte file. The correct Git blob is `56262bf0fdc93d3aade1a1967626f04fa4227e6f`. Browser image decoding passed on the live store and book page.
 
-Use these object names consistently:
+Both books' purchase links are mapped in source to their own `/api/buy` route, with product IDs `MANIPULATION-2026-09` and `STRUCTURE-2026-09`. Each fixed redirect uses the existing PayPal recipient and USD 23.33. A return visit to `/delivery` is not proof of payment.
 
-- Main Book
-- EPUB
-- Study Workbook
-- Research Atlas
-- Source Register
-- Structured Knowledge Register
-- AI Reasoning Framework
-- Free Sample
-- Buyer Edition Package
-- Buyer Guide
-- Release Manifest
+Both complete Buyer Edition ZIPs have been assembled, with per-file manifests and checksums. See `MANIPULATION_RELEASE_MANIFEST.md` and `releases/2026-09/buyer-packages.json`. The source register retains every reference cited by the reading edition.
 
-See `/PUBLISHING_RELEASE_STANDARD.md`.
+## Deployment status
 
-## Canonical cover
+**REMAINING SOURCE CHANGES REQUIRE DEPLOYMENT. PAYMENT AND BUYER RECEIPT ARE NOT VERIFIED.**
 
-Canonical cover asset: `assets/cover.jpg` — Git blob `a7134dfa144c50493a4e7495772703bc5f3ede19` (restored clean historical artwork; no alternate public cover asset).
+Last inspected READY deployments, from September 18:
 
-## Buyer delivery rule
+- Store: `dpl_F4iAS7TJnfBj38ev9tEXepCEshAr`
+- Manipulation: `dpl_Fy9jATJrfXjQKqEAy4RN33xCLnqx`
+- Structure: `dpl_FSGUfFuFi2CwCkrqDqKssobn8pgF`
 
-A commercial release should expose the Main Book PDF and EPUB directly to the buyer for immediate reading and also provide the complete Buyer Edition ZIP containing the canonical book, study, research, machine-readable, AI and terms layers. The ZIP is the complete archival bundle; it is not the only reading path.
+The original Manipulation hosted PayPal button produced an error. The replacement redirect is prepared in source; an authenticated checkout has not been completed. The existing Structure checkout encountered PayPal verification and was not proven functional or broken.
 
-## Canonical identity rule
+The manual production workflow requires repository/organization secret `VERCEL_TOKEN`; the inspected failed run reported it absent. The connected deployment tool also returned “Tool deploy_to_vercel not found.” After working deployment access is restored, run **Bookstore production sync** from this repository's Actions tab. Its final step checks deployed pages, product mapping and full cover bytes with `node scripts/verify-production.mjs`. Those checks do not prove payment acceptance or private delivery.
 
-Anything that contradicts this state is historical or superseded. Historical filenames or deployment labels do not determine canonical status. Canonical status requires the current manifest and release audit.
+Earlier claims that all retired domains were redirect-only were incorrect. The legacy Manipulation site and test paths were still public during the September 19 audit. Retirement remains pending Vercel access.
 
-**USD 23.33** is the canonical Manipulation price.
+## Buyer delivery and publication boundaries
 
-## Public/private rule
+Delivery is manual after payment verification. The seller must verify the completed transaction, product, amount/currency and recipient in the merchant account, then privately send the matching PDF, EPUB, complete ZIP and buyer guide to the verified transaction email. No automated payment notification or delivery system is implemented.
 
-The public repository may contain the website, methodology, public sample, selected source material, metadata and release documentation. Full paid publication files and the buyer archive must remain outside publicly enumerable web paths.
+Paid files and customer records remain outside the public repository and web tree. Public hashes identify the edition without exposing its contents. EPUB container, resource and spine checks passed; full EPUBCheck was not run.
 
-## Deployment verification — 2026-09-18
+Keep the approved cover and dark editorial book design, ordinary HTML navigation, samples, methodology and terms. Technical repairs do not authorize a visual redesign.
 
-The public deployment drift has been repaired.
-
-### Manipulation
-The single canonical Manipulation site is live and production-ready at the canonical URL. Verified HTTP 200:
-- `/`
-- `/sample`
-- `/methodology`
-- `/terms`
-- `/sitemap.xml`
-- `/robots.txt`
-
-Retired Manipulation addresses are redirect-only compatibility routes to `https://manipulation-book.vercel.app/`; they are not independent publication versions.
-
-### The Structure of Life
-Canonical source is live at the canonical URL. Verified HTTP 200:
-- `/`
-- `/sample`
-- `/methodology`
-- `/terms`
-- `/sitemap.xml`
-- `/robots.txt`
-
-The obsolete **5 FREE AI FRAMEWORKS** live copy is no longer the production root.
-
-### The Reasoning Library
-Current `store-v3` source is deployed and the canonical store root, sitemap and robots return HTTP 200. Store sitemap lastmod is 2026-09-17.
-
-## Remaining commercial-release boundary
-
-Public-source and production synchronization are now complete. Commercial BOOK LOCK still additionally requires the exact paid buyer binaries, final per-file hashes, final Buyer Edition archive hashes and an end-to-end successful payment-to-delivery/access test.
-
-## Blocker-resilience rule
-
-Critical navigation, book links and purchase links must remain ordinary first-party HTML anchors and must not depend on analytics, advertising scripts or trackers. Avoid naming critical visible elements or asset paths with advertising/filter-list vocabulary such as `ad`, `ads`, `advert`, `banner`, `sponsor`, `promo`, `tracker` or `pixel`.
+See `PUBLISHING_RELEASE_STANDARD.md` for the complete release gate. Do not describe the commercial journey as fully verified until deployment, successful payment and actual buyer receipt have all passed.
